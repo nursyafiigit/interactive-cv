@@ -51,3 +51,8 @@ onMounted(async () => {
     </div>
   </section>
 </template>
+<style scoped>
+#pendidikan {
+  background-color: rgb(69, 200, 244) /* Warna latar belakang abu-abu terang */
+}
+</style>

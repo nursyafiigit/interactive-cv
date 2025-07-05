@@ -48,3 +48,8 @@ onMounted(async () => {
     </div>
   </section>
 </template>
+<style scoped>
+#proyek {
+  background-color: rgb(255, 174, 140); /* Warna latar belakang abu-abu terang */
+}
+</style>

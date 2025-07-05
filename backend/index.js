@@ -6,6 +6,11 @@ const app = express();
 const PORT = 3000;
 
 app.use(cors());
+// Tambahkan ini di index.js setelah app.use(cors())
+app.get('/', (req, res) => {
+    res.send('Backend API is running...');
+  });
+  
 app.use(express.json());
 
 app.get("/api/education", (req, res) => res.json(educationHistory));

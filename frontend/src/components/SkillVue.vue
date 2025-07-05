@@ -29,3 +29,10 @@ onMounted(async () => {
     </div>
   </section>
 </template>
+
+<style scoped>
+#skill {
+  background-color: rgb(171, 248, 196); /* Warna latar belakang abu-abu terang */
+}
+
+</style>
