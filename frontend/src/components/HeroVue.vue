@@ -1,12 +1,12 @@
 <template>
-  <section class="herow">
+  <section class="herow container min-h-screen flex items-center justify-center ">
     <div id="profil" class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center">
       <div class="md:w-1/2 mb-10 md:mb-0">
         <h1
           class="text-5xl font-bold text-gray-800 mb-4 animate-slide-in-left"
           style="animation-delay: 200ms"
         >
-          Halo, Saya <span class="text-blue-600">Muhammad Nur Syafii</span>
+          Halo, Saya <span class="nama">Muhammad Nur Syafii</span>
         </h1>
         <p class="text-xl text-gray-600 mb-8 animate-slide-in-left" style="animation-delay: 400ms">
           Mahasiswa Teknik Informatika yang bersemangat dalam pengembangan web dan desain antarmuka.
@@ -21,7 +21,7 @@
         </a>
       </div>
       <div class="md:w-1/2 flex justify-center animate-slide-in-right">
-        <img src="../assets/image/image1.jpg" alt="" style="width: 400px" />
+        <img src='/image/image1.jpg' alt="" style="width: 400px" />
       </div>
     </div>
   </section>
@@ -29,10 +29,16 @@
 
 <style scoped>
 .herow {
-  background-color: rgb(170, 241, 241);
+  background-image: url('../public/image/kame.jpg');
+  background-size: cover;
+
 }
 img {
   border-radius: 50%;
+}
+.nama {
+  color: #aa1111; /* Warna biru */
+  font-weight: bold;
 }
 </style>
 <style></style>

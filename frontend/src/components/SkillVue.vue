@@ -13,10 +13,10 @@ onMounted(async () => {
 })
 </script>
 <template>
-  <section id="skill" class="py-20 bg-gray-50">
+  <section id="skill" class="py-20 bg-gray-50 min-h-screen flex items-center justify-center ">
     <div class="container mx-auto px-6">
       <SectionTitle title="Keahlian & Teknologi" />
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
         <div
           v-for="skill in skills"
           :key="skill.name"
@@ -32,7 +32,9 @@ onMounted(async () => {
 
 <style scoped>
 #skill {
-  background-color: rgb(171, 248, 196); /* Warna latar belakang abu-abu terang */
+  background-image: url('../public/background/bg3.jpg');
+  background-size: cover;
+  color: white !important;
 }
 
 </style>
