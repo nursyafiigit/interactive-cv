@@ -55,7 +55,7 @@ onMounted(async () => {
 
 <style scoped>
 #proyek {
-  background-image: url('../public/background/bg5.png');
+  background-image: url('../assets/background/bg5.png');
   background-size: cover;
 }
 </style>

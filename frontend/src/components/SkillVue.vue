@@ -32,7 +32,7 @@ onMounted(async () => {
 
 <style scoped>
 #skill {
-  background-image: url('../public/background/bg3.jpg');
+  background-image: url('../assets/background/bg3.jpg');
   background-size: cover;
   color: white !important;
 }

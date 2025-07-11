@@ -53,7 +53,7 @@ onMounted(async () => {
 </template>
 <style scoped>
 #pendidikan {
-  background-image: url('../public/background/bg2.jpg');
+  background-image: url('../assets/background/bg2.jpg');
   background-size: cover;
   color: white !important;
 }
