@@ -29,7 +29,7 @@
 
 <style scoped>
 .herow {
-  background-image: url('../public/image/kame.jpg');
+  background-image: url('../assets/background/kame.jpg');
   background-size: cover;
   padding: 100px;
 
