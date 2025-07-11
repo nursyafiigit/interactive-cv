@@ -2,27 +2,33 @@
 
 const express = require("express");
 const cors = require("cors");
-require("dotenv").config(); // Jika Anda menggunakan .env
+const dotenv = require("dotenv");
 
+// Load .env file jika ada
+dotenv.config();
+
+// Inisialisasi express
 const app = express();
+
+// Port dari environment Railway atau fallback ke 3000
 const port = process.env.PORT || 3000;
 
-// Middleware
+// Middleware umum
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Contoh route
+// Health check root endpoint
 app.get("/", (req, res) => {
-    res.send("✅ Express backend is running!");
+    res.status(200).send("✅ Express backend is running!");
 });
 
-// Tambahkan route lain di sini
+// Contoh endpoint tambahan
 app.get("/api/hello", (req, res) => {
-    res.json({ message: "Hello from backend 👋" });
+    res.status(200).json({ message: "Hello from backend 👋" });
 });
 
 // Jalankan server
-app.listen(port, () => {
-    console.log(`🚀 Server berjalan di port ${port}`);
+app.listen(port, "0.0.0.0", () => {
+    console.log(`🚀 Server berjalan di http://localhost:${port}`);
 });
