@@ -38,7 +38,10 @@
   </header>
 </template>
 <style scoped>
-
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
 </style>
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'

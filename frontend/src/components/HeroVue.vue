@@ -1,5 +1,5 @@
 <template>
-  <section class="herow container min-h-screen flex items-center justify-center ">
+  <section class="herow min-h-screen flex items-center justify-center ">
     <div id="profil" class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center">
       <div class="md:w-1/2 mb-10 md:mb-0">
         <h1
@@ -31,6 +31,7 @@
 .herow {
   background-image: url('../public/image/kame.jpg');
   background-size: cover;
+  padding: 100px;
 
 }
 img {
@@ -41,4 +42,3 @@ img {
   font-weight: bold;
 }
 </style>
-<style></style>
