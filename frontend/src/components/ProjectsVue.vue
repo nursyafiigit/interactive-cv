@@ -58,4 +58,9 @@ onMounted(async () => {
   background-image: url('../assets/background/bg5.png');
   background-size: cover;
 }
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
 </style>

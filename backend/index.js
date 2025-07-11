@@ -1,22 +1,28 @@
+// backend/index.js
+
 const express = require("express");
 const cors = require("cors");
-const { educationHistory, skills, projects } = require("./data");
+require("dotenv").config(); // Jika Anda menggunakan .env
 
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 
+// Middleware
 app.use(cors());
-// Tambahkan ini di index.js setelah app.use(cors())
-app.get('/', (req, res) => {
-    res.send('Backend API is running...');
-  });
-  
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.get("/api/education", (req, res) => res.json(educationHistory));
-app.get("/api/skills", (req, res) => res.json(skills));
-app.get("/api/projects", (req, res) => res.json(projects));
+// Contoh route
+app.get("/", (req, res) => {
+    res.send("✅ Express backend is running!");
+});
 
-app.listen(PORT, () => {
-    console.log(` Server backend berjalan di http://localhost:${PORT}`);
+// Tambahkan route lain di sini
+app.get("/api/hello", (req, res) => {
+    res.json({ message: "Hello from backend 👋" });
+});
+
+// Jalankan server
+app.listen(port, () => {
+    console.log(`🚀 Server berjalan di port ${port}`);
 });

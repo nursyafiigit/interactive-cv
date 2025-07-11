@@ -37,4 +37,9 @@ onMounted(async () => {
   color: white !important;
 }
 
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+} 
+
 </style>
