@@ -1,0 +1,13 @@
+{
+    "name": "Ahmad Setiawan",
+    "title": "Frontend Developer",
+    "bio": "Pengembang antarmuka modern menggunakan Vue.js",
+    "skills": ["HTML", "CSS", "JavaScript", "Vue.js"],
+    "experiences": [
+        {
+            "company": "PT Inovasi",
+            "position": "Web Developer",
+            "year": "2022 - Sekarang"
+        }
+    ]
+}
