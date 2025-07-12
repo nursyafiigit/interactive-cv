@@ -1,0 +1,24 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv file
+.env
+
+# MacOS
+.DS_Store
+
+# Linux
+*.swp
+
+# VSCode
+.vscode/
+.history/
+
+# Optional log & coverage files
+logs
+*.log
+*.log.*
+coverage/

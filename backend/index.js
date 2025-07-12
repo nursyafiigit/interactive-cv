@@ -1,34 +1,39 @@
-// backend/index.js
-
+// ==============================
+// IMPORT DEPENDENCIES
+// ==============================
 const express = require("express");
 const cors = require("cors");
-const dotenv = require("dotenv");
+const path = require("path");
 
-// Load .env file jika ada
-dotenv.config();
-
-// Inisialisasi express
+// ==============================
+// INITIALIZATION
+// ==============================
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-// Port dari environment Railway atau fallback ke 3000
-const port = process.env.PORT || 3000;
-
-// Middleware umum
+// ==============================
+// MIDDLEWARE
+// ==============================
 app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json()); // Jika ingin menerima JSON dari POST/PUT
+app.use(express.urlencoded({ extended: true })); // Untuk menerima form data
 
-// Health check root endpoint
+// ==============================
+// ROUTES
+// ==============================
+const cvRoutes = require("./routes/cv");
+app.use("/api/cv", cvRoutes);
+
+// ==============================
+// ROOT ENDPOINT
+// ==============================
 app.get("/", (req, res) => {
-    res.status(200).send("✅ Express backend is running!");
+    res.status(200).send("✅ Backend Interactive CV is Running");
 });
 
-// Contoh endpoint tambahan
-app.get("/api/hello", (req, res) => {
-    res.status(200).json({ message: "Hello from backend 👋" });
-});
-
-// Jalankan server
-app.listen(port, "0.0.0.0", () => {
-    console.log(`🚀 Server berjalan di http://localhost:${port}`);
+// ==============================
+// START SERVER
+// ==============================
+app.listen(PORT, () => {
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
