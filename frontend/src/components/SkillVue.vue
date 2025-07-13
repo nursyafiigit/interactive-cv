@@ -4,10 +4,10 @@ import axios from "axios";
 import lottie from "lottie-web";
 
 // Lottie file imports
-import mainAnimation from "../assets/lottie/front.json";
-import animHTML from "../assets/lottie/html.json";
-import animJS from "../assets/lottie/js.json";
-import animPython from "../assets/lottie/python.json";
+import mainAnimation from "/lottie/front.json";
+import animHTML from "/lottie/html.json";
+import animJS from "/lottie/js.json";
+import animPython from "/lottie/python.json";
 
 // Mapping file-name → imported animation
 const animationMap = {
