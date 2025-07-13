@@ -8,7 +8,7 @@ const skills = ref([]);
 onMounted(async () => {
   try {
     // Ambil data skill dari JSON publik
-    const response = await axios.get("/api/skills.json");
+    const response = await axios.get("/api/skills");
     skills.value = response.data;
 
     // Pastikan DOM tersedia sebelum load animasi
