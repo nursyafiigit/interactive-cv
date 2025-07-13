@@ -7,7 +7,7 @@ const skills = ref([])
 
 onMounted(async () => {
   try {
-    const response = await axios.get('https://your-backend.up.railway.app/api/skills')
+    const response = await axios.get('/api/skills')
     // mapping data agar selalu punya field name dan level
     skills.value = response.data.map(item => ({
       name: item.name || item.skill,    // fallback jika backend pakai 'skill'

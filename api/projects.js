@@ -1,13 +1,13 @@
-module.exports = (req, res) => {
-    res.status(200).json([
+export default function handler(req, res) {
+    const projects = [
         {
             id: 1,
-            title: "Portfolio Website",
-            description: "Website portofolio dengan Vue.js",
-            tech: ["Vue.js", "TailwindCSS"],
-            image: "https://source.unsplash.com/800x600/?website",
-            link: "https://github.com/username/portfolio",
+            title: "Website Portofolio",
+            description: "Website pribadi dengan Vue 3 dan Tailwind.",
+            image: "",
+            tech: ["Vue", "Tailwind", "Vercel"],
+            link: "https://contoh.vercel.app",
         },
-        // ...data project lain
-    ]);
-};
+    ];
+    res.status(200).json(projects);
+}

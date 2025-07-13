@@ -1,22 +1,17 @@
-// Data array
-const educationData = [
-    {
-        id: 1,
-        institution: "Universitas Amikom Yogyakarta",
-        field: "Teknik Informatika",
-        startYear: 2021,
-        endYear: 2025,
-    },
-    {
-        id: 2,
-        institution: "SMA Negeri 1 Sleman",
-        field: "IPA",
-        startYear: 2018,
-        endYear: 2021,
-    },
-];
-
-// Handler function (ES module)
 export default function handler(req, res) {
-    res.status(200).json(educationData);
+    const education = [
+        {
+            id: 1,
+            institution: "Universitas Indonesia",
+            major: "Teknik Informatika",
+            period: "2019 - 2023",
+        },
+        {
+            id: 2,
+            institution: "SMA Negeri 1 Jakarta",
+            major: "IPA",
+            period: "2016 - 2019",
+        },
+    ];
+    res.status(200).json(education);
 }

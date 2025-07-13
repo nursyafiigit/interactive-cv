@@ -8,8 +8,8 @@ const skills = ref([])
 
 onMounted(async () => {
   try {
-    const response = await axios.get('/api/skills')
-    skills.value = response.data // ✅ PERBAIKAN DI SINI
+    const response = await axios.get('/api/projects')
+    skills.value = response.data // 
   } catch (error) {
     console.error(error)
   }
