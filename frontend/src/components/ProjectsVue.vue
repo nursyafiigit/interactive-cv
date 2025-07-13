@@ -5,8 +5,8 @@
   >
     <div class="container mx-auto px-6">
       <!-- Judul dengan animasi -->
-      <div data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100">
-        <SectionTitle title="PROYEK" />
+      <div data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100" class="text-white">
+        <SectionTitle title="MyProjects" />
       </div>
 
       <!-- Grid proyek -->

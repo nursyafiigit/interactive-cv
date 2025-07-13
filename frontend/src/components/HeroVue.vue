@@ -13,12 +13,13 @@
         </p>
 
         <a
-          href="#kontak"
-          class="but text-dark font-bold py-3 px-6 rounded-lg hover:bg-blue- 700 transition-colors duration-300 inline-block animate-slide-in-left"
-          style="animation-delay: 600ms"
-        >
-          Hubungi Saya
-        </a>
+  href="#kontak"
+  class="contact-button animate-slide-in-left"
+  style="animation-delay: 600ms"
+>
+  Hubungi Saya
+</a>
+
       </div>
       <div class="md:w-1/2 flex justify-center animate-slide-in-right">
         <img src='/image/aku.jpg' alt="" style="width: 400px" />
@@ -37,9 +38,42 @@
 img {
   border-radius: 50%;
 }
-.but {
+.contact-button {
   background-color: #e9c200;
+  display: inline-block;
+  margin-bottom: 3rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.contact-button:hover {
+  background-color: #1e3a8a; /* biru gelap */
+  color: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Animasi slide dari kiri */
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.7s ease forwards;
+}
+
 .nama {
   color: #e9c200; /* Warna biru */
   font-weight: bold;
