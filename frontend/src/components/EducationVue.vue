@@ -1,20 +1,20 @@
 <script setup>
-import { ref, onMounted } from 'vue'
 import axios from 'axios'
+import { ref, onMounted } from 'vue'
 import SectionTitle from './SectionTitle.vue'
 
-const education = ref([])
+const educationHistory = ref([])
 
 onMounted(async () => {
-  const response = await axios.get('https://your-backend.up.railway.app/api/education')
-  // Map data agar sesuai struktur frontend (period, institution, major)
-  education.value = response.data.map(item => ({
-    id: item.id,
-    institution: item.institution,
-    period: `${item.startYear} - ${item.endYear}`,
-    major: item.field, // gunakan item.field, atau item.major jika ada
-  }))
+  try {
+    const response = await axios.get('/api/education')
+    educationHistory.value = response.data
+  } catch (error) {
+    console.error(error)
+  }
 })
+
+
 </script>
 
 <template>

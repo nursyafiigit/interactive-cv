@@ -3,21 +3,13 @@ import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import SectionTitle from './SectionTitle.vue'
 
-const projects = ref([])
+const skills = ref([])
+
 
 onMounted(async () => {
   try {
-    const response = await axios.get('https://your-backend.up.railway.app/api/projects')
-    // mapping data agar cocok dengan frontend
-    projects.value = response.data.map(item => ({
-      id: item.id,
-      title: item.title || item.name, // fallback jika ada
-      description: item.description,
-      year: item.year,
-      image: item.image || '', // kosongkan jika tidak ada field
-      tech: item.technologies || [], // di backend: technologies
-      link: item.link || '#', // kosongkan jika tidak ada
-    }))
+    const response = await axios.get('/api/skills')
+    skills.value = response.data // ✅ PERBAIKAN DI SINI
   } catch (error) {
     console.error(error)
   }
