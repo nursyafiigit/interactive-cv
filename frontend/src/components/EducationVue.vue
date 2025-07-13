@@ -4,11 +4,34 @@
     class="edu py-20 bg-gradient-to-r from-blue-100 via-blue-50 to-green-100 min-h-screen font-sans"
   >
     <div class="container mx-auto px-6">
+      <!-- Section Title -->
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
         <SectionTitle title="Education History" class="text-white" />
       </div>
+
+      <!-- Paragraf deskripsi -->
+      <div
+        class="max-w-3xl mx-auto text-white text-center mt-6 mb-12"
+        data-aos="fade-up"
+        data-aos-delay="600"
+        data-aos-duration="800"
+      >
+        <p class="text-white/90 leading-relaxed">
+          Sebagai seorang IT Developer, perjalanan pendidikan saya telah memberikan dasar yang kuat
+          untuk memahami dan menguasai teknologi informasi serta pengembangan perangkat lunak. Berikut
+          adalah beberapa pencapaian pendidikan yang telah membentuk keahlian saya di bidang ini:
+        </p>
+      </div>
+
+      <!-- Timeline pendidikan -->
       <div class="relative">
-        <div data-aos="fade-in" data-aos-duration="800" data-aos-delay="600" class="absolute h-full border-r-2 border-gray-300" style="left: 50%"></div>
+        <div
+          data-aos="fade-in"
+          data-aos-duration="800"
+          data-aos-delay="600"
+          class="absolute h-full border-r-2 border-gray-300"
+          style="left: 50%"
+        ></div>
 
         <div
           v-for="(edu, index) in educationHistory"
@@ -40,14 +63,24 @@
               </a>
             </div>
             <div class="w-1/2 flex justify-start">
-              <div data-aos="fade-in" data-aos-duration="800" data-aos-delay="400" class="w-4 h-4 bulet rounded-full z-10"></div>
+              <div
+                data-aos="fade-in"
+                data-aos-duration="800"
+                data-aos-delay="400"
+                class="w-4 h-4 bulet rounded-full z-10"
+              ></div>
             </div>
           </div>
 
           <!-- GANJIL -->
           <div v-else class="w-full flex">
             <div class="w-1/2 flex justify-end">
-              <div data-aos="fade-in" data-aos-duration="800" data-aos-delay="400" class="w-4 h-4 bulet rounded-full z-10"></div>
+              <div
+                data-aos="fade-in"
+                data-aos-duration="800"
+                data-aos-delay="400"
+                class="w-4 h-4 bulet rounded-full z-10"
+              ></div>
             </div>
             <div class="w-1/2 pl-8 flex justify-start">
               <a
@@ -99,6 +132,7 @@ onMounted(async () => {
 .edu {
   background-image: url('../assets/background/wl4.jpg');
   background-size: cover;
+  background-position: center;
 }
 .bulet {
   background-color: #e9c200;

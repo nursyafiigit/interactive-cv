@@ -50,7 +50,7 @@ onMounted(async () => {
 
       <div
         class="mx-auto mb-10"
-        style="max-width: 500px; padding-top: 200px;"
+        style="max-width: 500px; padding-top: 50px;"
         data-aos="zoom-in"
         data-aos-delay="300"
         data-aos-duration="800"
