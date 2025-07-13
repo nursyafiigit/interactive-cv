@@ -8,7 +8,6 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [
     vue(),
-    // vueDevTools() // ⛔️ Hindari ini di production, bisa error saat build
   ],
   base: '/', // penting untuk Vercel agar semua routing benar
   build: {

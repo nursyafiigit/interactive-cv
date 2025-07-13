@@ -21,7 +21,7 @@
         </a>
       </div>
       <div class="md:w-1/2 flex justify-center animate-slide-in-right">
-        <img src='/image/image1.jpg' alt="" style="width: 400px" />
+        <img src='/image/aku.jpg' alt="" style="width: 400px" />
       </div>
     </div>
   </section>
