@@ -1,13 +1,14 @@
 {
     "name": "simple-backend",
     "version": "1.0.0",
+    "description": "Backend API sederhana untuk data CV menggunakan Express",
     "main": "index.js",
     "type": "module",
     "scripts": {
         "start": "node index.js"
     },
     "dependencies": {
-        "express": "^4.18.4",
-        "cors": "^2.8.5"
+        "cors": "^2.8.5",
+        "express": "^4.18.4"
     }
 }
