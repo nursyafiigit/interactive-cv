@@ -43,15 +43,16 @@ onMounted(async () => {
 <template>
   <section class="skills-section py-20 font-sans min-h-screen">
     <div class="container mx-auto px-6">
-      <div data-aos="fade-up" data-aos-duration="800">
-        <h1 class="text-white text-4xl font-bold text-center mb-6">Skills</h1>
+      <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+        <SectionTitle title="MySkills" class="text-white" />
       </div>
 
       <div
         class="mx-auto mb-10"
-        style="max-width: 500px"
+        style="max-width: 500px; padding-top: 200px;"
         data-aos="zoom-in"
         data-aos-delay="300"
+        data-aos-duration="800"
       >
         <div id="main-lottie" style="height: 300px"></div>
       </div>
@@ -71,18 +72,21 @@ onMounted(async () => {
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-        <div
-          v-for="skill in skills"
-          :key="skill.name"
-          class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300"
-          data-aos="zoom-in-up"
-          data-aos-duration="800"
-          data-aos-delay="200"
-        >
-          <div :id="skill.animId" class="lottie-box mb-4"></div>
-          <h5 class="text-white text-xl font-bold">{{ skill.name }}</h5>
-          <p class="text-white/60">{{ skill.level }}</p>
+      <!-- Tambahkan pembungkus padding -->
+      <div class="px-4 md:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-10">
+          <div
+            v-for="skill in skills"
+            :key="skill.name"
+            class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300"
+            data-aos="zoom-in-up"
+            data-aos-duration="800"
+            data-aos-delay="200"
+          >
+            <div :id="skill.animId" class="lottie-box mb-4"></div>
+            <h5 class="text-white text-xl font-bold">{{ skill.name }}</h5>
+            <p class="text-white/60">{{ skill.level }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -91,7 +95,7 @@ onMounted(async () => {
 
 <style scoped>
 .skills-section {
-  background-image: url("../assets/background/wl3.png");
+  background-image: url("../assets/background/wl1.png");
   background-size: cover;
   background-position: center;
 }
