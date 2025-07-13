@@ -2,6 +2,7 @@
 import { ref, onMounted, nextTick } from "vue";
 import axios from "axios";
 import lottie from "lottie-web";
+import SectionTitle from "./SectionTitle.vue";
 
 const skills = ref([]);
 

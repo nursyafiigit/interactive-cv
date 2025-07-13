@@ -97,7 +97,7 @@ onMounted(async () => {
 
 <style scoped>
 .edu {
-  background-image: url('../assets/background/wl5.jpg');
+  background-image: url('../assets/background/wl4.jpg');
   background-size: cover;
 }
 .bulet {
