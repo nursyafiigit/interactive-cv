@@ -1,7 +1,10 @@
 <template>
-  <section id="pendidikan" class="edu py-20 bg-gradient-to-r from-blue-100 via-blue-50 to-green-100 min-h-screen font-sans">
+  <section
+    id="pendidikan"
+    class="edu py-20 bg-gradient-to-r from-blue-100 via-blue-50 to-green-100 min-h-screen font-sans"
+  >
     <div class="container mx-auto px-6">
-      <SectionTitle title="Education History" class="text-white"/>
+      <SectionTitle title="Education History" class="text-white" />
       <div class="relative">
         <div class="absolute h-full border-r-2 border-gray-300" style="left: 50%"></div>
         <div
@@ -12,44 +15,41 @@
           <div v-if="index % 2 === 0" class="w-full flex">
             <div class="w-1/2 pr-8 flex justify-end">
               <div
-                class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition duration-300 flex items-center gap-4 max-w-md"
+                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg p-6 hover:shadow-2xl transition duration-300 flex items-center gap-4 max-w-md"
               >
                 <img :src="edu.logo" class="w-16 h-16 object-contain" />
                 <div class="text-right">
-                  <p class="text-sm font-semibold text-blue-600 mb-1">
+                  <p class="text-sm font-semibold text-yellow-500 mb-1">
                     {{ edu.period }}
                   </p>
-                  <h3 class="text-2xl font-bold text-gray-800 mb-1">
+                  <h3 class="text-2xl font-bold text-white mb-1">
                     {{ edu.institution }}
                   </h3>
-                  <p class="text-gray-600">{{ edu.major }}</p>
+                  <p class="text-white/80">{{ edu.major }}</p>
                 </div>
               </div>
             </div>
             <div class="w-1/2 flex justify-start">
-              <div class="w-4 h-4 bg-blue-600 rounded-full z 10"></div>
+              <div class="w-4 h-4 bulet rounded-full z 10"></div>
             </div>
           </div>
           <div v-else class="w-full flex">
             <div class="w-1/2 flex justify-end">
-              <div class="w-4 h-4 bg-blue-600 rounded-full z-10"></div>
+              <div class="w-4 h-4 bulet rounded-full z-10"></div>
             </div>
             <div class="w-1/2 pl-8 flex justify-start">
               <div
-                class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition duration-300 flex flex-row-reverse items-center gap-4 max-w-md"
+                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg p-6 hover:shadow-2xl transition duration-300 flex items-center gap-4 max-w-md"
               >
-                <img
-                  :src="edu.logo"
-                  class="w-16 h-16 object-contain"
-                />
-                <div class="text-left">
-                  <p class="text-sm font-semibold text-blue-600 mb-1">
+                <img :src="edu.logo" class="w-16 h-16 object-contain" />
+                <div class="text-right">
+                  <p class="text-sm font-semibold text-yellow-500 mb-1">
                     {{ edu.period }}
                   </p>
-                  <h3 class="text-2xl font-bold text-gray-800 mb-1">
+                  <h3 class="text-2xl font-bold text-white mb-1">
                     {{ edu.institution }}
                   </h3>
-                  <p class="text-gray-600">{{ edu.major }}</p>
+                  <p class="text-white/80">{{ edu.major }}</p>
                 </div>
               </div>
             </div>
@@ -74,13 +74,15 @@ onMounted(async () => {
     console.error(error)
   }
 })
-
-
 </script>
 
 <style scoped>
 .edu {
   background-image: url('../assets/background/wl5.jpg');
   background-size: cover;
+}
+
+.bulet {
+  background-color: #e9c200;
 }
 </style>
