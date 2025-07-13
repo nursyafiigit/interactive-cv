@@ -4,9 +4,13 @@
     class="edu py-20 bg-gradient-to-r from-blue-100 via-blue-50 to-green-100 min-h-screen font-sans"
   >
     <div class="container mx-auto px-6">
-      <SectionTitle title="Education History" class="text-white" />
+      <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+        <SectionTitle title="Education History" class="text-white" />
+      </div>
       <div class="relative">
-        <div class="absolute h-full border-r-2 border-gray-300" style="left: 50%"></div>
+        
+          <div data-aos="fade-in" data-aos-duration="800" data-aos-delay="600" class="absolute h-full border-r-2 border-gray-300" style="left: 50%" ></div>
+        
         <div
           v-for="(edu, index) in educationHistory"
           :key="edu.id"
@@ -14,7 +18,7 @@
         >
           <div v-if="index % 2 === 0" class="w-full flex">
             <div class="w-1/2 pr-8 flex justify-end">
-              <div
+              <div data-aos="fade-right" data-aos-duration="800" data-aos-delay="200"
                 class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg p-6 hover:shadow-2xl transition duration-300 flex items-center gap-4 max-w-md"
               >
                 <img :src="edu.logo" class="w-16 h-16 object-contain" />
@@ -30,15 +34,15 @@
               </div>
             </div>
             <div class="w-1/2 flex justify-start">
-              <div class="w-4 h-4 bulet rounded-full z 10"></div>
+              <div data-aos="fade-in" data-aos-duration="800" data-aos-delay="400" class="w-4 h-4 bulet rounded-full z 10"></div>
             </div>
           </div>
           <div v-else class="w-full flex">
             <div class="w-1/2 flex justify-end">
-              <div class="w-4 h-4 bulet rounded-full z-10"></div>
+              <div data-aos="fade-in" data-aos-duration="800" data-aos-delay="400" class="w-4 h-4 bulet rounded-full z-10"></div>
             </div>
             <div class="w-1/2 pl-8 flex justify-start">
-              <div
+              <div data-aos="fade-left" data-aos-duration="800" data-aos-delay="200"
                 class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg p-6 hover:shadow-2xl transition duration-300 flex items-center gap-4 max-w-md"
               >
                 <img :src="edu.logo" class="w-16 h-16 object-contain" />
