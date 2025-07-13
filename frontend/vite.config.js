@@ -1,12 +1,16 @@
 import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import vueDevTools from 'vite-plugin-vue-devtools'
+
+// Nonaktifkan plugin devtools karena hanya untuk dev environment
+// import vueDevTools from 'vite-plugin-vue-devtools'
 
 export default defineConfig({
-  plugins: [vue(), vueDevTools()],
-  base: '/',
+  plugins: [
+    vue(),
+    // vueDevTools() // ⛔️ Hindari ini di production, bisa error saat build
+  ],
+  base: '/', // penting untuk Vercel agar semua routing benar
   build: {
     outDir: 'dist',
   },
