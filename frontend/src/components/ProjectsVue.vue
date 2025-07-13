@@ -52,7 +52,7 @@ onMounted(async () => {
 
 <style scoped>
 .pro {
-  background-image: url('../assets/background/bg5.png');
+  background-image: url('../assets/background/wl6.jpg');
   background-size: cover;
 }
 </style>

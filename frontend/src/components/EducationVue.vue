@@ -80,7 +80,7 @@ onMounted(async () => {
 
 <style scoped>
 .edu {
-  background-image: url('../assets/background/bg2.jpg');
+  background-image: url('../assets/background/wl5.jpg');
   background-size: cover;
 }
 </style>
