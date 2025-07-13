@@ -2,16 +2,23 @@
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import SectionTitle from './SectionTitle.vue'
+
 const skills = ref([])
+
 onMounted(async () => {
   try {
-    const response = await axios.get('http://localhost:3000/api/skills')
-    skills.value = response.data
+    const response = await axios.get('https://your-backend.up.railway.app/api/skills')
+    // mapping data agar selalu punya field name dan level
+    skills.value = response.data.map(item => ({
+      name: item.name || item.skill,    // fallback jika backend pakai 'skill'
+      level: item.level || '',          // default kosong jika tidak ada
+    }))
   } catch (error) {
     console.error(error)
   }
 })
 </script>
+
 <template>
   <section id="skill" class="py-20 bg-gray-50 min-h-screen flex items-center justify-center ">
     <div class="container mx-auto px-6">
@@ -40,6 +47,5 @@ onMounted(async () => {
 .container {
   max-width: 1300px;
   margin: 0 auto;
-} 
-
+}
 </style>

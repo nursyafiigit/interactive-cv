@@ -7,8 +7,17 @@ const projects = ref([])
 
 onMounted(async () => {
   try {
-    const response = await axios.get('http://localhost:3000/api/projects')
-    projects.value = response.data
+    const response = await axios.get('https://your-backend.up.railway.app/api/projects')
+    // mapping data agar cocok dengan frontend
+    projects.value = response.data.map(item => ({
+      id: item.id,
+      title: item.title || item.name, // fallback jika ada
+      description: item.description,
+      year: item.year,
+      image: item.image || '', // kosongkan jika tidak ada field
+      tech: item.technologies || [], // di backend: technologies
+      link: item.link || '#', // kosongkan jika tidak ada
+    }))
   } catch (error) {
     console.error(error)
   }
@@ -22,11 +31,15 @@ onMounted(async () => {
       <div class="grid md:grid-cols-2 gap-12">
         <div
           v-for="project in projects"
-          :key="project.title"
+          :key="project.id"
           class="bg-gray-50 rounded-lg shadow-lg overflow-hidden"
         >
-          <!-- Ambil gambar dari array images (jika ada) atau gunakan field image sebagai fallback -->
-          <img :src="project.image" alt="Project Image" class="w-full h-56 object-cover" />
+          <!-- Gambar project, fallback gambar default jika kosong -->
+          <img
+            :src="project.image || 'https://via.placeholder.com/600x200?text=No+Image'"
+            alt="Project Image"
+            class="w-full h-56 object-cover"
+          />
 
           <div class="p-6">
             <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ project.title }}</h3>

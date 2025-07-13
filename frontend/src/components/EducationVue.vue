@@ -2,24 +2,29 @@
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import SectionTitle from './SectionTitle.vue'
-const educationHistory = ref([])
+
+const education = ref([])
+
 onMounted(async () => {
-  try {
-    const response = await axios.get('http://localhost:3000/api/education')
-    educationHistory.value = response.data
-  } catch (error) {
-    console.error(error)
-  }
-});
+  const response = await axios.get('https://your-backend.up.railway.app/api/education')
+  // Map data agar sesuai struktur frontend (period, institution, major)
+  education.value = response.data.map(item => ({
+    id: item.id,
+    institution: item.institution,
+    period: `${item.startYear} - ${item.endYear}`,
+    major: item.field, // gunakan item.field, atau item.major jika ada
+  }))
+})
 </script>
+
 <template>
-  <section id="pendidikan" class="py-20 min-h-screen flex items-center justify-center ">
+  <section id="pendidikan" class="py-20 min-h-screen flex items-center justify-center">
     <div class="container mx-auto px-6">
       <SectionTitle title="Riwayat Pendidikan" />
       <div class="relative">
         <div class="absolute h-full border-r-2 border-gray-300" style="left: 50%"></div>
         <div
-          v-for="(edu, index) in educationHistory"
+          v-for="(edu, index) in education"
           :key="edu.id"
           class="mb-8 flex justify-between items-center w-full"
         >
@@ -27,23 +32,20 @@ onMounted(async () => {
             <div class="w-1/2 pr-8 text-right">
               <p class="font-semibold text-white-600">{{ edu.period }}</p>
               <h3 class="text-2xl font-bold text-white-800">{{ edu.institution }}</h3>
-              <p class="text-gray- 600">{{ edu.major }}</p>
+              <p class="text-gray-600">{{ edu.major }}</p>
             </div>
-
             <div class="w-1/2 flex justify-start">
-              <div class="w-4 h-4 bg-yellow-300 rounded-full z- 10"></div>
+              <div class="w-4 h-4 bg-yellow-300 rounded-full z-10"></div>
             </div>
           </div>
-
           <div v-else class="w-full flex">
             <div class="w-1/2 flex justify-end">
-              <div class="w-4 h-4 bg-yellow-300 rounded-full z- 10"></div>
+              <div class="w-4 h-4 bg-yellow-300 rounded-full z-10"></div>
             </div>
-
             <div class="w-1/2 pl-8 text-left">
               <p class="font-semibold text-white-600">{{ edu.period }}</p>
               <h3 class="text-2xl font-bold text-white-800">{{ edu.institution }}</h3>
-              <p class="text-gray- 600">{{ edu.major }}</p>
+              <p class="text-gray-600">{{ edu.major }}</p>
             </div>
           </div>
         </div>
@@ -51,6 +53,7 @@ onMounted(async () => {
     </div>
   </section>
 </template>
+
 <style scoped>
 #pendidikan {
   background-image: url('../assets/background/bg2.jpg');

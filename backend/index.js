@@ -1,39 +1,34 @@
-// ==============================
-// IMPORT DEPENDENCIES
-// ==============================
-const express = require("express");
-const cors = require("cors");
-const path = require("path");
+import express from "express";
+import cors from "cors";
+import education from "./data/education.js";
+import projects from "./data/projects.js";
+import skills from "./data/skills.js";
 
-// ==============================
-// INITIALIZATION
-// ==============================
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
-// ==============================
-// MIDDLEWARE
-// ==============================
 app.use(cors());
-app.use(express.json()); // Jika ingin menerima JSON dari POST/PUT
-app.use(express.urlencoded({ extended: true })); // Untuk menerima form data
 
-// ==============================
-// ROUTES
-// ==============================
-const cvRoutes = require("./routes/cv");
-app.use("/api/cv", cvRoutes);
-
-// ==============================
-// ROOT ENDPOINT
-// ==============================
-app.get("/", (req, res) => {
-    res.status(200).send("✅ Backend Interactive CV is Running");
+// Endpoint API untuk mendapatkan data pendidikan
+app.get("/api/education", (req, res) => {
+    res.json(education);
 });
 
-// ==============================
-// START SERVER
-// ==============================
+// Endpoint API untuk mendapatkan data projects
+app.get("/api/projects", (req, res) => {
+    res.json(projects);
+});
+
+// Endpoint API untuk mendapatkan data skills
+app.get("/api/skills", (req, res) => {
+    res.json(skills);
+});
+
+// Tes endpoint (opsional)
+app.get("/", (req, res) => {
+    res.send("Simple Backend API for Portfolio is running.");
+});
+
 app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
+    console.log(`Server berjalan di port ${PORT}`);
 });

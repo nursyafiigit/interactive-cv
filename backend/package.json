@@ -1,12 +1,13 @@
 {
-    "name": "interactive-cv-backend",
+    "name": "simple-backend",
     "version": "1.0.0",
     "main": "index.js",
+    "type": "module",
     "scripts": {
         "start": "node index.js"
     },
     "dependencies": {
-        "express": "^4.18.2",
+        "express": "^4.18.4",
         "cors": "^2.8.5"
     }
 }
