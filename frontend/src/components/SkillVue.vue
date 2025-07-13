@@ -1,58 +1,44 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, nextTick } from "vue";
 import axios from "axios";
 import lottie from "lottie-web";
-
-// Lottie file imports
-import mainAnimation from "/lottie/front.json";
-import animHTML from "/lottie/html.json";
-import animJS from "/lottie/js.json";
-import animPython from "/lottie/python.json";
-
-// Mapping file-name → imported animation
-const animationMap = {
-  "html.json": animHTML,
-  "js.json": animJS,
-  "python.json": animPython,
-};
 
 const skills = ref([]);
 
 onMounted(async () => {
   try {
-    // Fetch data from local JSON
+    // Ambil data skill dari JSON publik
     const response = await axios.get("/api/skills.json");
     skills.value = response.data;
 
-    // Init main Lottie
+    // Pastikan DOM tersedia sebelum load animasi
+    await nextTick();
+
+    // Load animasi utama
     lottie.loadAnimation({
       container: document.getElementById("main-lottie"),
       renderer: "svg",
       loop: true,
       autoplay: true,
-      animationData: mainAnimation,
+      path: "/lottie/front.json", // ✅ Gunakan path URL
     });
 
-    // Delay agar DOM render dahulu
-    setTimeout(() => {
-      skills.value.forEach((skill) => {
-        const animData = animationMap[skill.animFile];
-        if (animData) {
-          lottie.loadAnimation({
-            container: document.getElementById(skill.animId),
-            renderer: "svg",
-            loop: true,
-            autoplay: true,
-            animationData: animData,
-          });
-        }
+    // Load animasi setiap card berdasarkan path
+    skills.value.forEach((skill) => {
+      lottie.loadAnimation({
+        container: document.getElementById(skill.animId),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: `/lottie/${skill.animFile}`, // ✅ Path ke public/lottie/*.json
       });
-    }, 300);
+    });
   } catch (error) {
     console.error("Gagal memuat data skill:", error);
   }
 });
 </script>
+
 
 <template>
   <section class="skills-section py-20 font-sans min-h-screen">
