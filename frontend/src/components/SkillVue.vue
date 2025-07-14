@@ -96,7 +96,7 @@ onMounted(async () => {
 
 <style scoped>
 .skills-section {
-  background-image: url("../assets/background/wl15.jpg");
+  background-image: url("../assets/background/wl14.jpg");
   background-size: cover;
   background-position: center;
 }

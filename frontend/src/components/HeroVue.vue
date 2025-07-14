@@ -65,15 +65,15 @@ img {
   font-weight: bold;
   text-decoration: none;
   color: #000000;
-  transition: all 0.4s ease;
+  transition: all 0.4s ease !important;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact-button:hover {
   background-color: #000000; /* biru gelap */
   color: #e9c200;
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px) !important;
+  box-shadow: 0px 6px 16px rgba(249, 186, 14, 0.374);
 }
 
 /* Animasi slide dari kiri */

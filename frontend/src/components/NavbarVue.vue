@@ -5,7 +5,11 @@
       isHidden ? '-translate-y-full' : 'translate-y-0'
     ]"
   >
-    <nav class="container mx-auto px-9 py-4 flex justify-between items-center">
+    <nav
+      class="container-nav px-9 py-4 flex justify-between items-center"
+      data-aos="fade-down"
+      data-aos-duration="800"
+    >
       <div class="tex text-2xl font-bold text-white">Muhammad Nur Syafii</div>
       <ul class="flex space-x-6">
         <li>
@@ -37,23 +41,7 @@
     </nav>
   </header>
 </template>
-<style scoped>
-.container {
-  max-width: 1350px;
-  margin: 0 auto;
-}
-.nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  background: rgba(0, 50, 0, 0); /* hijau gelap transparan */
-  backdrop-filter: blur(10px);     /* efek blur */
-  -webkit-backdrop-filter: blur(10px); /* dukungan untuk Safari */
-  
-}
-</style>
+
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
@@ -74,3 +62,21 @@ onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
 </script>
+
+<style scoped>
+.container-nav {
+  max-width: 1350px;
+  margin: 0 auto;
+}
+
+.nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(0, 50, 0, 0); /* hijau gelap transparan */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+</style>
