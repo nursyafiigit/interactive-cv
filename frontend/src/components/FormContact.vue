@@ -2,7 +2,7 @@
   <section id="contact" class="h-screen flex items-center justify-center bg-gray-900 py-20 overflow-hidden">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
       <!-- Judul (Section Title) -->
-      <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+      <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" class="mb-6">
         <SectionTitle title="Contact Me" class="text-white text-xl sm:text-2xl md:text-4xl" />
       </div>
 
@@ -63,7 +63,7 @@
 
         <!-- Lottie Animation (Kanan) -->
         <div class="w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center items-center" data-aos="zoom-in" data-aos-duration="1000">
-          <div id="lottie" style="max-width: 500px; margin: auto"></div>
+          <div id="lottie" style="max-width: 450px; margin: auto; padding-top: 10px;"></div>
         </div>
       </div>
     </div>
