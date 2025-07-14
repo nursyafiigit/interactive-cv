@@ -1,12 +1,11 @@
 <template>
   <section class="herow min-h-screen flex items-center justify-center overflow-x-hidden">
     <div
-  id="profil"
-  class="container mx-auto px-4 sm:px-6 py-20 flex flex-col-reverse md:flex-row items-center gap-y-12 md:gap-x-12"
->
-
+      id="profil"
+      class="container mx-auto px-4 sm:px-6 py-20 flex flex-col-reverse md:flex-row items-center gap-y-12 md:gap-x-12"
+    >
       <!-- Bagian Kiri -->
-      <div class="w-full md:w-1/2 mt-10 md:mt-0 text-center md:text-left px-2">
+      <div class="w-full md:w-1/2 mt-10 md:mt-0 text-center md:text-left">
         <h1
           class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
           data-aos="fade-right"
@@ -14,6 +13,7 @@
         >
           Halo, Saya <span class="nama">Muhammad Nur Syafii</span>
         </h1>
+
         <p
           class="text-base sm:text-lg md:text-xl text-white mb-8"
           data-aos="fade-right"
@@ -56,11 +56,10 @@
 
 <style scoped>
 .herow {
-  background-image: url("../assets/background/wl5.jpg");
+  background-image: url('../assets/background/wl5.jpg');
   background-size: cover;
   background-position: center;
 }
-
 
 .contact-button {
   background-color: #e9c200;
