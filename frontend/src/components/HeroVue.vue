@@ -1,9 +1,10 @@
 <template>
   <section class="herow min-h-screen flex items-center justify-center overflow-x-hidden">
     <div
-      id="profil"
-      class="container mx-auto px-4 sm:px-6 py-20 flex flex-col-reverse md:flex-row items-center"
-    >
+  id="profil"
+  class="container mx-auto px-4 sm:px-6 py-20 flex flex-col-reverse md:flex-row items-center gap-y-12 md:gap-x-12"
+>
+
       <!-- Bagian Kiri -->
       <div class="w-full md:w-1/2 mt-10 md:mt-0 text-center md:text-left px-2">
         <h1
@@ -58,8 +59,8 @@
   background-image: url("../assets/background/wl5.jpg");
   background-size: cover;
   background-position: center;
-  padding: 2rem;
 }
+
 
 .contact-button {
   background-color: #e9c200;
