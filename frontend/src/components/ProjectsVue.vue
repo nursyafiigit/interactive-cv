@@ -27,7 +27,7 @@
             class="w-full h-48 sm:h-56 md:h-60 object-cover rounded-t-lg"
           />
 
-          <div class="p-4 sm:p-6">
+          <div class="p-4 sm:p-6 flex flex-col justify-between h-full">
             <h3
               class="text-xl sm:text-2xl font-bold text-white mb-2"
               data-aos="zoom-in"
@@ -45,36 +45,40 @@
               {{ project.description }}
             </p>
 
-            <!-- Teknologi -->
-            <div class="mb-4 flex flex-wrap gap-2">
-              <span
-                v-for="t in project.tech"
-                :key="t"
-                class="inline-block bg-white/20 text-white text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full"
-                data-aos="zoom-in"
-                :data-aos-delay="index * 250"
-              >
-                {{ t }}
-              </span>
-            </div>
+            <!-- Teknologi dan Link berada di bagian bawah -->
+            <div class="mt-auto">
+              <!-- Teknologi -->
+              <div class="mb-4 flex flex-wrap gap-2">
+                <span
+                  v-for="t in project.tech"
+                  :key="t"
+                  class="inline-block bg-white/20 text-white text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full"
+                  data-aos="zoom-in"
+                  :data-aos-delay="index * 250"
+                >
+                  {{ t }}
+                </span>
+              </div>
 
-            <!-- Link -->
-            <a
-              :href="project.link"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-yellow-300 font-semibold hover:underline text-sm sm:text-base"
-              data-aos="fade-up"
-              :data-aos-delay="index * 300"
-            >
-              Lihat Detail &rarr;
-            </a>
+              <!-- Link -->
+              <a
+                :href="project.link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-yellow-300 font-semibold hover:underline text-sm sm:text-base"
+                data-aos="fade-up"
+                :data-aos-delay="index * 300"
+              >
+                Lihat Detail &rarr;
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
 
 <script setup>
 import { ref, onMounted } from 'vue'
@@ -108,10 +112,22 @@ onMounted(async () => {
   border-radius: 18px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-card:hover {
   transform: translateY(-6px) !important;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
 }
+
+.project-card .p-4 {
+  flex-grow: 1;  /* Membuat div konten dapat mengisi sisa ruang */
+}
+
+.project-card .mt-auto {
+  margin-top: auto;  /* Memastikan 'project tech' dan link selalu berada di bawah */
+}
+
 </style>
