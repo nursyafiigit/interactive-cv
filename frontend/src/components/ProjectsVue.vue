@@ -18,7 +18,7 @@
           :key="project.title"
           class="project-card"
           :data-aos="getAOS(index)"
-          data-aos-duration="800"
+          data-aos-duration="700"
           :data-aos-delay="index * 200"
         >
           <img
