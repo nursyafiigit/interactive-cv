@@ -5,7 +5,7 @@
       class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center gap-y-12 md:gap-x-12"
     >
       <!-- Bagian Kiri -->
-      <div class="md:w-1/2 text-left">
+      <div class="md:w-1/2 text-left order-2 md:order-1">
         <h1
           class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
           data-aos="fade-right"
@@ -38,7 +38,7 @@
 
       <!-- Bagian Kanan -->
       <div
-        class="md:w-1/2 flex justify-center"
+        class="md:w-1/2 flex justify-center order-1 md:order-2"
         data-aos="fade-left"
         data-aos-delay="300"
         data-aos-duration="1000"
@@ -52,7 +52,6 @@
     </div>
   </section>
 </template>
-
 
 <style scoped>
 .herow {

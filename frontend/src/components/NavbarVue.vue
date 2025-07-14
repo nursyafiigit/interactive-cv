@@ -85,7 +85,7 @@ onUnmounted(() => {
 
 <style scoped>
 .container-nav {
-  max-width: 1350px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
