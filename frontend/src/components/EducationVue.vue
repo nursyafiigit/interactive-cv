@@ -120,7 +120,7 @@ const educationHistory = ref([])
 
 onMounted(async () => {
   try {
-    //const response = await axios.get('/api/education')
+    const response = await axios.get('/api/education')
     educationHistory.value = response.data
   } catch (error) {
     console.error(error)

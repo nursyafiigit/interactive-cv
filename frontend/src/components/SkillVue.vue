@@ -63,7 +63,7 @@ const skills = ref([]);
 
 onMounted(async () => {
   try {
-    //const response = await axios.get("/api/skills");
+    const response = await axios.get("/api/skills");
     skills.value = response.data;
 
     await nextTick();
