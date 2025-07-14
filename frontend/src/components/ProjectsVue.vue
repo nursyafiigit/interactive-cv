@@ -15,7 +15,7 @@
       </div>
 
       <!-- Grid proyek -->
-      <div class="grid md:grid-cols-2 gap-8 mt-12 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12 max-w-7xl mx-auto">
         <div
           v-for="(project, index) in projects"
           :key="project.title"
@@ -32,15 +32,16 @@
 
           <div class="p-6">
             <h3
-              class="text-2xl font-bold text-white mb-2"
+              class="text-xl sm:text-2xl font-bold text-white mb-2"
               data-aos="zoom-in"
               :data-aos-delay="index * 250"
               data-aos-duration="700"
             >
               {{ project.title }}
             </h3>
+
             <p
-              class="text-white/80 mb-4"
+              class="text-sm sm:text-base text-white/80 mb-4"
               data-aos="fade"
               :data-aos-delay="index * 250"
             >
@@ -48,11 +49,11 @@
             </p>
 
             <!-- Teknologi -->
-            <div class="mb-4">
+            <div class="mb-4 flex flex-wrap gap-2">
               <span
                 v-for="t in project.tech"
                 :key="t"
-                class="inline-block bg-white/20 text-white text-sm font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full"
+                class="inline-block bg-white/20 text-white text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full"
                 data-aos="zoom-in"
                 :data-aos-delay="index * 250"
               >
@@ -65,7 +66,7 @@
               :href="project.link"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-yellow-300 font-semibold hover:underline"
+              class="text-yellow-300 font-semibold hover:underline text-sm sm:text-base"
               data-aos="fade-up"
               :data-aos-delay="index * 300"
             >
@@ -77,7 +78,6 @@
     </div>
   </section>
 </template>
-
 
 <script setup>
 import { ref, onMounted } from 'vue'
@@ -118,4 +118,3 @@ onMounted(async () => {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
 }
 </style>
-

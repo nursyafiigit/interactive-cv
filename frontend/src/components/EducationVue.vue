@@ -3,13 +3,13 @@
     id="pendidikan"
     class="edu py-20 bg-gradient-to-r from-blue-100 via-blue-50 to-green-100 min-h-screen font-sans"
   >
-    <div class="container mx-auto px-6">
+    <div class="container mx-auto px-4 sm:px-6">
       <!-- Section Title -->
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
         <SectionTitle title="Education History" class="text-white" />
       </div>
 
-      <!-- Paragraf deskripsi -->
+      <!-- Deskripsi -->
       <div
         class="max-w-3xl mx-auto text-white text-center mt-6 mb-12"
         data-aos="fade-up"
@@ -18,98 +18,94 @@
       >
         <p class="text-white/90 leading-relaxed">
           Sebagai seorang IT Developer, perjalanan pendidikan saya telah memberikan dasar yang kuat
-          untuk memahami dan menguasai teknologi informasi serta pengembangan perangkat lunak. Berikut
-          adalah beberapa pencapaian pendidikan yang telah membentuk keahlian saya di bidang ini:
+          untuk memahami dan menguasai teknologi informasi serta pengembangan perangkat lunak...
         </p>
       </div>
 
-      <!-- Timeline pendidikan -->
+      <!-- Timeline -->
       <div class="relative">
+        <!-- Garis tengah -->
         <div
+          class="hidden md:block absolute h-full border-r-2 border-gray-300 left-1/2 transform -translate-x-1/2"
           data-aos="fade-in"
           data-aos-duration="800"
           data-aos-delay="600"
-          class="absolute h-full border-r-2 border-gray-300"
-          style="left: 50%"
         ></div>
 
         <div
           v-for="(edu, index) in educationHistory"
           :key="edu.id"
-          class="mb-8 flex justify-between items-center w-full"
+          class="mb-10 w-full"
         >
-          <!-- GENAP -->
-          <div v-if="index % 2 === 0" class="w-full flex">
+          <!-- Desktop layout -->
+          <div v-if="index % 2 === 0" class="hidden md:flex justify-between items-center">
             <div class="w-1/2 pr-8 flex justify-end">
               <a
                 :href="edu.link"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="card"
                 data-aos="fade-right"
-                data-aos-duration="800"
-                data-aos-delay="200"
-                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg p-6 hover:shadow-2xl transition duration-300 flex items-center gap-4 max-w-md hover:scale-105"
               >
                 <img :src="edu.logo" class="w-16 h-16 object-contain" />
                 <div class="text-right">
-                  <p class="text-sm font-semibold text-yellow-500 mb-1">
-                    {{ edu.period }}
-                  </p>
-                  <h3 class="text-2xl font-bold text-white mb-1">
-                    {{ edu.institution }}
-                  </h3>
+                  <p class="text-sm font-semibold text-yellow-500 mb-1">{{ edu.period }}</p>
+                  <h3 class="text-2xl font-bold text-white mb-1">{{ edu.institution }}</h3>
                   <p class="text-white/80">{{ edu.major }}</p>
                 </div>
               </a>
             </div>
             <div class="w-1/2 flex justify-start">
-              <div
-                data-aos="fade-in"
-                data-aos-duration="800"
-                data-aos-delay="400"
-                class="w-4 h-4 bulet rounded-full z-10"
-              ></div>
+              <div class="w-4 h-4 bulet rounded-full z-10"></div>
             </div>
           </div>
 
-          <!-- GANJIL -->
-          <div v-else class="w-full flex">
+          <div v-else class="hidden md:flex justify-between items-center">
             <div class="w-1/2 flex justify-end">
-              <div
-                data-aos="fade-in"
-                data-aos-duration="800"
-                data-aos-delay="400"
-                class="w-4 h-4 bulet rounded-full z-10"
-              ></div>
+              <div class="w-4 h-4 bulet rounded-full z-10"></div>
             </div>
             <div class="w-1/2 pl-8 flex justify-start">
               <a
                 :href="edu.link"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="card"
                 data-aos="fade-left"
-                data-aos-duration="800"
-                data-aos-delay="200"
-                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-lg p-6 hover:shadow-2xl transition duration-300 flex items-center gap-4 max-w-md hover:scale-105"
               >
                 <img :src="edu.logo" class="w-16 h-16 object-contain" />
                 <div class="text-right">
-                  <p class="text-sm font-semibold text-yellow-500 mb-1">
-                    {{ edu.period }}
-                  </p>
-                  <h3 class="text-2xl font-bold text-white mb-1">
-                    {{ edu.institution }}
-                  </h3>
+                  <p class="text-sm font-semibold text-yellow-500 mb-1">{{ edu.period }}</p>
+                  <h3 class="text-2xl font-bold text-white mb-1">{{ edu.institution }}</h3>
                   <p class="text-white/80">{{ edu.major }}</p>
                 </div>
               </a>
             </div>
+          </div>
+
+          <!-- Mobile layout -->
+          <div class="md:hidden flex flex-col items-center gap-4">
+            <div class="w-4 h-4 bulet rounded-full z-10"></div>
+            <a
+              :href="edu.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="card w-full max-w-md"
+              data-aos="fade-up"
+            >
+              <img :src="edu.logo" class="w-16 h-16 object-contain" />
+              <div class="text-left">
+                <p class="text-sm font-semibold text-yellow-500 mb-1">{{ edu.period }}</p>
+                <h3 class="text-2xl font-bold text-white mb-1">{{ edu.institution }}</h3>
+                <p class="text-white/80">{{ edu.major }}</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
 
 <script setup>
 import axios from 'axios'
@@ -131,10 +127,27 @@ onMounted(async () => {
 <style scoped>
 .edu {
   background-image: url('../assets/background/wl7.jpg');
-  background-size:cover;
+  background-size: cover;
   background-position: center;
 }
 .bulet {
   background-color: #e9c200;
 }
+.card {
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
 </style>

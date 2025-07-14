@@ -8,25 +8,22 @@
 
       <!-- Animasi utama -->
       <div
-        class="mx-auto mb-10"
-        style="max-width: 500px"
+        class="mx-auto mb-10 max-w-[500px] w-full"
         data-aos="zoom-in"
         data-aos-delay="300"
         data-aos-duration="800"
       >
-        <div id="main-lottie" style="height: 300px"></div>
+        <div id="main-lottie" class="h-[300px] w-full"></div>
       </div>
 
       <!-- Penjelasan -->
       <div
-        class="text-center mb-10"
+        class="text-center mb-10 px-4"
         data-aos="fade-up"
         data-aos-delay="500"
         data-aos-duration="800"
       >
-        <h4 class="text-white text-xl font-semibold mb-2">
-          Apa yang Saya Bisa?
-        </h4>
+        <h4 class="text-white text-xl font-semibold mb-2">Apa yang Saya Bisa?</h4>
         <p class="text-white/80 max-w-3xl mx-auto">
           Dunia teknologi selalu berkembang, dan saya senang menjadi bagian dari perjalanan itu. Berikut beberapa skill yang saya kuasai:
         </p>
@@ -34,7 +31,7 @@
 
       <!-- Grid Skill -->
       <div class="mx-auto max-w-6xl px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           <div
             v-for="skill in skills"
             :key="skill.name"
@@ -43,7 +40,7 @@
             data-aos-duration="800"
             data-aos-delay="200"
           >
-            <div :id="skill.animId" class="lottie-box mb-4 mx-auto"></div>
+            <div :id="skill.animId" class="lottie-box mb-4 mx-auto w-full"></div>
             <h5 class="text-white text-xl font-bold text-center">{{ skill.name }}</h5>
             <p class="text-white/60 text-center">{{ skill.level }}</p>
           </div>

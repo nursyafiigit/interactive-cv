@@ -1,17 +1,17 @@
 <template>
   <section class="herow min-h-screen flex items-center justify-center">
-    <div id="profil" class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center">
+    <div id="profil" class="container mx-auto px-4 sm:px-6 py-20 flex flex-col-reverse md:flex-row items-center">
       <!-- Bagian Kiri -->
-      <div class="md:w-1/2 mb-10 md:mb-0">
+      <div class="w-full md:w-1/2 mt-10 md:mt-0 text-center md:text-left">
         <h1
-          class="text-5xl font-bold text-white mb-4"
+          class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
           data-aos="fade-right"
           data-aos-duration="1000"
         >
           Halo, Saya <span class="nama">Muhammad Nur Syafii</span>
         </h1>
         <p
-          class="text-xl text-white mb-8"
+          class="text-base sm:text-lg md:text-xl text-white mb-8"
           data-aos="fade-right"
           data-aos-delay="200"
           data-aos-duration="1000"
@@ -35,12 +35,16 @@
 
       <!-- Bagian Kanan -->
       <div
-        class="md:w-1/2 flex justify-center"
+        class="w-full md:w-1/2 flex justify-center"
         data-aos="fade-left"
         data-aos-delay="300"
         data-aos-duration="1000"
       >
-        <img src="/image/aku.jpg" alt="Foto Profil" style="width: 400px" />
+        <img
+          src="/image/aku.jpg"
+          alt="Foto Profil"
+          class="w-40 sm:w-60 md:w-80 lg:w-[400px] rounded-full"
+        />
       </div>
     </div>
   </section>
@@ -50,10 +54,8 @@
 .herow {
   background-image: url('../assets/background/wl5.jpg');
   background-size: cover;
-  padding: 100px;
-}
-img {
-  border-radius: 50%;
+  background-position: center;
+  padding: 2rem;
 }
 .contact-button {
   background-color: #e9c200;
@@ -69,30 +71,14 @@ img {
 }
 
 .contact-button:hover {
-  background-color: #000000; /* biru gelap */
+  background-color: #000000;
   color: #e9c200;
   transform: translateY(-5px) !important;
   box-shadow: 0px 6px 16px rgba(249, 186, 14, 0.374);
 }
 
-/* Animasi slide dari kiri */
-@keyframes slide-in-left {
-  0% {
-    transform: translateX(-50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.animate-slide-in-left {
-  animation: slide-in-left 0.7s ease forwards;
-}
-
 .nama {
-  color: #e9c200; /* Warna biru */
+  color: #e9c200;
   font-weight: bold;
 }
 </style>

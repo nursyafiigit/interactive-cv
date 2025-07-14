@@ -4,8 +4,8 @@ const currentYear = new Date().getFullYear()
 </script>
 
 <template>
-  <footer id="kontak" class=" text-white">
-    <div class="container mx-auto px-6 text-center">
+  <footer id="kontak" class="text-white pt-16">
+    <div class="container mx-auto px-4 sm:px-6 text-center">
       <!-- Section title -->
       <div data-aos="fade-up" data-aos-duration="800">
         <SectionTitle title="Hubungi Saya" />
@@ -13,7 +13,7 @@ const currentYear = new Date().getFullYear()
 
       <!-- Deskripsi -->
       <p
-        class="text-xl text-white mb-8"
+        class="text-base sm:text-xl text-white mb-8 leading-relaxed"
         data-aos="fade-up"
         data-aos-delay="200"
         data-aos-duration="800"
@@ -32,9 +32,9 @@ const currentYear = new Date().getFullYear()
         Kirim Email
       </a>
 
-      <!-- Link Sosial dengan Logo -->
+      <!-- Link Sosial -->
       <div
-        class="flex justify-center space-x-6 mb-8"
+        class="flex justify-center flex-wrap gap-6 mb-8 mt-6"
         data-aos="fade-up"
         data-aos-delay="600"
         data-aos-duration="800"
@@ -61,14 +61,14 @@ const currentYear = new Date().getFullYear()
           rel="noopener noreferrer"
           class="icon-link"
         >
-          <img src="/icons/social.png" alt="LinkedIn" class="icon" />
+          <img src="/icons/social.png" alt="Instagram" class="icon" />
         </a>
       </div>
-      <!-- Rectangle blur transparan -->
     </div>
-    <!-- Footer Bar Full Width -->
+
+    <!-- Footer Bar -->
     <div
-      class="w-full bg-white/10 backdrop-blur-md border-white/20 text-white text-center py-5 text-sm mt-16"
+      class="w-full bg-white/10 backdrop-blur-md border-t border-white/20 text-white text-center py-5 text-sm mt-16"
     >
       &copy; {{ currentYear }} Muhammad Nur Syafii. Universitas Amikom Yogyakarta.
     </div>
@@ -79,8 +79,9 @@ const currentYear = new Date().getFullYear()
 #kontak {
   background-image: url('../assets/background/wl14.jpg');
   background-size: cover;
-  padding-top: 60px;
+  background-position: center;
 }
+
 .email-button {
   background-color: #e9c200;
   display: inline-block;
@@ -95,7 +96,7 @@ const currentYear = new Date().getFullYear()
 }
 
 .email-button:hover {
-  background-color: #000000; /* biru gelap */
+  background-color: #000000;
   color: #e9c200;
   transform: translateY(-5px) !important;
   box-shadow: 0px 6px 16px rgba(249, 186, 14, 0.374);
@@ -105,9 +106,11 @@ const currentYear = new Date().getFullYear()
   display: inline-block;
   transition: transform 0.3s ease;
 }
+
 .icon-link:hover {
   transform: translateY(-5px);
 }
+
 .icon {
   width: 40px;
   height: 40px;
