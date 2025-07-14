@@ -3,7 +3,7 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
       <!-- Judul (Section Title) -->
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-        <SectionTitle title="Contact Me" class="text-white" />
+        <SectionTitle title="Contact Me" class="text-white text-xl sm:text-2xl md:text-4xl" />
       </div>
 
       <div class="flex flex-col lg:flex-row w-full max-w-7xl justify-center items-center">
