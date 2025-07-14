@@ -18,7 +18,6 @@
           :key="project.title"
           class="project-card"
           :data-aos="getAOS(index)"
-          data-aos-duration="1000"  
           :data-aos-delay="index * 200"
         >
           <img
@@ -79,14 +78,21 @@
   </section>
 </template>
 
+
 <script setup>
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import SectionTitle from './SectionTitle.vue'
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const projects = ref([])
 
 onMounted(async () => {
+  AOS.init({
+    duration: 1000,  // Set the global duration for AOS animations
+    delay: 100,  // Optional: set a global delay for all AOS animations
+    
+  });
   try {
     const response = await axios.get('/api/projects')
     projects.value = response.data
