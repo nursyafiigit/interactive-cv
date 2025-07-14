@@ -88,7 +88,7 @@ const projects = ref([])
 
 onMounted(async () => {
   try {
-    const response = await axios.get('/api/projects')
+    //const response = await axios.get('/api/projects')
     projects.value = response.data
   } catch (error) {
     console.error(error)

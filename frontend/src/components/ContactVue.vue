@@ -1,9 +1,10 @@
 <script setup>
 import SectionTitle from './SectionTitle.vue'
+const currentYear = new Date().getFullYear()
 </script>
 
 <template>
-  <footer id="kontak" class="py-20 bg-gray-800 text-white">
+  <footer id="kontak" class=" text-white">
     <div class="container mx-auto px-6 text-center">
       <!-- Section title -->
       <div data-aos="fade-up" data-aos-duration="800">
@@ -12,7 +13,7 @@ import SectionTitle from './SectionTitle.vue'
 
       <!-- Deskripsi -->
       <p
-        class="text-xl text-gray-300 mb-8"
+        class="text-xl text-white mb-8"
         data-aos="fade-up"
         data-aos-delay="200"
         data-aos-duration="800"
@@ -52,7 +53,7 @@ import SectionTitle from './SectionTitle.vue'
           rel="noopener noreferrer"
           class="icon-link"
         >
-          <img src="/icons/linkedin.png" alt="LinkedIn" class="icon"/>
+          <img src="/icons/linkedin.png" alt="LinkedIn" class="icon" />
         </a>
         <a
           href="https://www.instagram.com/mhmmdn_s/"
@@ -60,19 +61,16 @@ import SectionTitle from './SectionTitle.vue'
           rel="noopener noreferrer"
           class="icon-link"
         >
-          <img src="/icons/social.png" alt="LinkedIn" class="icon"/>
+          <img src="/icons/social.png" alt="LinkedIn" class="icon" />
         </a>
       </div>
-
-      <!-- Hak Cipta -->
-      <p
-        class="text-white"
-        data-aos="fade-in"
-        data-aos-delay="800"
-        data-aos-duration="1000"
-      >
-        &copy; {{ new Date().getFullYear() }} Muhammad Nur Syafii. Universitas Amikom Yogyakarta.
-      </p>
+      <!-- Rectangle blur transparan -->
+    </div>
+    <!-- Footer Bar Full Width -->
+    <div
+      class="w-full bg-white/10 backdrop-blur-md border-white/20 text-white text-center py-5 text-sm mt-16"
+    >
+      &copy; {{ currentYear }} Muhammad Nur Syafii. Universitas Amikom Yogyakarta.
     </div>
   </footer>
 </template>
@@ -81,6 +79,7 @@ import SectionTitle from './SectionTitle.vue'
 #kontak {
   background-image: url('../assets/background/wl14.jpg');
   background-size: cover;
+  padding-top: 60px;
 }
 .email-button {
   background-color: #e9c200;
@@ -125,5 +124,4 @@ import SectionTitle from './SectionTitle.vue'
   filter: brightness(1.2);
   transform: scale(1.1);
 }
-
 </style>
