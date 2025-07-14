@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="max-h-screen flex items-center justify-center bg-gray-900 py-20">
+  <section id="contact" class="h-screen flex items-center justify-center bg-gray-900 py-20 overflow-hidden">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
       <!-- Judul (Section Title) -->
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
@@ -8,7 +8,7 @@
 
       <div class="flex flex-col lg:flex-row w-full max-w-7xl justify-center items-center">
         <!-- Form Kontak (Kiri) -->
-        <div class="w-full lg:w-1/2 bg-black-30 bg-opacity-30 backdrop-blur-md p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-duration="1000">
+        <div class="w-full lg:w-1/2 bg-black-30 bg-opacity-30 backdrop-blur-md p-8 rounded-lg shadow-lg mb-8 lg:mb-0" data-aos="fade-up" data-aos-duration="1000">
           <form @submit.prevent="submitForm">
             <!-- Name -->
             <div class="mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
