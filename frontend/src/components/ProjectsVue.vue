@@ -18,7 +18,7 @@
           :key="project.title"
           class="project-card"
           :data-aos="getAOS(index)"
-          data-aos-duration="700"
+          data-aos-duration="800"
           :data-aos-delay="index * 200"
         >
           <img
@@ -95,14 +95,15 @@ onMounted(async () => {
   }
 })
 
-// Function to determine AOS effect based on index
+// Function to determine AOS effect based on column position in the grid
 const getAOS = (index) => {
+  // Modifikasi AOS berdasarkan posisi dalam grid
   if (index % 3 === 0) {
-    return 'fade-up';  // Card tengah (setiap 3rd card)
+    return 'fade-up';  // Card tengah
   } else if (index % 3 === 1) {
-    return 'fade-left';  // Card di sebelah kiri
+    return 'fade-left';  // Card kiri
   } else {
-    return 'fade-right';  // Card di sebelah kanan
+    return 'fade-right';  // Card kanan
   }
 }
 </script>
