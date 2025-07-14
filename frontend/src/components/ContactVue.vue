@@ -1,6 +1,29 @@
 <script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import SectionTitle from './SectionTitle.vue'
+
 const currentYear = new Date().getFullYear()
+const showFooterBar = ref(false)
+
+const handleScroll = () => {
+  const scrollTop = window.scrollY
+  const windowHeight = window.innerHeight
+  const fullHeight = document.documentElement.scrollHeight
+
+  if (scrollTop + windowHeight >= fullHeight - 10) {
+    showFooterBar.value = true
+  } else {
+    showFooterBar.value = false
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
@@ -15,7 +38,6 @@ const currentYear = new Date().getFullYear()
       <p
         class="text-base sm:text-xl text-white mb-8 leading-relaxed"
         data-aos="fade-up"
-        data-aos-delay="200"
         data-aos-duration="800"
       >
         Jangan ragu untuk terhubung atau bertanya.
@@ -26,17 +48,17 @@ const currentYear = new Date().getFullYear()
         href="mailto:nursyafii@gmail.com"
         class="email-button"
         data-aos="zoom-in"
-        data-aos-delay="400"
-        data-aos-duration="700"
+        data-aos-delay="1000"
+        data-aos-duration="1000"
       >
         Kirim Email
       </a>
 
       <!-- Link Sosial -->
       <div
-        class="flex justify-center flex-wrap gap-6 mb-8 mt-6"
+        class="flex justify-center flex-wrap gap-6 mt-6"
         data-aos="fade-up"
-        data-aos-delay="600"
+        data-aos-delay="50"
         data-aos-duration="800"
       >
         <a
@@ -66,20 +88,44 @@ const currentYear = new Date().getFullYear()
       </div>
     </div>
 
-    <!-- Footer Bar -->
-    <div class="w-full bg-white/10 backdrop-blur-md border-t border-white/20 mt-16">
-      <div class="container mx-auto px-4 sm:px-6 text-white text-center py-5 text-sm sm:text-base" >
-        &copy; {{ currentYear }} Muhammad Nur Syafii. Universitas Amikom Yogyakarta.
+    <!-- Footer Bar: ini harus tetap di dalam elemen footer -->
+      <!-- Spacer agar halaman bisa di-scroll -->
+    <div class="space"></div>
+
+    <!-- Footer Bar Pop-up -->
+    <transition name="fade-up">
+      <div
+        v-show="showFooterBar"
+        class="w-full fixed bottom-0 left-0 bg-black/60 backdrop-blur-md z-50"
+      >
+        <div class="container mx-auto px-4 sm:px-6 text-white text-center py-5 text-sm sm:text-base">
+          &copy; {{ currentYear }} Muhammad Nur Syafii. Universitas Amikom Yogyakarta.
+        </div>
       </div>
-    </div>
+    </transition>
   </footer>
 </template>
+
 
 <style scoped>
 #kontak {
   background-image: url('../assets/background/wl14.jpg');
   background-size: cover;
   background-position: center;
+}
+
+.space {
+  height: 120px;
+}
+/* Fade-up animation */
+.fade-up-enter-active,
+.fade-up-leave-active {
+  transition: all 0.5s ease;
+}
+.fade-up-enter-from,
+.fade-up-leave-to {
+  opacity: 0;
+  transform: translateY(100%);
 }
 
 .email-button {

@@ -31,7 +31,7 @@
       </div>
 
       <!-- Grid Skill -->
-      <div class="mx-auto max-w-6xl px-4">
+      <div class="mx-auto max-w-[1200px] px-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           <div
             v-for="skill in skills"
@@ -52,46 +52,46 @@
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from "vue";
-import axios from "axios";
-import lottie from "lottie-web";
-import SectionTitle from "./SectionTitle.vue";
+import { ref, onMounted, nextTick } from 'vue'
+import axios from 'axios'
+import lottie from 'lottie-web'
+import SectionTitle from './SectionTitle.vue'
 
-const skills = ref([]);
+const skills = ref([])
 
 onMounted(async () => {
   try {
-    const response = await axios.get("/api/skills");
-    skills.value = response.data;
+    const response = await axios.get('/api/skills')
+    skills.value = response.data
 
-    await nextTick();
+    await nextTick()
 
     lottie.loadAnimation({
-      container: document.getElementById("main-lottie"),
-      renderer: "svg",
+      container: document.getElementById('main-lottie'),
+      renderer: 'svg',
       loop: true,
       autoplay: true,
-      path: "/lottie/front.json",
-    });
+      path: '/lottie/front.json',
+    })
 
     skills.value.forEach((skill) => {
       lottie.loadAnimation({
         container: document.getElementById(skill.animId),
-        renderer: "svg",
+        renderer: 'svg',
         loop: true,
         autoplay: true,
         path: `/lottie/${skill.animFile}`,
-      });
-    });
+      })
+    })
   } catch (error) {
-    console.error("Gagal memuat data skill:", error);
+    console.error('Gagal memuat data skill:', error)
   }
-});
+})
 </script>
 
 <style scoped>
 .skills-section {
-  background-image: url("../assets/background/wl11.jpg");
+  background-image: url('../assets/background/wl11.jpg');
   background-size: cover;
   background-position: center;
 }

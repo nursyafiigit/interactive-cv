@@ -1,9 +1,9 @@
 <template>
   <header
-    :class="[ 'nav shadow-md sticky top-0 z-50 transition-transform duration-300', isHidden ? '-translate-y-full' : 'translate-y-0' ]"
+    :class="[ 'nav shadow-md sticky top-0 z-50 transition-transform duration-300', isHidden ? '-translate-y-full' : 'translate-y-0' ] "
   >
     <nav
-      class="container-nav px-6 md:px-9 py-4 flex justify-between items-center"
+      class="container-nav px-6 md:px-9 py-4 flex justify-between items-center "
       data-aos="fade-down"
       data-aos-duration="800"
     >
