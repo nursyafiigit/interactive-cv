@@ -6,9 +6,9 @@
         <SectionTitle title="Contact Me" class="text-white" />
       </div>
 
-      <div class="flex flex-col lg:flex-row w-full max-w-7xl justify-between items-center">
+      <div class="flex flex-col lg:flex-row w-full max-w-7xl justify-center items-center">
         <!-- Form Kontak (Kiri) -->
-        <div class="w-full lg:w-1/2 bg-black-30 bg-opacity-30 backdrop-blur-md p-8 rounded-lg shadow-lg ml-4" data-aos="fade-up" data-aos-duration="1000">
+        <div class="w-full lg:w-1/2 bg-black-30 bg-opacity-30 backdrop-blur-md p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-duration="1000">
           <form @submit.prevent="submitForm">
             <!-- Name -->
             <div class="mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
@@ -50,24 +50,19 @@
             </div>
 
             <!-- Submit Button -->
-             <div data-aos="zoom-in-up"
-                 data-aos-delay="700"
-                 data-aos-duration="800">
-
-                 <button
-                 type="submit"
-                 class="contact-button w-full"
-                 href="mailto : nursyafii@gmail.com"
-                 
-                 >
-                 Kirim
-                </button>
+            <div data-aos="zoom-in-up" data-aos-delay="700" data-aos-duration="800">
+              <button
+                type="submit"
+                class="contact-button w-full"
+              >
+                Kirim
+              </button>
             </div>
           </form>
         </div>
 
         <!-- Lottie Animation (Kanan) -->
-        <div class="w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-end pl-16" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center items-center" data-aos="zoom-in" data-aos-duration="1000">
           <div id="lottie" style="max-width: 500px; margin: auto"></div>
         </div>
       </div>
