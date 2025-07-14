@@ -66,7 +66,7 @@ import SectionTitle from './SectionTitle.vue'
 
       <!-- Hak Cipta -->
       <p
-        class="text-white-500"
+        class="text-white"
         data-aos="fade-in"
         data-aos-delay="800"
         data-aos-duration="1000"

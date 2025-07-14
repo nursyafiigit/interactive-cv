@@ -4,7 +4,7 @@
     class="pro py-20 bg-gradient-to-r from-blue-100 via-blue-50 to-green-100 min-h-screen font-sans"
   >
     <div class="container mx-auto px-6">
-      <!-- Judul dengan animasi -->
+      <!-- Judul -->
       <div data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100" class="text-white">
         <SectionTitle title="MyProjects" />
       </div>
@@ -14,47 +14,47 @@
         <div
           v-for="(project, index) in projects"
           :key="project.title"
-          class="bg-gray-50 rounded-lg shadow-lg overflow-hidden"
+          class="project-card"
           :data-aos="index % 2 === 0 ? 'fade-up-right' : 'fade-up-left'"
           data-aos-duration="800"
           :data-aos-delay="index * 200"
         >
-          <img :src="project.image" alt="Gambar Proyek" class="w-full h-56 object-cover" />
+          <img :src="project.image" alt="Gambar Proyek" class="w-full h-56 object-cover rounded-t-lg" />
 
           <div class="p-6">
             <h3
-              class="text-2xl font-bold text-gray-800 mb-2"
+              class="text-2xl font-bold text-white mb-2"
               data-aos="zoom-in"
-              data-aos-delay="index * 250"
+              :data-aos-delay="index * 250"
               data-aos-duration="700"
             >
               {{ project.title }}
             </h3>
-            <p class="text-gray-600 mb-4" data-aos="fade" data-aos-delay="index * 250">
+            <p class="text-white/80 mb-4" data-aos="fade" :data-aos-delay="index * 250">
               {{ project.description }}
             </p>
 
-            <!-- Teknologi yang digunakan -->
+            <!-- Teknologi -->
             <div class="mb-4">
               <span
                 v-for="t in project.tech"
                 :key="t"
-                class="inline-block bg-blue-100 text-blue-800 text-sm font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full"
+                class="inline-block bg-white/20 text-white text-sm font-semibold mr-2 mb-2 px-2.5 py-0.5 rounded-full"
                 data-aos="zoom-in"
-                data-aos-delay="index * 250"
+                :data-aos-delay="index * 250"
               >
                 {{ t }}
               </span>
             </div>
 
-            <!-- Link proyek -->
+            <!-- Link -->
             <a
               :href="project.link"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-blue-600 font-semibold hover:underline"
+              class="text-yellow-300 font-semibold hover:underline"
               data-aos="fade-up"
-              data-aos-delay="index * 300"
+              :data-aos-delay="index * 300"
             >
               Lihat Detail &rarr;
             </a>
@@ -87,5 +87,20 @@ onMounted(async () => {
   background-image: url('../assets/background/wl6.jpg');
   background-size: cover;
   background-position: center;
+}
+
+.project-card {
+  background-color: rgba(255, 255, 255, 0.08); /* transparan putih tipis */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
 }
 </style>
