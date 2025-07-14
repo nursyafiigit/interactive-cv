@@ -12,7 +12,7 @@
       </div>
 
       <!-- Grid proyek -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12 max-w-[1220px] mx-auto">
         <div
           v-for="(project, index) in projects"
           :key="project.title"
@@ -104,12 +104,12 @@ onMounted(async () => {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
+  border-radius: 18px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 .project-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) !important;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
 }
 </style>
