@@ -44,15 +44,16 @@ onBeforeUnmount(() => {
       </p>
 
       <!-- Tombol Email -->
-      <a
-        href="mailto:nursyafii@gmail.com"
-        class="email-button"
-        data-aos="zoom-in"
-        data-aos-delay="1000"
-        data-aos-duration="1000"
-      >
-        Kirim Email
-      </a>
+       <router-link to="/formcontact">
+        <a
+          class="email-button"
+          data-aos="zoom-in"
+          data-aos-delay="1000"
+          data-aos-duration="1000"
+        >
+          Kirim Email
+        </a>
+      </router-link>
 
       <!-- Link Sosial -->
       <div
@@ -89,7 +90,7 @@ onBeforeUnmount(() => {
     </div>
 
     <!-- Footer Bar: ini harus tetap di dalam elemen footer -->
-      <!-- Spacer agar halaman bisa di-scroll -->
+    <!-- Spacer agar halaman bisa di-scroll -->
     <div class="space"></div>
 
     <!-- Footer Bar Pop-up -->
@@ -98,14 +99,15 @@ onBeforeUnmount(() => {
         v-show="showFooterBar"
         class="w-full fixed bottom-0 left-0 bg-black/60 backdrop-blur-md z-50"
       >
-        <div class="container mx-auto px-4 sm:px-6 text-white text-center py-5 text-sm sm:text-base">
+        <div
+          class="container mx-auto px-4 sm:px-6 text-white text-center py-5 text-sm sm:text-base"
+        >
           &copy; {{ currentYear }} Muhammad Nur Syafii. Universitas Amikom Yogyakarta.
         </div>
       </div>
     </transition>
   </footer>
 </template>
-
 
 <style scoped>
 #kontak {

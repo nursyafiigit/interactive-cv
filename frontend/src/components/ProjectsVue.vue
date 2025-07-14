@@ -12,64 +12,61 @@
       </div>
 
       <!-- Grid proyek -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-[1220px] mx-auto">
-        <div
-          v-for="(project, index) in projects"
-          :key="project.title"
-          class="project-card"
-          :data-aos="getAOS(index)"
-          :data-aos-delay="index * 200"
-        >
-          <img
-            :src="project.image"
-            alt="Gambar Proyek"
-            class="w-full h-48 sm:h-56 md:h-60 object-cover rounded-t-lg"
-          />
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-[1220px] mx-auto"
+      >
+        <div v-for="(project, index) in projects" :key="project.title" class="project-card">
+          <div :data-aos="getAOS(index)" :data-aos-delay="index * 200" data-aos-duration="800">
+            <img
+              :src="project.image"
+              alt="Gambar Proyek"
+              class="w-full h-48 sm:h-56 md:h-60 object-cover rounded-t-lg"
+            />
 
-          <div class="p-4 sm:p-6 flex flex-col justify-between h-full">
-            <h3
-              class="text-xl sm:text-2xl font-bold text-white mb-2"
-              data-aos="zoom-in"
-              :data-aos-delay="index * 250"
-              data-aos-duration="700"
-            >
-              {{ project.title }}
-            </h3>
-
-            <p
-              class="text-sm sm:text-base text-white/80 mb-4 leading-relaxed"
-              data-aos="fade"
-              :data-aos-delay="index * 250"
-            >
-              {{ project.description }}
-            </p>
-
-            <!-- Teknologi dan Link berada di bagian bawah -->
-            <div class="mt-auto">
-              <!-- Teknologi -->
-              <div class="mb-4 flex flex-wrap gap-2">
-                <span
-                  v-for="t in project.tech"
-                  :key="t"
-                  class="inline-block bg-white/20 text-white text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full"
-                  data-aos="zoom-in"
-                  :data-aos-delay="index * 250"
-                >
-                  {{ t }}
-                </span>
-              </div>
-
-              <!-- Link -->
-              <a
-                :href="project.link"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-yellow-300 font-semibold hover:underline text-sm sm:text-base"
-                data-aos="fade-up"
-                :data-aos-delay="index * 300"
+            <div class="p-4 sm:p-6 flex flex-col justify-between h-full">
+              <h3
+                class="text-xl sm:text-2xl font-bold text-white mb-2"
+                data-aos="zoom-in"
+                :data-aos-delay="index * 250"
+                data-aos-duration="700"
               >
-                Lihat Detail &rarr;
-              </a>
+                {{ project.title }}
+              </h3>
+
+              <p
+                class="text-sm sm:text-base text-white/80 mb-4 leading-relaxed"
+                data-aos="fade"
+                :data-aos-delay="index * 250"
+              >
+                {{ project.description }}
+              </p>
+              <!-- Teknologi dan Link berada di bagian bawah -->
+              <div class="mt-auto">
+                <!-- Teknologi -->
+                <div class="mb-4 flex flex-wrap gap-2">
+                  <span
+                    v-for="t in project.tech"
+                    :key="t"
+                    class="inline-block bg-white/20 text-white text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full"
+                    data-aos="zoom-in"
+                    :data-aos-delay="index * 250"
+                  >
+                    {{ t }}
+                  </span>
+                </div>
+
+                <!-- Link -->
+                <a
+                  :href="project.link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-yellow-300 font-semibold hover:underline text-sm sm:text-base"
+                  data-aos="fade-up"
+                  :data-aos-delay="index * 300"
+                >
+                  Lihat Detail &rarr;
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -78,23 +75,21 @@
   </section>
 </template>
 
-
 <script setup>
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import SectionTitle from './SectionTitle.vue'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 const projects = ref([])
 
 onMounted(async () => {
   AOS.init({
-    duration: 1000,  // Set the global duration for AOS animations
-    delay: 100,  // Optional: set a global delay for all AOS animations
-    
-  });
+    duration: 1000, // Set the global duration for AOS animations
+    delay: 100, // Optional: set a global delay for all AOS animations
+  })
   try {
-    const response = await axios.get('/api/projects')
+    //const response = await axios.get('/api/projects')
     projects.value = response.data
   } catch (error) {
     console.error(error)
@@ -105,11 +100,11 @@ onMounted(async () => {
 const getAOS = (index) => {
   // Modifikasi AOS berdasarkan posisi dalam grid
   if (index % 3 === 0) {
-    return 'fade-left';  // Card tengah
+    return 'fade-left' // Card tengah
   } else if (index % 3 === 1) {
-    return 'fade-up';  // Card kiri
+    return 'fade-up' // Card kiri
   } else {
-    return 'fade-right';  // Card kanan
+    return 'fade-right' // Card kanan
   }
 }
 </script>
@@ -128,7 +123,9 @@ const getAOS = (index) => {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 18px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease !important;
   display: flex;
   flex-direction: column;
   height: 100%;
