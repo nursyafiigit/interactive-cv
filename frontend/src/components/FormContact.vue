@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="h-screen flex items-center justify-center bg-gray-900 py-20 overflow-hidden">
+  <section id="contact" class="h-screen flex items-center justify-center bg-gray-900 py-20 overflow-y-auto">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
       <!-- Judul (Section Title) -->
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" class="mb-6">
