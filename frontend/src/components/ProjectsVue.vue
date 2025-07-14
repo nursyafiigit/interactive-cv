@@ -89,7 +89,7 @@ onMounted(async () => {
     delay: 100, // Optional: set a global delay for all AOS animations
   })
   try {
-    //const response = await axios.get('/api/projects')
+    const response = await axios.get('/api/projects')
     projects.value = response.data
   } catch (error) {
     console.error(error)
