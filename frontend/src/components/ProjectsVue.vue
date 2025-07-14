@@ -1,8 +1,5 @@
 <template>
-  <section
-    id="proyek"
-    class="pro py-20 min-h-screen font-sans"
-  >
+  <section id="proyek" class="pro py-20 min-h-screen font-sans overflow-x-hidden">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Judul -->
       <div
@@ -27,10 +24,10 @@
           <img
             :src="project.image"
             alt="Gambar Proyek"
-            class="w-full h-56 object-cover rounded-t-lg"
+            class="w-full h-48 sm:h-56 md:h-60 object-cover rounded-t-lg"
           />
 
-          <div class="p-6">
+          <div class="p-4 sm:p-6">
             <h3
               class="text-xl sm:text-2xl font-bold text-white mb-2"
               data-aos="zoom-in"
@@ -41,7 +38,7 @@
             </h3>
 
             <p
-              class="text-sm sm:text-base text-white/80 mb-4"
+              class="text-sm sm:text-base text-white/80 mb-4 leading-relaxed"
               data-aos="fade"
               :data-aos-delay="index * 250"
             >
@@ -102,7 +99,6 @@ onMounted(async () => {
   background-size: cover;
   background-position: center;
 }
-
 .project-card {
   background-color: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
@@ -110,9 +106,8 @@ onMounted(async () => {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .project-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);

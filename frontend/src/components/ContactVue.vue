@@ -67,10 +67,10 @@ const currentYear = new Date().getFullYear()
     </div>
 
     <!-- Footer Bar -->
-    <div
-      class="w-full bg-white/10 backdrop-blur-md border-t border-white/20 text-white text-center py-5 text-sm mt-16"
-    >
-      &copy; {{ currentYear }} Muhammad Nur Syafii. Universitas Amikom Yogyakarta.
+    <div class="w-full bg-white/10 backdrop-blur-md border-t border-white/20 mt-16">
+      <div class="container mx-auto px-4 sm:px-6 text-white text-center py-5 text-sm sm:text-base" >
+        &copy; {{ currentYear }} Muhammad Nur Syafii. Universitas Amikom Yogyakarta.
+      </div>
     </div>
   </footer>
 </template>

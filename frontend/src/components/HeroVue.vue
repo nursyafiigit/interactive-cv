@@ -1,8 +1,11 @@
 <template>
-  <section class="herow min-h-screen flex items-center justify-center">
-    <div id="profil" class="container mx-auto px-4 sm:px-6 py-20 flex flex-col-reverse md:flex-row items-center">
+  <section class="herow min-h-screen flex items-center justify-center overflow-x-hidden">
+    <div
+      id="profil"
+      class="container mx-auto px-4 sm:px-6 py-20 flex flex-col-reverse md:flex-row items-center"
+    >
       <!-- Bagian Kiri -->
-      <div class="w-full md:w-1/2 mt-10 md:mt-0 text-center md:text-left">
+      <div class="w-full md:w-1/2 mt-10 md:mt-0 text-center md:text-left px-2">
         <h1
           class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
           data-aos="fade-right"
@@ -43,7 +46,7 @@
         <img
           src="/image/aku.jpg"
           alt="Foto Profil"
-          class="w-40 sm:w-60 md:w-80 lg:w-[400px] rounded-full"
+          class="w-40 sm:w-52 md:w-72 lg:w-[320px] max-w-full rounded-full"
         />
       </div>
     </div>
@@ -52,11 +55,12 @@
 
 <style scoped>
 .herow {
-  background-image: url('../assets/background/wl5.jpg');
+  background-image: url("../assets/background/wl5.jpg");
   background-size: cover;
   background-position: center;
   padding: 2rem;
 }
+
 .contact-button {
   background-color: #e9c200;
   display: inline-block;

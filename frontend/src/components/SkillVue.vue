@@ -1,5 +1,5 @@
 <template>
-  <section class="skills-section py-20 font-sans min-h-screen">
+  <section class="skills-section py-20 font-sans min-h-screen overflow-x-hidden">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Judul -->
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
@@ -8,7 +8,7 @@
 
       <!-- Animasi utama -->
       <div
-        class="mx-auto mb-10 max-w-[500px] w-full"
+        class="mx-auto mb-10 w-full max-w-[500px]"
         data-aos="zoom-in"
         data-aos-delay="300"
         data-aos-duration="800"
@@ -23,9 +23,10 @@
         data-aos-delay="500"
         data-aos-duration="800"
       >
-        <h4 class="text-white text-xl font-semibold mb-2">Apa yang Saya Bisa?</h4>
-        <p class="text-white/80 max-w-3xl mx-auto">
-          Dunia teknologi selalu berkembang, dan saya senang menjadi bagian dari perjalanan itu. Berikut beberapa skill yang saya kuasai:
+        <h4 class="text-white text-xl sm:text-2xl font-semibold mb-2">Apa yang Saya Bisa?</h4>
+        <p class="text-white/80 max-w-3xl mx-auto text-base sm:text-lg">
+          Dunia teknologi selalu berkembang, dan saya senang menjadi bagian dari perjalanan itu.
+          Berikut beberapa skill yang saya kuasai:
         </p>
       </div>
 
@@ -41,8 +42,8 @@
             data-aos-delay="200"
           >
             <div :id="skill.animId" class="lottie-box mb-4 mx-auto w-full"></div>
-            <h5 class="text-white text-xl font-bold text-center">{{ skill.name }}</h5>
-            <p class="text-white/60 text-center">{{ skill.level }}</p>
+            <h5 class="text-white text-xl sm:text-2xl font-bold text-center">{{ skill.name }}</h5>
+            <p class="text-white/60 text-center text-sm sm:text-base">{{ skill.level }}</p>
           </div>
         </div>
       </div>
@@ -94,7 +95,6 @@ onMounted(async () => {
   background-size: cover;
   background-position: center;
 }
-
 .lottie-box {
   height: 200px;
   max-width: 100%;
