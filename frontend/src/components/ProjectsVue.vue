@@ -1,16 +1,21 @@
 <template>
   <section
     id="proyek"
-    class="pro py-20 bg-gradient-to-r from-blue-100 via-blue-50 to-green-100 min-h-screen font-sans"
+    class="pro py-20 min-h-screen font-sans"
   >
-    <div class="container mx-auto px-6">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Judul -->
-      <div data-aos="fade-down" data-aos-duration="1000" data-aos-delay="100" class="text-white">
+      <div
+        data-aos="fade-down"
+        data-aos-duration="1000"
+        data-aos-delay="100"
+        class="text-white text-center"
+      >
         <SectionTitle title="MyProjects" />
       </div>
 
       <!-- Grid proyek -->
-      <div class="grid md:grid-cols-2 gap-12 mt-12">
+      <div class="grid md:grid-cols-2 gap-8 mt-12 max-w-7xl mx-auto">
         <div
           v-for="(project, index) in projects"
           :key="project.title"
@@ -19,7 +24,11 @@
           data-aos-duration="800"
           :data-aos-delay="index * 200"
         >
-          <img :src="project.image" alt="Gambar Proyek" class="w-full h-56 object-cover rounded-t-lg" />
+          <img
+            :src="project.image"
+            alt="Gambar Proyek"
+            class="w-full h-56 object-cover rounded-t-lg"
+          />
 
           <div class="p-6">
             <h3
@@ -30,7 +39,11 @@
             >
               {{ project.title }}
             </h3>
-            <p class="text-white/80 mb-4" data-aos="fade" :data-aos-delay="index * 250">
+            <p
+              class="text-white/80 mb-4"
+              data-aos="fade"
+              :data-aos-delay="index * 250"
+            >
               {{ project.description }}
             </p>
 
@@ -65,6 +78,7 @@
   </section>
 </template>
 
+
 <script setup>
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
@@ -90,13 +104,13 @@ onMounted(async () => {
 }
 
 .project-card {
-  background-color: rgba(255, 255, 255, 0.08); /* transparan putih tipis */
+  background-color: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  border-radius: 15px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 .project-card:hover {
@@ -104,3 +118,4 @@ onMounted(async () => {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
 }
 </style>
+

@@ -1,9 +1,6 @@
 <template>
   <section class="herow min-h-screen flex items-center justify-center">
-    <div
-      id="profil"
-      class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center"
-    >
+    <div id="profil" class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center">
       <!-- Bagian Kiri -->
       <div class="md:w-1/2 mb-10 md:mb-0">
         <h1
@@ -19,7 +16,10 @@
           data-aos-delay="200"
           data-aos-duration="1000"
         >
-          Mahasiswa Teknik Informatika yang bersemangat dalam pengembangan web dan desain antarmuka.
+          Saya seorang IT Developer yang memiliki hasrat mendalam terhadap teknologi dan
+          pengembangan perangkat lunak. Sejak awal saya tertarik dengan dunia pemrograman, saya
+          telah berkomitmen untuk terus belajar, berinovasi, dan memberikan solusi teknologi yang
+          dapat mempermudah kehidupan serta meningkatkan efisiensi.
         </p>
 
         <a
@@ -45,7 +45,6 @@
     </div>
   </section>
 </template>
-
 
 <style scoped>
 .herow {

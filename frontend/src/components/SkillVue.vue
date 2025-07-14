@@ -1,53 +1,12 @@
-<script setup>
-import { ref, onMounted, nextTick } from "vue";
-import axios from "axios";
-import lottie from "lottie-web";
-import SectionTitle from "./SectionTitle.vue";
-
-const skills = ref([]);
-
-onMounted(async () => {
-  try {
-    // Ambil data skill dari JSON publik
-    const response = await axios.get("/api/skills");
-    skills.value = response.data;
-
-    // Pastikan DOM tersedia sebelum load animasi
-    await nextTick();
-
-    // Load animasi utama
-    lottie.loadAnimation({
-      container: document.getElementById("main-lottie"),
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      path: "/lottie/front.json", // ✅ Gunakan path URL
-    });
-
-    // Load animasi setiap card berdasarkan path
-    skills.value.forEach((skill) => {
-      lottie.loadAnimation({
-        container: document.getElementById(skill.animId),
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        path: `/lottie/${skill.animFile}`, // ✅ Path ke public/lottie/*.json
-      });
-    });
-  } catch (error) {
-    console.error("Gagal memuat data skill:", error);
-  }
-});
-</script>
-
-
 <template>
   <section class="skills-section py-20 font-sans min-h-screen">
-    <div class="container mx-auto px-6">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Judul -->
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
         <SectionTitle title="MySkills" class="text-white" />
       </div>
 
+      <!-- Animasi utama -->
       <div
         class="mx-auto mb-10"
         style="max-width: 500px"
@@ -58,6 +17,7 @@ onMounted(async () => {
         <div id="main-lottie" style="height: 300px"></div>
       </div>
 
+      <!-- Penjelasan -->
       <div
         class="text-center mb-10"
         data-aos="fade-up"
@@ -68,14 +28,13 @@ onMounted(async () => {
           Apa yang Saya Bisa?
         </h4>
         <p class="text-white/80 max-w-3xl mx-auto">
-          Dunia teknologi selalu berkembang, dan saya senang menjadi bagian dari
-          perjalanan itu. Berikut beberapa skill yang saya kuasai:
+          Dunia teknologi selalu berkembang, dan saya senang menjadi bagian dari perjalanan itu. Berikut beberapa skill yang saya kuasai:
         </p>
       </div>
 
-      <!-- Tambahkan pembungkus padding -->
-      <div class="px-4 md:px-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-10">
+      <!-- Grid Skill -->
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           <div
             v-for="skill in skills"
             :key="skill.name"
@@ -84,15 +43,53 @@ onMounted(async () => {
             data-aos-duration="800"
             data-aos-delay="200"
           >
-            <div :id="skill.animId" class="lottie-box mb-4"></div>
-            <h5 class="text-white text-xl font-bold">{{ skill.name }}</h5>
-            <p class="text-white/60">{{ skill.level }}</p>
+            <div :id="skill.animId" class="lottie-box mb-4 mx-auto"></div>
+            <h5 class="text-white text-xl font-bold text-center">{{ skill.name }}</h5>
+            <p class="text-white/60 text-center">{{ skill.level }}</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script setup>
+import { ref, onMounted, nextTick } from "vue";
+import axios from "axios";
+import lottie from "lottie-web";
+import SectionTitle from "./SectionTitle.vue";
+
+const skills = ref([]);
+
+onMounted(async () => {
+  try {
+    const response = await axios.get("/api/skills");
+    skills.value = response.data;
+
+    await nextTick();
+
+    lottie.loadAnimation({
+      container: document.getElementById("main-lottie"),
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "/lottie/front.json",
+    });
+
+    skills.value.forEach((skill) => {
+      lottie.loadAnimation({
+        container: document.getElementById(skill.animId),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: `/lottie/${skill.animFile}`,
+      });
+    });
+  } catch (error) {
+    console.error("Gagal memuat data skill:", error);
+  }
+});
+</script>
 
 <style scoped>
 .skills-section {
@@ -103,5 +100,6 @@ onMounted(async () => {
 
 .lottie-box {
   height: 200px;
+  max-width: 100%;
 }
 </style>
