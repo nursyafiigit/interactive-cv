@@ -60,7 +60,7 @@
               </a>
             </div>
             <div class="w-1/2 flex justify-start">
-              <div class="w-4 h-4 bulet rounded-full z-10" data-aos="fade-in"></div>
+              <div class="w-4 h-4 bulet rounded-full z-10" data-aos="fade-in" data-aos-duration="800"></div>
             </div>
           </div>
 
@@ -69,7 +69,7 @@
             class="hidden md:flex justify-between items-center"
           >
             <div class="w-1/2 flex justify-end">
-              <div class="w-4 h-4 bulet rounded-full z-10" data-aos="fade-in"></div>
+              <div class="w-4 h-4 bulet rounded-full z-10" data-aos="fade-in" data-aos-duration="800"></div>
             </div>
             <div class="w-1/2 pl-8 flex justify-start">
               <a

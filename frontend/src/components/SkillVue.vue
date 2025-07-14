@@ -31,7 +31,7 @@
       </div>
 
       <!-- Grid Skill -->
-      <div class="mx-auto max-w-[1200px] px-4">
+      <div class="mx-auto max-w-[1220px] px-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           <div
             v-for="skill in skills"
