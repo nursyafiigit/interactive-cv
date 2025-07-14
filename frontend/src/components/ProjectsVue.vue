@@ -3,7 +3,7 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Judul -->
       <div
-        data-aos="fade-down"
+        data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-delay="100"
         class="text-white text-center"
@@ -18,7 +18,7 @@
           :key="project.title"
           class="project-card"
           :data-aos="getAOS(index)"
-          data-aos-duration="800"
+          data-aos-duration="1000"
           :data-aos-delay="index * 200"
         >
           <img
@@ -99,11 +99,11 @@ onMounted(async () => {
 const getAOS = (index) => {
   // Modifikasi AOS berdasarkan posisi dalam grid
   if (index % 3 === 0) {
-    return 'fade-up';  // Card tengah
+    return 'fade-left';  // Card tengah
   } else if (index % 3 === 1) {
-    return 'fade-left';  // Card kiri
+    return 'fade-right';  // Card kiri
   } else {
-    return 'fade-right';  // Card kanan
+    return 'fade-up';  // Card kanan
   }
 }
 </script>
