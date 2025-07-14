@@ -17,7 +17,7 @@
           v-for="(project, index) in projects"
           :key="project.title"
           class="project-card"
-          :data-aos="index % 2 === 0 ? 'fade-up-right' : 'fade-up-left'"
+          :data-aos="getAOS(index)"
           data-aos-duration="800"
           :data-aos-delay="index * 200"
         >
@@ -79,7 +79,6 @@
   </section>
 </template>
 
-
 <script setup>
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
@@ -95,6 +94,17 @@ onMounted(async () => {
     console.error(error)
   }
 })
+
+// Function to determine AOS effect based on index
+const getAOS = (index) => {
+  if (index % 3 === 0) {
+    return 'fade-up';  // Card tengah (setiap 3rd card)
+  } else if (index % 3 === 1) {
+    return 'fade-left';  // Card di sebelah kiri
+  } else {
+    return 'fade-right';  // Card di sebelah kanan
+  }
+}
 </script>
 
 <style scoped>
@@ -123,11 +133,10 @@ onMounted(async () => {
 }
 
 .project-card .p-4 {
-  flex-grow: 1;  /* Membuat div konten dapat mengisi sisa ruang */
+  flex-grow: 1;
 }
 
 .project-card .mt-auto {
-  margin-top: auto;  /* Memastikan 'project tech' dan link selalu berada di bawah */
+  margin-top: auto;
 }
-
 </style>
