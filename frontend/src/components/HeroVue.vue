@@ -1,11 +1,11 @@
 <template>
-  <section class="herow min-h-screen flex items-center justify-center overflow-x-hidden">
+  <section class="herow min-h-screen flex items-center justify-center">
     <div
       id="profil"
-      class="container mx-auto px-4 sm:px-6 py-20 flex flex-col-reverse md:flex-row items-center gap-y-12 md:gap-x-12"
+      class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center gap-y-12 md:gap-x-12"
     >
       <!-- Bagian Kiri -->
-      <div class="w-full md:w-1/2 mt-10 md:mt-0 text-center md:text-left">
+      <div class="md:w-1/2 text-left">
         <h1
           class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
           data-aos="fade-right"
@@ -13,7 +13,6 @@
         >
           Halo, Saya <span class="nama">Muhammad Nur Syafii</span>
         </h1>
-
         <p
           class="text-base sm:text-lg md:text-xl text-white mb-8"
           data-aos="fade-right"
@@ -39,7 +38,7 @@
 
       <!-- Bagian Kanan -->
       <div
-        class="w-full md:w-1/2 flex justify-center"
+        class="md:w-1/2 flex justify-center"
         data-aos="fade-left"
         data-aos-delay="300"
         data-aos-duration="1000"
@@ -47,12 +46,13 @@
         <img
           src="/image/aku.jpg"
           alt="Foto Profil"
-          class="w-40 sm:w-52 md:w-72 lg:w-[320px] max-w-full rounded-full"
+          class="w-40 sm:w-52 md:w-72 lg:w-[320px] max-w-full rounded-full object-cover"
         />
       </div>
     </div>
   </section>
 </template>
+
 
 <style scoped>
 .herow {

@@ -1,5 +1,5 @@
 <template>
-  <section class="skills-section py-20 font-sans min-h-screen overflow-x-hidden">
+  <section class="skills-section py-20 font-sans min-h-screen overflow-x-hidden" id="skill">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Judul -->
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
