@@ -101,9 +101,9 @@ const getAOS = (index) => {
   if (index % 3 === 0) {
     return 'fade-left';  // Card tengah
   } else if (index % 3 === 1) {
-    return 'fade-right';  // Card kiri
+    return 'fade-up';  // Card kiri
   } else {
-    return 'fade-up';  // Card kanan
+    return 'fade-right';  // Card kanan
   }
 }
 </script>
