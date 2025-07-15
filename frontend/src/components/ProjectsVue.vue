@@ -4,13 +4,15 @@
       <!-- Judul -->
       <div
         data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-delay="100"
+        data-aos-duration="800"
+    
         class="text-white text-center"
       >
         <SectionTitle title="MyProjects" />
       </div>
-      <div class="max-w-screen flex justify-center items-center">
+      <div class="max-w-screen flex justify-center items-center" data-aos="fade-up"
+        data-aos-duration="800"
+        data-aos-delay="200">
         <p class="desc text-white text-center max-w-3xl">
           Lihat berbagai proyek yang telah saya kerjakan, masing-masing mencerminkan dedikasi saya
           terhadap kualitas, inovasi, dan penyelesaian masalah yang efektif dalam berbagai industri.
@@ -18,13 +20,10 @@
       </div>
 
       <!-- Grid proyek -->
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-[1220px] mx-auto"
-      >
         <div
           v-for="(project, index) in projects"
           :key="project.title"
-          class="project-card"
+          class="project-card grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-[1220px] mx-auto"
           :data-aos="getAOS(index)"
           :data-aos-delay="index * 200"
           data-aos-duration="800"
@@ -82,7 +81,6 @@
           </div>
         </div>
       </div>
-    </div>
   </section>
 </template>
 

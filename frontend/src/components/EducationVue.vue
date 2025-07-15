@@ -60,7 +60,8 @@
               </a>
             </div>
             <div class="w-1/2 flex justify-start">
-              <div class="w-4 h-4 bulet rounded-full z-10" data-aos="fade-in" data-aos-duration="800"></div>
+              <!-- Bulet hanya muncul di desktop -->
+              <div class="w-4 h-4 bulet rounded-full z-10 hidden md:block" data-aos="fade-in" data-aos-duration="800"></div>
             </div>
           </div>
 
@@ -69,7 +70,8 @@
             class="hidden md:flex justify-between items-center"
           >
             <div class="w-1/2 flex justify-end">
-              <div class="w-4 h-4 bulet rounded-full z-10" data-aos="fade-in" data-aos-duration="800"></div>
+              <!-- Bulet hanya muncul di desktop -->
+              <div class="w-4 h-4 bulet rounded-full z-10 hidden md:block" data-aos="fade-in" data-aos-duration="800"></div>
             </div>
             <div class="w-1/2 pl-8 flex justify-start">
               <a
@@ -91,8 +93,8 @@
 
           <!-- Mobile: layout vertikal -->
           <div class="md:hidden flex flex-col items-center gap-4">
-            <!-- Tambahkan AOS pada elemen .bulet untuk mobile -->
-            <div class="w-4 h-4 bulet rounded-full z-10" data-aos="fade-up" data-aos-duration="800"></div>
+            <!-- Bulet tidak muncul di mobile -->
+            <div class="w-4 h-4 bulet rounded-full z-10 hidden md:block"></div>
             <a
               :href="edu.link"
               target="_blank"
