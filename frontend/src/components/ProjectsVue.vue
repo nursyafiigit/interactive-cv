@@ -20,13 +20,17 @@
       </div>
 
       <!-- Grid proyek -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-[1220px] mx-auto"
+        data-aos-duration="800"
+      >
         <div
           v-for="(project, index) in projects"
           :key="project.title"
-          class="project-card grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-[1220px] mx-auto"
+          class="project-card"
           :data-aos="getAOS(index)"
           :data-aos-delay="index * 200"
-          data-aos-duration="800"
+          
         >
           <img
             :src="project.image"
@@ -81,6 +85,7 @@
           </div>
         </div>
       </div>
+    </div>
   </section>
 </template>
 
