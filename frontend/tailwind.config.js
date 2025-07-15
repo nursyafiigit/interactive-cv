@@ -20,6 +20,13 @@ export default {
         'slide-in-right': 'slide-in-right 0.7s ease-out forwards',
         'fade-in': 'fade-in 0.5s ease-out forwards',
       },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
+      fontSize: {
+        xxs: '0.65rem', // Menambahkan ukuran font xxs
+        xxl: '2.5rem', // Menambahkan ukuran font xxl
+      },
     },
   },
   plugins: [],

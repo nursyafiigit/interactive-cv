@@ -36,7 +36,7 @@ onBeforeUnmount(() => {
 
       <!-- Deskripsi -->
       <p
-        class="text-base sm:text-xl text-white mb-8 leading-relaxed"
+        class="desc text-base sm:text-xl text-white mb-8 leading-relaxed"
         data-aos="fade-up"
         data-aos-duration="800"
       >
@@ -45,14 +45,17 @@ onBeforeUnmount(() => {
 
       <!-- Tombol Email -->
        <router-link to="/formcontact">
-        <a
+        <div data-aos="zoom-in"
+          data-aos-delay="100"
+          data-aos-duration="800">
+
+          <a
           class="email-button"
-          data-aos="zoom-in"
-          data-aos-delay="1000"
-          data-aos-duration="1000"
-        >
+          
+          >
           Kirim Email
         </a>
+      </div>
       </router-link>
 
       <!-- Link Sosial -->
@@ -97,10 +100,10 @@ onBeforeUnmount(() => {
     <transition name="fade-up">
       <div
         v-show="showFooterBar"
-        class="w-full fixed bottom-0 left-0 bg-black/60 backdrop-blur-md z-50"
+        class="w-full fixed bottom-0 left-0 bg-black/10 backdrop-blur-md z-50"
       >
         <div
-          class="container mx-auto px-4 sm:px-6 text-white text-center py-5 text-sm sm:text-base"
+          class="container mx-auto px-4 sm:px-6 text-white text-center py-5 text-xxs sm:text-base font-poppins"
         >
           &copy; {{ currentYear }} Muhammad Nur Syafii. Universitas Amikom Yogyakarta.
         </div>

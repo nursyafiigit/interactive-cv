@@ -37,17 +37,17 @@
       </button>
 
       <!-- Menu Desktop -->
-      <ul class="hidden md:flex space-x-6">
-        <li><a href="#profil" class="nav-link">Profil</a></li>
-        <li><a href="#pendidikan" class="nav-link">Pendidikan</a></li>
-        <li><a href="#skill" class="nav-link">Skill</a></li>
-        <li><a href="#proyek" class="nav-link">Proyek</a></li>
-        <li><a href="#kontak" class="nav-link">Kontak</a></li>
+      <ul class="nap hidden md:flex space-x-6">
+        <li><a href="#profil" class="nav-link">Profile</a></li>
+        <li><a href="#pendidikan" class="nav-link">Education</a></li>
+        <li><a href="#skill" class="nav-link">Skills</a></li>
+        <li><a href="#proyek" class="nav-link">Projects</a></li>
+        <li><a href="#kontak" class="nav-link">Contact</a></li>
       </ul>
     </nav>
 
     <!-- Menu Mobile -->
-    <div v-show="menuOpen" class="md:hidden bg-black/60 backdrop-blur-md px-6 py-4">
+    <div v-show="menuOpen" class="nap md:hidden bg-black/60 backdrop-blur-md px-6 py-4">
       <ul class="flex flex-col space-y-4">
         <li><a @click="menuOpen = false" href="#profil" class="nav-link">Profil</a></li>
         <li><a @click="menuOpen = false" href="#pendidikan" class="nav-link">Pendidikan</a></li>
@@ -102,6 +102,10 @@ onUnmounted(() => {
 
 .nav-link {
   @apply text-white hover:text-yellow-400 transform hover:-translate-y-0.5 transition-all duration-300;
+}
+
+.nap {
+  font-family: 'Poppins';
 }
 </style>
 

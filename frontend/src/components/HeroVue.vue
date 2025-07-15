@@ -7,16 +7,16 @@
       <!-- Bagian Kiri -->
       <div class="md:w-1/2 text-left order-2 md:order-1">
         <h1
-          class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4"
+          class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-9"
           data-aos="fade-right"
           data-aos-duration="1000"
         >
           Halo, Saya <span class="nama">Muhammad Nur Syafii</span>
         </h1>
         <p
-          class="text-base sm:text-lg md:text-xl text-white mb-8"
+          class="desc text-base sm:text-lg md:text-xl text-white mb-8"
           data-aos="fade-right"
-          data-aos-delay="200"
+          data-aos-delay="300"
           data-aos-duration="1000"
         >
           Saya seorang IT Developer yang memiliki hasrat mendalam terhadap teknologi dan
@@ -24,21 +24,14 @@
           telah berkomitmen untuk terus belajar, berinovasi, dan memberikan solusi teknologi yang
           dapat mempermudah kehidupan serta meningkatkan efisiensi.
         </p>
-
-        <a
-          href="#kontak"
-          class="contact-button"
-          data-aos="zoom-in-up"
-          data-aos-delay="400"
-          data-aos-duration="800"
-        >
-          Hubungi Saya
-        </a>
+        <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+          <a href="#kontak" class="contact-button"> Hubungi Saya </a>
+        </div>
       </div>
 
       <!-- Bagian Kanan -->
       <div
-        class="md:w-1/2 flex justify-center order-1 md:order-2"
+        class="md:w-1/2 flex justify-end order-1 md:order-2"
         data-aos="fade-left"
         data-aos-delay="300"
         data-aos-duration="1000"
@@ -55,7 +48,7 @@
 
 <style scoped>
 .herow {
-  background-image: url('../assets/background/wl5.jpg');
+  background-image: url('../assets/background/wl55.jpg');
   background-size: cover;
   background-position: center;
 }

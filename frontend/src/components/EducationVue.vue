@@ -5,7 +5,7 @@
   >
     <div class="container mx-auto px-4 sm:px-6">
       <!-- Section Title -->
-      <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+      <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
         <SectionTitle title="Education History" class="text-white" />
       </div>
 
@@ -13,10 +13,10 @@
       <div
         class="max-w-3xl mx-auto text-white text-center mt-6 mb-12"
         data-aos="fade-up"
-        data-aos-delay="600"
+        data-aos-delay="200"
         data-aos-duration="800"
       >
-        <p class="text-white/90 leading-relaxed">
+        <p class="desc text-white/90 leading-relaxed">
           Sebagai seorang IT Developer, perjalanan pendidikan saya telah memberikan dasar yang kuat
           untuk memahami dan menguasai teknologi informasi serta pengembangan perangkat lunak...
         </p>
@@ -26,10 +26,10 @@
       <div class="relative">
         <!-- Garis tengah hanya muncul di desktop -->
         <div
-          class="hidden md:block absolute h-full border-r-2 border-gray-300 left-1/2 transform -translate-x-1/2"
+          class="hidden md:block absolute h-full border-r-2 border-white left-1/2 transform -translate-x-1/2"
           data-aos="fade-in"
           data-aos-duration="800"
-          data-aos-delay="600"
+          data-aos-delay="400"
         ></div>
 
         <!-- Loop riwayat pendidikan -->
@@ -91,7 +91,8 @@
 
           <!-- Mobile: layout vertikal -->
           <div class="md:hidden flex flex-col items-center gap-4">
-            <div class="w-4 h-4 bulet rounded-full z-10"></div>
+            <!-- Tambahkan AOS pada elemen .bulet untuk mobile -->
+            <div class="w-4 h-4 bulet rounded-full z-10" data-aos="fade-up" data-aos-duration="800"></div>
             <a
               :href="edu.link"
               target="_blank"

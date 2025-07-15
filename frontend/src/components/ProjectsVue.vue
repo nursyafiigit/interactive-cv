@@ -3,22 +3,28 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Judul -->
       <div
-        data-aos="fade-down"
+        data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-delay="100"
         class="text-white text-center"
       >
         <SectionTitle title="MyProjects" />
       </div>
+      <div class="max-w-screen flex justify-center items-center">
+        <p class="desc text-white text-center max-w-3xl">
+          Lihat berbagai proyek yang telah saya kerjakan, masing-masing mencerminkan dedikasi saya
+          terhadap kualitas, inovasi, dan penyelesaian masalah yang efektif dalam berbagai industri.
+        </p>
+      </div>
 
       <!-- Grid proyek -->
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-[1220px] mx-auto"
-        :data-aos="getAOS(index)"
-        :data-aos-delay="index * 200"
-        data-aos-duration="800"
-      >
-        <div v-for="(project, index) in projects" :key="project.title" class="project-card">
+      <div v-for="(project, index) in projects" :key="project.title" class="project-card">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-[1220px] mx-auto"
+          :data-aos="getAOS(index)"
+          :data-aos-delay="index * 200"
+          data-aos-duration="800"
+        >
           <img
             :src="project.image"
             alt="Gambar Proyek"

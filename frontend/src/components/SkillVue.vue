@@ -23,8 +23,8 @@
         data-aos-delay="500"
         data-aos-duration="800"
       >
-        <h4 class="text-white text-xl sm:text-2xl font-semibold mb-2">Apa yang Saya Bisa?</h4>
-        <p class="text-white/80 max-w-3xl mx-auto text-base sm:text-lg">
+        <h4 class=" text-white font-poppins text-3xl sm:text-xl font-semibold mb-2">Apa yang Saya Bisa?</h4>
+        <p class="desc text-white/80 max-w-3xl mx-auto text-base sm:text-lg">
           Dunia teknologi selalu berkembang, dan saya senang menjadi bagian dari perjalanan itu.
           Berikut beberapa skill yang saya kuasai:
         </p>
