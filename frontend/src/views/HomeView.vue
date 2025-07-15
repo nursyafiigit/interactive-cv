@@ -9,7 +9,9 @@ import LandingPage from '@/components/LandingPage.vue'
 import { onMounted } from 'vue'
 
 onMounted(() => {
-  window.dispatchEvent(new Event('homeview-mounted'))
+  setTimeout(() => {
+    window.dispatchEvent(new Event('homeview-mounted'))
+  }, 50) // ⏱️ hanya 50ms delay
 })
 </script>
 <template>

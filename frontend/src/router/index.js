@@ -40,7 +40,7 @@ const router = createRouter({
             behavior: 'smooth',
           })
           window.removeEventListener('homeview-mounted', waitForHomeView)
-        }, 1000)
+        }, 200)
       })
     }
 
