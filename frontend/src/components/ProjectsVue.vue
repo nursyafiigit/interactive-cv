@@ -2,17 +2,15 @@
   <section id="proyek" class="pro py-20 min-h-screen font-sans overflow-x-hidden">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Judul -->
-      <div
-        data-aos="fade-up"
-        data-aos-duration="800"
-    
-        class="text-white text-center"
-      >
+      <div data-aos="fade-up" data-aos-duration="800" class="text-white text-center">
         <SectionTitle title="MyProjects" />
       </div>
-      <div class="max-w-screen flex justify-center items-center" data-aos="fade-up"
+      <div
+        class="max-w-screen flex justify-center items-center"
+        data-aos="fade-up"
         data-aos-duration="800"
-        data-aos-delay="200">
+        data-aos-delay="200"
+      >
         <p class="desc text-white text-center max-w-3xl">
           Lihat berbagai proyek yang telah saya kerjakan, masing-masing mencerminkan dedikasi saya
           terhadap kualitas, inovasi, dan penyelesaian masalah yang efektif dalam berbagai industri.
@@ -23,63 +21,63 @@
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-[1220px] mx-auto"
       >
-        <div
-          v-for="(project, index) in projects"
-          :key="project.title"
-          class="project-card"
-          :data-aos="getAOS(index)"
-          :data-aos-delay="getDelay(index)"
-          :data-aos-duration="getDur(index)"
-        >
-          <img
-            :src="project.image"
-            alt="Gambar Proyek"
-            class="w-full h-48 sm:h-56 md:h-60 object-cover rounded-t-lg"
-          />
+        <div :data-aos="getAOS(index)" data-aos-delay="400" data-aos-duration="1000">
+          <div
+            v-for="(project, index) in projects"
+            :key="project.title"
+            class="project-card"
+            
+          >
+            <img
+              :src="project.image"
+              alt="Gambar Proyek"
+              class="w-full h-48 sm:h-56 md:h-60 object-cover rounded-t-lg"
+            />
 
-          <div class="p-4 sm:p-6 flex flex-col justify-between">
-            <h3
-              class="text-xl sm:text-2xl font-bold text-white mb-2"
-              data-aos="zoom-in"
-              :data-aos-delay="index * 250"
-              data-aos-duration="700"
-            >
-              {{ project.title }}
-            </h3>
-
-            <p
-              class="text-sm sm:text-base text-white/80 mb-4 leading-relaxed"
-              data-aos="fade"
-              :data-aos-delay="index * 250"
-            >
-              {{ project.description }}
-            </p>
-            <!-- Teknologi dan Link berada di bagian bawah -->
-            <div class="mt-auto">
-              <!-- Teknologi -->
-              <div class="mb-4 flex flex-wrap gap-2">
-                <span
-                  v-for="t in project.tech"
-                  :key="t"
-                  class="inline-block bg-white/20 text-white text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full"
-                  data-aos="zoom-in"
-                  :data-aos-delay="index * 250"
-                >
-                  {{ t }}
-                </span>
-              </div>
-
-              <!-- Link -->
-              <a
-                :href="project.link"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-yellow-300 font-semibold hover:underline text-sm sm:text-base"
-                data-aos="fade-up"
-                :data-aos-delay="index * 300"
+            <div class="p-4 sm:p-6 flex flex-col justify-between">
+              <h3
+                class="text-xl sm:text-2xl font-bold text-white mb-2"
+                data-aos="zoom-in"
+                :data-aos-delay="index * 250"
+                data-aos-duration="700"
               >
-                Lihat Detail &rarr;
-              </a>
+                {{ project.title }}
+              </h3>
+
+              <p
+                class="text-sm sm:text-base text-white/80 mb-4 leading-relaxed"
+                data-aos="fade"
+                :data-aos-delay="index * 250"
+              >
+                {{ project.description }}
+              </p>
+              <!-- Teknologi dan Link berada di bagian bawah -->
+              <div class="mt-auto">
+                <!-- Teknologi -->
+                <div class="mb-4 flex flex-wrap gap-2">
+                  <span
+                    v-for="t in project.tech"
+                    :key="t"
+                    class="inline-block bg-white/20 text-white text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full"
+                    data-aos="zoom-in"
+                    :data-aos-delay="index * 250"
+                  >
+                    {{ t }}
+                  </span>
+                </div>
+
+                <!-- Link -->
+                <a
+                  :href="project.link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-yellow-300 font-semibold hover:underline text-sm sm:text-base"
+                  data-aos="fade-up"
+                  :data-aos-delay="index * 300"
+                >
+                  Lihat Detail &rarr;
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -100,7 +98,7 @@ const projects = ref([])
 onMounted(async () => {
   AOS.init({
     duration: 1000, // Set the global duration for AOS animations
-    delay: 100, // Optional: set a global delay for all AOS animations
+    delay: 200, // Optional: set a global delay for all AOS animations
   })
   try {
     const response = await axios.get('/api/projects')
@@ -119,25 +117,6 @@ const getAOS = (index) => {
     return 'fade-up' // Card tengah
   } else {
     return 'fade-right' // Card kanan
-  }
-}
-
-const getDur = (index) => {
-  if (index % 3 === 0) {
-    return '1000' // Card kiri
-  } else if (index % 3 === 1) {
-    return '800' // Card tengah
-  } else {
-    return '1000' // Card kanan
-  }
-}
-const getDelay = (index) => {
-  if (index % 3 === 0) {
-    return '600' // Card kiri
-  } else if (index % 3 === 1) {
-    return '300' // Card tengah
-  } else {
-    return '600' // Card kanan
   }
 }
 </script>
