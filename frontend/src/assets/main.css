@@ -17,3 +17,10 @@ transform: translateY(0px);
     font-family: 'Poppins';
     font-size: 16px !important;
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}

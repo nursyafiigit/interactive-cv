@@ -3,7 +3,7 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Judul -->
       <div data-aos="fade-up" data-aos-duration="800" class="text-white text-center">
-        <SectionTitle title="MyProjects" />
+        <SectionTitle title="MyProjects" class="font-poppins"/>
       </div>
       <div
         class="max-w-screen flex justify-center items-center"
@@ -37,7 +37,7 @@
 
             <div class="p-4 sm:p-6 flex flex-col justify-between">
               <h3
-                class="text-xl sm:text-2xl font-bold text-white mb-2"
+                class="text-xl font-poppins sm:text-2xl font-bold text-white mb-2"
                 data-aos="zoom-in"
                 :data-aos-delay="index * 250"
                 data-aos-duration="700"
@@ -46,7 +46,7 @@
               </h3>
 
               <p
-                class="text-sm sm:text-base text-white/80 mb-4 leading-relaxed"
+                class="text-sm font-poppins sm:text-base text-white/80 mb-4 leading-relaxed"
                 data-aos="fade"
                 :data-aos-delay="index * 250"
               >
@@ -59,7 +59,7 @@
                   <span
                     v-for="t in project.tech"
                     :key="t"
-                    class="inline-block bg-white/20 text-white text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full"
+                    class="inline-block bg-white/20 font-poppins text-white text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full"
                     data-aos="zoom-in"
                     :data-aos-delay="index * 250"
                   >
@@ -72,7 +72,7 @@
                   :href="project.link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="text-yellow-300 font-semibold hover:underline text-sm sm:text-base"
+                  class="text-yellow-300 font-poppins font-semibold hover:underline text-sm sm:text-base"
                   data-aos="fade-up"
                   :data-aos-delay="index * 300"
                 >

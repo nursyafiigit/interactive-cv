@@ -6,7 +6,7 @@
     <div class="container mx-auto px-4 sm:px-6">
       <!-- Section Title -->
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-        <SectionTitle title="Education History" class="text-white" />
+        <SectionTitle title="Education History" class="text-white font-poppins" />
       </div>
 
       <!-- Deskripsi -->
@@ -53,9 +53,9 @@
               >
                 <img :src="edu.logo" class="w-16 h-16 object-contain" />
                 <div class="text-right">
-                  <p class="text-sm font-semibold text-yellow-500 mb-1">{{ edu.period }}</p>
-                  <h3 class="text-2xl font-bold text-white mb-1">{{ edu.institution }}</h3>
-                  <p class="text-white/80">{{ edu.major }}</p>
+                  <p class="text-sm font-poppins font-semibold text-yellow-500 mb-1">{{ edu.period }}</p>
+                  <h3 class="text-2xl font-bold font-poppins text-white mb-1">{{ edu.institution }}</h3>
+                  <p class="text-white/80 font-poppins">{{ edu.major }}</p>
                 </div>
               </a>
             </div>
@@ -104,9 +104,9 @@
             >
               <img :src="edu.logo" class="w-16 h-16 object-contain" />
               <div>
-                <p class="text-sm font-semibold text-yellow-500 mb-1">{{ edu.period }}</p>
-                <h3 class="text-2xl font-bold text-white mb-1">{{ edu.institution }}</h3>
-                <p class="text-white/80">{{ edu.major }}</p>
+                <p class="text-sm font-poppins font-semibold text-yellow-500 mb-1">{{ edu.period }}</p>
+                <h3 class="text-2xl font-bold font-poppins text-white mb-1">{{ edu.institution }}</h3>
+                <p class="text-white/80 font-poppins">{{ edu.major }}</p>
               </div>
             </a>
           </div>
@@ -156,7 +156,7 @@ onMounted(async () => {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  transform: translateY(-6px) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25) !important;
 }
 </style>

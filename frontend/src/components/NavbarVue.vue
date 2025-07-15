@@ -1,14 +1,19 @@
 <template>
   <header
-    :class="[ 'nav shadow-md sticky top-0 z-50 transition-transform duration-300', isHidden ? '-translate-y-full' : 'translate-y-0' ] "
+    :class="[
+      'nav shadow-md sticky top-0 z-50 transition-transform duration-300',
+      isHidden ? '-translate-y-full' : 'translate-y-0'
+    ]"
   >
     <nav
-      class="container-nav px-6 md:px-9 py-4 flex justify-between items-center "
+      class="container-nav px-6 md:px-9 py-4 flex justify-between items-center"
       data-aos="fade-down"
       data-aos-duration="800"
     >
       <!-- Brand -->
-      <div class="tex text-xl md:text-2xl font-bold text-white">Muhammad Nur Syafii</div>
+      <div class="tex text-xl md:text-2xl font-bold font-poppins text-white">
+        Muhammad Nur Syafii
+      </div>
 
       <!-- Hamburger Button -->
       <button @click="menuOpen = !menuOpen" class="text-white md:hidden focus:outline-none">
@@ -38,30 +43,30 @@
 
       <!-- Menu Desktop -->
       <ul class="nap hidden md:flex space-x-6">
-        <li><a href="#profil" class="nav-link">Profile</a></li>
-        <li><a href="#pendidikan" class="nav-link">Education</a></li>
-        <li><a href="#skill" class="nav-link">Skills</a></li>
-        <li><a href="#proyek" class="nav-link">Projects</a></li>
-        <li><a href="#kontak" class="nav-link">Contact</a></li>
+        <li><router-link to="/#profil" class="nav-link">Profile</router-link></li>
+        <li><router-link to="/#pendidikan" class="nav-link">Education</router-link></li>
+        <li><router-link to="/#skill" class="nav-link">Skills</router-link></li>
+        <li><router-link to="/#proyek" class="nav-link">Projects</router-link></li>
+        <li><router-link to="/#kontak" class="nav-link">Contact</router-link></li>
       </ul>
     </nav>
 
     <!-- Menu Mobile -->
     <div v-show="menuOpen" class="nap md:hidden bg-black/60 backdrop-blur-md px-6 py-4">
       <ul class="flex flex-col space-y-4">
-        <li><a @click="menuOpen = false" href="#profil" class="nav-link">Profil</a></li>
-        <li><a @click="menuOpen = false" href="#pendidikan" class="nav-link">Pendidikan</a></li>
-        <li><a @click="menuOpen = false" href="#skill" class="nav-link">Skill</a></li>
-        <li><a @click="menuOpen = false" href="#proyek" class="nav-link">Proyek</a></li>
-        <li><a @click="menuOpen = false" href="#kontak" class="nav-link">Kontak</a></li>
+        <li><router-link @click="menuOpen = false" to="/#profil" class="nav-link">Profil</router-link></li>
+        <li><router-link @click="menuOpen = false" to="/#pendidikan" class="nav-link">Pendidikan</router-link></li>
+        <li><router-link @click="menuOpen = false" to="/#skill" class="nav-link">Skill</router-link></li>
+        <li><router-link @click="menuOpen = false" to="/#proyek" class="nav-link">Proyek</router-link></li>
+        <li><router-link @click="menuOpen = false" to="/#kontak" class="nav-link">Kontak</router-link></li>
       </ul>
     </div>
   </header>
 </template>
 
-
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { RouterLink } from 'vue-router' // untuk gunakan <router-link>
 
 const isHidden = ref(false)
 const menuOpen = ref(false)
@@ -81,7 +86,6 @@ onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
 </script>
-
 
 <style scoped>
 .container-nav {
@@ -108,4 +112,3 @@ onUnmounted(() => {
   font-family: 'Poppins';
 }
 </style>
-

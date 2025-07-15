@@ -3,7 +3,7 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Judul -->
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-        <SectionTitle title="MySkills" class="text-white" />
+        <SectionTitle title="MySkills" class="text-white font-poppins" />
       </div>
 
       <!-- Animasi utama -->
@@ -42,8 +42,8 @@
             data-aos-delay="200"
           >
             <div :id="skill.animId" class="lottie-box mb-4 mx-auto w-full"></div>
-            <h5 class="text-white text-xl sm:text-2xl font-bold text-center">{{ skill.name }}</h5>
-            <p class="text-white/60 text-center text-sm sm:text-base">{{ skill.level }}</p>
+            <h5 class="text-white font-poppins text-xl sm:text-2xl font-bold text-center ">{{ skill.name }}</h5>
+            <p class="text-white/60 text-center  font-poppins text-sm sm:text-base">{{ skill.level }}</p>
           </div>
         </div>
       </div>

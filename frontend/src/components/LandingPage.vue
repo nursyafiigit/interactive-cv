@@ -32,12 +32,24 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="landing min-h-screen">
+  <section class="landing min-h-screen min-w-full">
     <div class="container flex flex-col justify-center items-center min-h-screen">
       <div class="max-w-7xl">
-        <h1 class="ha1 text-white typing" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">{{ displayText }}</h1>
+        <h1
+          class="ha1 text-white typing"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          data-aos-delay="500"
+        >
+          {{ displayText }}
+        </h1>
       </div>
-      <div class="max-w-3xl mt-8" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+      <div
+        class="max-w-3xl mt-8"
+        data-aos="fade-left"
+        data-aos-duration="1000"
+        data-aos-delay="500"
+      >
         <p class="desc text-white text-center">
           Terima kasih telah mengunjungi website portofolio saya. Jika Anda ingin tahu lebih banyak
           atau berkonsultasi lebih lanjut, silakan hubungi saya.
@@ -52,6 +64,9 @@ onMounted(() => {
   background-image: url('../assets/background/wl2.jpg');
   background-size: cover;
   background-position: center;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
+  min-width: 100% !important;
 }
 
 .ha1 {

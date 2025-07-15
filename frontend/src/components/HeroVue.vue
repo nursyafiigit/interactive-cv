@@ -7,7 +7,7 @@
       <!-- Bagian Kiri -->
       <div class="md:w-1/2 text-left order-2 md:order-1">
         <h1
-          class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-9"
+          class="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold text-white mb-9"
           data-aos="fade-right"
           data-aos-duration="1000"
         >
@@ -25,7 +25,7 @@
           dapat mempermudah kehidupan serta meningkatkan efisiensi.
         </p>
         <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-          <a href="#kontak" class="contact-button"> Hubungi Saya </a>
+          <a href="#kontak" class="contact-button font-poppins text-base"> Hubungi Saya </a>
         </div>
       </div>
 

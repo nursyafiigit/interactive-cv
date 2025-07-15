@@ -31,7 +31,7 @@ onBeforeUnmount(() => {
     <div class="container mx-auto px-4 sm:px-6 text-center">
       <!-- Section title -->
       <div data-aos="fade-up" data-aos-duration="800">
-        <SectionTitle title="Hubungi Saya" />
+        <SectionTitle title="Hubungi Saya" class="font-poppins"/>
       </div>
 
       <!-- Deskripsi -->
@@ -44,19 +44,12 @@ onBeforeUnmount(() => {
       </p>
 
       <!-- Tombol Email -->
-       <router-link to="/formcontact">
-        <div data-aos="zoom-in"
-          data-aos-delay="100"
-          data-aos-duration="800">
 
-          <a
-          class="email-button"
-          
-          >
-          Kirim Email
-        </a>
+      <div data-aos="zoom-in" data-aos-delay="100" data-aos-duration="800">
+        <router-link to="/formcontact">
+          <a class="email-button font-poppins text-base"> Kirim Email </a>
+        </router-link>
       </div>
-      </router-link>
 
       <!-- Link Sosial -->
       <div
