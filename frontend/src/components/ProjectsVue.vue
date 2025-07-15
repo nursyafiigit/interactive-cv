@@ -1,5 +1,5 @@
 <template>
-  <section id="proyek" class="pro py-20 min-h-screen font-sans overflow-x-hidden">
+  <section id="proyek" class="pro py-20 min-h-screen font-sans overflow-x-hidden overflow-y-hidden">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Judul -->
       <div data-aos="fade-up" data-aos-duration="800" class="text-white text-center">
@@ -25,8 +25,8 @@
           v-for="(project, index) in projects"
           :key="project.title"
           :data-aos="getAOS(index)"
-          data-aos-delay="400"
-          data-aos-duration="1000"
+          :data-aos-delay="getDelay(index)"
+          :data-aos-duration="getDur(index)"
         >
           <div class="project-card">
             <img
@@ -111,14 +111,27 @@ onMounted(async () => {
 
 // Function to determine AOS effect based on column position in the grid
 const getAOS = (index) => {
-  // Modifikasi AOS berdasarkan posisi dalam grid
   if (index % 3 === 0) {
-    return 'fade-left' // Card kiri
+    return 'fade-left'
   } else if (index % 3 === 1) {
-    return 'fade-up' // Card tengah
+    return 'fade-up'
   } else {
-    return 'fade-right' // Card kanan
+    return 'fade-right'
   }
+}
+
+const getDelay = (index) => {
+  if (index % 3 === 0) {
+    return 600
+  } else if (index % 3 === 1) {
+    return 100
+  } else {
+    return 600
+  }
+}
+
+const getDur = () => {
+  return 800
 }
 </script>
 
@@ -141,7 +154,7 @@ const getAOS = (index) => {
     box-shadow 0.3s ease !important;
   display: flex;
   flex-direction: column;
-  height: auto; /* Remove height: 100% */
+  height: 100%; /* Set height to 100% for consistent card height */
 }
 
 .project-card:hover {
@@ -155,5 +168,10 @@ const getAOS = (index) => {
 
 .project-card .mt-auto {
   margin-top: auto;
+}
+
+/* Optional: Set a minimum height for consistent card height */
+.project-card {
+  min-height: 300px; /* You can adjust this to whatever height you want */
 }
 </style>
