@@ -37,7 +37,7 @@ const router = createRouter({
         window.addEventListener('homeview-mounted', scrollToHash)
 
         // Fallback: tetap scroll kalau event tidak dikirim setelah 600ms
-        setTimeout(scrollToHash, 600)
+        setTimeout(scrollToHash, 200)
       })
     }
 
