@@ -1,9 +1,6 @@
 <template>
   <header
-    :class="[
-      'nav shadow-md sticky top-0 z-50 transition-transform duration-300',
-      isHidden ? '-translate-y-full' : 'translate-y-0'
-    ]"
+    :class="[ 'nav shadow-md sticky top-0 z-50 transition-transform duration-300', isHidden ? '-translate-y-full' : 'translate-y-0' ]"
   >
     <nav
       class="container-nav px-6 md:px-9 py-4 flex justify-between items-center"
@@ -43,31 +40,32 @@
 
       <!-- Menu Desktop -->
       <ul class="nap hidden md:flex space-x-6">
-        <li><router-link to="/#profil" class="nav-link">Profile</router-link></li>
-        <li><router-link to="/#pendidikan" class="nav-link">Education</router-link></li>
-        <li><router-link to="/#skill" class="nav-link">Skills</router-link></li>
-        <li><router-link to="/#proyek" class="nav-link">Projects</router-link></li>
-        <li><router-link to="/#kontak" class="nav-link">Contact</router-link></li>
+        <li><a @click.prevent="scrollToHash('#profil')" class="nav-link">Profile</a></li>
+        <li><a @click.prevent="scrollToHash('#pendidikan')" class="nav-link">Education</a></li>
+        <li><a @click.prevent="scrollToHash('#skill')" class="nav-link">Skills</a></li>
+        <li><a @click.prevent="scrollToHash('#proyek')" class="nav-link">Projects</a></li>
+        <li><a @click.prevent="scrollToHash('#kontak')" class="nav-link">Contact</a></li>
       </ul>
     </nav>
 
     <!-- Menu Mobile -->
     <div v-show="menuOpen" class="nap md:hidden bg-black/60 backdrop-blur-md px-6 py-4">
       <ul class="flex flex-col space-y-4">
-        <li><router-link @click="menuOpen = false" to="/#profil" class="nav-link">Profil</router-link></li>
-        <li><router-link @click="menuOpen = false" to="/#pendidikan" class="nav-link">Pendidikan</router-link></li>
-        <li><router-link @click="menuOpen = false" to="/#skill" class="nav-link">Skill</router-link></li>
-        <li><router-link @click="menuOpen = false" to="/#proyek" class="nav-link">Proyek</router-link></li>
-        <li><router-link @click="menuOpen = false" to="/#kontak" class="nav-link">Kontak</router-link></li>
+        <li><a @click.prevent="scrollToHash('#profil'); menuOpen = false" class="nav-link">Profil</a></li>
+        <li><a @click.prevent="scrollToHash('#pendidikan'); menuOpen = false" class="nav-link">Pendidikan</a></li>
+        <li><a @click.prevent="scrollToHash('#skill'); menuOpen = false" class="nav-link">Skill</a></li>
+        <li><a @click.prevent="scrollToHash('#proyek'); menuOpen = false" class="nav-link">Proyek</a></li>
+        <li><a @click.prevent="scrollToHash('#kontak'); menuOpen = false" class="nav-link">Kontak</a></li>
       </ul>
     </div>
   </header>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-import { RouterLink } from 'vue-router' // untuk gunakan <router-link>
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const isHidden = ref(false)
 const menuOpen = ref(false)
 let lastScroll = window.scrollY
@@ -85,6 +83,15 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
+
+const scrollToHash = async (hash) => {
+  await router.push('/' + hash)
+  await nextTick()
+  const el = document.querySelector(hash)
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 </script>
 
 <style scoped>
@@ -99,7 +106,7 @@ onUnmounted(() => {
   top: 0;
   left: 0;
   z-index: 1000;
-  background: rgba(0, 50, 0, 0); /* transparan */
+  background: rgba(0, 50, 0, 0);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
