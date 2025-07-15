@@ -27,7 +27,7 @@ const router = createRouter({
             el: to.hash,
             behavior: 'smooth',
           })
-        }, 200) // Delay 300ms cukup untuk render selesai
+        }, 300) // Delay 300ms cukup untuk render selesai
       })
     }
 
