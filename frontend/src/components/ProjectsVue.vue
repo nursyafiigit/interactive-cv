@@ -21,13 +21,14 @@
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-[1220px] mx-auto"
       >
-        <div :data-aos="getAOS(index)" data-aos-delay="400" data-aos-duration="1000">
-          <div
-            v-for="(project, index) in projects"
-            :key="project.title"
-            class="project-card"
-            
-          >
+        <div
+          v-for="(project, index) in projects"
+          :key="project.title"
+          :data-aos="getAOS(index)"
+          data-aos-delay="400"
+          data-aos-duration="1000"
+        >
+          <div class="project-card">
             <img
               :src="project.image"
               alt="Gambar Proyek"
