@@ -6,6 +6,11 @@ import Skills from '@/components/SkillVue.vue'
 import Projects from '@/components/ProjectsVue.vue'
 import Contact from '@/components/ContactVue.vue'
 import LandingPage from '@/components/LandingPage.vue'
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  window.dispatchEvent(new Event('homeview-mounted'))
+})
 </script>
 <template>
   <div>
