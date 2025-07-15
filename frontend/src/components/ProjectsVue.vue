@@ -2,17 +2,11 @@
   <section id="proyek" class="pro py-20 min-h-screen font-sans overflow-x-hidden overflow-y-auto">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Judul -->
-      <div
-        data-aos="fade-up"
-        data-aos-duration="800"
-    
-        class="text-white text-center"
-      >
+      <div data-aos="fade-up" data-aos-duration="800" class="text-white text-center">
         <SectionTitle title="MyProjects" />
       </div>
       <div class="max-w-screen flex justify-center items-center" data-aos="fade-up"
-        data-aos-duration="800"
-        data-aos-delay="200">
+        data-aos-duration="800" data-aos-delay="200">
         <p class="desc text-white text-center max-w-3xl">
           Lihat berbagai proyek yang telah saya kerjakan, masing-masing mencerminkan dedikasi saya
           terhadap kualitas, inovasi, dan penyelesaian masalah yang efektif dalam berbagai industri.
@@ -22,20 +16,22 @@
       <!-- Grid proyek -->
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-[1220px] mx-auto"
-        data-aos-duration="800"
       >
         <div
           v-for="(project, index) in projects"
           :key="project.title"
           class="project-card"
           :data-aos="getAOS(index)"
+          :data-aos-duration="800" <!-- Set duration for each project card -->
           :data-aos-delay="index * 200"
-          
         >
           <img
             :src="project.image"
             alt="Gambar Proyek"
             class="w-full h-48 sm:h-56 md:h-60 object-cover rounded-t-lg"
+            data-aos="zoom-in"
+            :data-aos-delay="index * 150"
+            data-aos-duration="700" <!-- Set duration for image zoom-in effect -->
           />
 
           <div class="p-4 sm:p-6 flex flex-col justify-between">
@@ -52,6 +48,7 @@
               class="text-sm sm:text-base text-white/80 mb-4 leading-relaxed"
               data-aos="fade"
               :data-aos-delay="index * 250"
+              data-aos-duration="800" <!-- Set duration for paragraph fade-in -->
             >
               {{ project.description }}
             </p>
@@ -65,6 +62,7 @@
                   class="inline-block bg-white/20 text-white text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full"
                   data-aos="zoom-in"
                   :data-aos-delay="index * 250"
+                  data-aos-duration="800" <!-- Set duration for tech items -->
                 >
                   {{ t }}
                 </span>
@@ -78,6 +76,7 @@
                 class="text-yellow-300 font-semibold hover:underline text-sm sm:text-base"
                 data-aos="fade-up"
                 :data-aos-delay="index * 300"
+                data-aos-duration="900" <!-- Set duration for link -->
               >
                 Lihat Detail &rarr;
               </a>
