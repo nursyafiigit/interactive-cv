@@ -20,16 +20,23 @@ const router = createRouter({
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: 'smooth',
-      }
+      return new Promise((resolve) => {
+        // Tunggu sampai DOM benar-benar siap
+        setTimeout(() => {
+          resolve({
+            el: to.hash,
+            behavior: 'smooth',
+          })
+        }, 200) // Delay 300ms cukup untuk render selesai
+      })
     }
+
     if (savedPosition) {
       return savedPosition
     }
+
     return { top: 0 }
-  }
+  },
 })
 
 export default router

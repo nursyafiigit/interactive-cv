@@ -1,7 +1,7 @@
 <template>
-  <section class="herow min-h-screen flex items-center justify-center">
+  <section id="profil" class="herow min-h-screen flex items-center justify-center ">
     <div
-      id="profil"
+      
       class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center gap-y-12 md:gap-x-12"
     >
       <!-- Bagian Kiri -->
