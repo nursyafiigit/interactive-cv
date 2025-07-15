@@ -1,5 +1,5 @@
 <template>
-  <section id="proyek" class="pro py-20 min-h-screen font-sans overflow-x-hidden overflow-y-auto">
+  <section id="proyek" class="pro py-20 min-h-screen font-sans overflow-x-hidden">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Judul -->
       <div
@@ -28,8 +28,8 @@
           :key="project.title"
           class="project-card"
           :data-aos="getAOS(index)"
-          :data-aos-delay="index * 200"
-          :data-aos-duration="800"
+          :data-aos-delay="getDelay(index)"
+          :data-aos-duration="getDur(index)"
         >
           <img
             :src="project.image"
@@ -114,11 +114,30 @@ onMounted(async () => {
 const getAOS = (index) => {
   // Modifikasi AOS berdasarkan posisi dalam grid
   if (index % 3 === 0) {
-    return 'fade-left' // Card tengah
+    return 'fade-left' // Card kiri
   } else if (index % 3 === 1) {
-    return 'fade-up' // Card kiri
+    return 'fade-up' // Card tengah
   } else {
     return 'fade-right' // Card kanan
+  }
+}
+
+const getDur = (index) => {
+  if (index % 3 === 0) {
+    return 1000 // Card kiri
+  } else if (index % 3 === 1) {
+    return 800 // Card tengah
+  } else {
+    return 1000 // Card kanan
+  }
+}
+const getDelay = (index) => {
+  if (index % 3 === 0) {
+    return 600 // Card kiri
+  } else if (index % 3 === 1) {
+    return 300 // Card tengah
+  } else {
+    return 600 // Card kanan
   }
 }
 </script>
