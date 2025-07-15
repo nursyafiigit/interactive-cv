@@ -124,20 +124,20 @@ const getAOS = (index) => {
 
 const getDur = (index) => {
   if (index % 3 === 0) {
-    return 1000 // Card kiri
+    return '1000' // Card kiri
   } else if (index % 3 === 1) {
-    return 800 // Card tengah
+    return '800' // Card tengah
   } else {
-    return 1000 // Card kanan
+    return '1000' // Card kanan
   }
 }
 const getDelay = (index) => {
   if (index % 3 === 0) {
-    return 600 // Card kiri
+    return '600' // Card kiri
   } else if (index % 3 === 1) {
-    return 300 // Card tengah
+    return '300' // Card tengah
   } else {
-    return 600 // Card kanan
+    return '600' // Card kanan
   }
 }
 </script>
