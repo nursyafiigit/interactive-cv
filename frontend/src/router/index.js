@@ -21,33 +21,27 @@ const router = createRouter({
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
       return new Promise((resolve) => {
-        const waitForHomeView = () => {
-          // Setelah event dideteksi, scroll ke elemen dengan anchor
-          resolve({
-            el: to.hash,
-            behavior: 'smooth',
-          })
-          window.removeEventListener('homeview-mounted', waitForHomeView)
+        let resolved = false
+
+        const scrollToHash = () => {
+          if (!resolved) {
+            resolved = true
+            resolve({
+              el: to.hash,
+              behavior: 'smooth',
+            })
+          }
         }
 
-        // Tambahkan listener dan timeout fallback (jika event tidak pernah dikirim)
-        window.addEventListener('homeview-mounted', waitForHomeView)
+        // Dengarkan event saat HomeView sudah siap
+        window.addEventListener('homeview-mounted', scrollToHash)
 
-        // Fallback: scroll tetap dilakukan setelah 1 detik jika event tidak muncul
-        setTimeout(() => {
-          resolve({
-            el: to.hash,
-            behavior: 'smooth',
-          })
-          window.removeEventListener('homeview-mounted', waitForHomeView)
-        }, 200)
+        // Fallback: tetap scroll kalau event tidak dikirim setelah 600ms
+        setTimeout(scrollToHash, 600)
       })
     }
 
-    if (savedPosition) {
-      return savedPosition
-    }
-
+    if (savedPosition) return savedPosition
     return { top: 0 }
   },
 })
