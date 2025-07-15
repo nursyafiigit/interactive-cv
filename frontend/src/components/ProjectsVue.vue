@@ -18,9 +18,13 @@
       </div>
 
       <!-- Grid proyek -->
-      <div v-for="(project, index) in projects" :key="project.title" class="project-card">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-[1220px] mx-auto"
+      >
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-[1220px] mx-auto"
+          v-for="(project, index) in projects"
+          :key="project.title"
+          class="project-card"
           :data-aos="getAOS(index)"
           :data-aos-delay="index * 200"
           data-aos-duration="800"

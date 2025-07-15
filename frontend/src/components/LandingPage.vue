@@ -35,9 +35,9 @@ onMounted(() => {
   <section class="landing min-h-screen">
     <div class="container flex flex-col justify-center items-center min-h-screen">
       <div class="max-w-7xl">
-        <h1 class="ha1 text-white typing" data-aos="fade-right" data-aos-duration="1000">{{ displayText }}</h1>
+        <h1 class="ha1 text-white typing" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">{{ displayText }}</h1>
       </div>
-      <div class="max-w-3xl mt-8" data-aos="fade-left" data-aos-duration="1000">
+      <div class="max-w-3xl mt-8" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
         <p class="desc text-white text-center">
           Terima kasih telah mengunjungi website portofolio saya. Jika Anda ingin tahu lebih banyak
           atau berkonsultasi lebih lanjut, silakan hubungi saya.
