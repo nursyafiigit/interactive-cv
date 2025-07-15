@@ -22,7 +22,7 @@
           :key="project.title"
           class="project-card"
           :data-aos="getAOS(index)"
-          :data-aos-duration="800" <!-- Set duration for each project card -->
+          :data-aos-duration="800" 
           :data-aos-delay="index * 200"
         >
           <img
@@ -31,7 +31,7 @@
             class="w-full h-48 sm:h-56 md:h-60 object-cover rounded-t-lg"
             data-aos="zoom-in"
             :data-aos-delay="index * 150"
-            data-aos-duration="700" <!-- Set duration for image zoom-in effect -->
+            data-aos-duration="700" 
           />
 
           <div class="p-4 sm:p-6 flex flex-col justify-between">
@@ -48,7 +48,7 @@
               class="text-sm sm:text-base text-white/80 mb-4 leading-relaxed"
               data-aos="fade"
               :data-aos-delay="index * 250"
-              data-aos-duration="800" <!-- Set duration for paragraph fade-in -->
+              data-aos-duration="800"
             >
               {{ project.description }}
             </p>
@@ -62,7 +62,7 @@
                   class="inline-block bg-white/20 text-white text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full"
                   data-aos="zoom-in"
                   :data-aos-delay="index * 250"
-                  data-aos-duration="800" <!-- Set duration for tech items -->
+                  data-aos-duration="800" 
                 >
                   {{ t }}
                 </span>
@@ -76,7 +76,7 @@
                 class="text-yellow-300 font-semibold hover:underline text-sm sm:text-base"
                 data-aos="fade-up"
                 :data-aos-delay="index * 300"
-                data-aos-duration="900" <!-- Set duration for link -->
+                data-aos-duration="900"
               >
                 Lihat Detail &rarr;
               </a>
