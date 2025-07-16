@@ -45,7 +45,7 @@ onMounted(() => {
         </h1>
       </div>
       <div
-        class="max-w-3xl mt-8"
+        class="condes max-w-3xl mt-8"
         data-aos="fade-left"
         data-aos-duration="1000"
         data-aos-delay="500"
@@ -112,7 +112,12 @@ onMounted(() => {
     font-size: 60px; /* Ukuran font lebih kecil pada perangkat mobile */
   }
   .desc {
-    font-size: 1rem; /* Ukuran font deskripsi lebih kecil pada perangkat mobile */
+    font-size: 10px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile */
+  }
+  .condes {
+    margin-left: 3px;
+    margin-right: 3px;
+
   }
 }
 
@@ -121,7 +126,12 @@ onMounted(() => {
     font-size: 40px; /* Ukuran font lebih kecil pada perangkat mobile kecil */
   }
   .desc {
-    font-size: 0.875rem; /* Ukuran font deskripsi lebih kecil pada perangkat mobile kecil */
+    font-size: 9px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile kecil */
+  }
+  .condes {
+    margin-left: 3px;
+    margin-right: 3px;
+
   }
 }
 </style>

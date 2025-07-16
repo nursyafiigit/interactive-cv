@@ -53,9 +53,9 @@
               >
                 <img :src="edu.logo" class="w-16 h-16 object-contain" />
                 <div class="text-right">
-                  <p class="text-sm font-poppins font-semibold text-yellow-500 mb-1">{{ edu.period }}</p>
-                  <h3 class="text-2xl font-bold font-poppins text-white mb-1">{{ edu.institution }}</h3>
-                  <p class="text-white/80 font-poppins">{{ edu.major }}</p>
+                  <p class="text-sm sm:text-xs md:text-sm font-poppins font-semibold text-yellow-500 mb-1">{{ edu.period }}</p>
+                  <h3 class="text-xl sm:text-lg md:text-2xl font-bold font-poppins text-white mb-1">{{ edu.institution }}</h3>
+                  <p class="text-white/80 font-poppins text-sm sm:text-xs md:text-sm">{{ edu.major }}</p>
                 </div>
               </a>
             </div>
@@ -83,9 +83,9 @@
               >
                 <img :src="edu.logo" class="w-16 h-16 object-contain" />
                 <div class="text-right">
-                  <p class="text-sm font-semibold text-yellow-500 mb-1">{{ edu.period }}</p>
-                  <h3 class="text-2xl font-bold text-white mb-1">{{ edu.institution }}</h3>
-                  <p class="text-white/80">{{ edu.major }}</p>
+                  <p class="text-sm sm:text-xs md:text-sm font-semibold text-yellow-500 mb-1">{{ edu.period }}</p>
+                  <h3 class="text-xl sm:text-lg md:text-2xl font-bold text-white mb-1">{{ edu.institution }}</h3>
+                  <p class="text-white/80 sm:text-xs font-poppins md:text-sm">{{ edu.major }}</p>
                 </div>
               </a>
             </div>
@@ -104,9 +104,9 @@
             >
               <img :src="edu.logo" class="w-16 h-16 object-contain" />
               <div>
-                <p class="text-sm font-poppins font-semibold text-yellow-500 mb-1">{{ edu.period }}</p>
-                <h3 class="text-2xl font-bold font-poppins text-white mb-1">{{ edu.institution }}</h3>
-                <p class="text-white/80 font-poppins">{{ edu.major }}</p>
+                <p class="text-sm sm:text-xs md:text-sm font-poppins font-semibold text-yellow-500 mb-1">{{ edu.period }}</p>
+                <h3 class="text-xl sm:text-lg md:text-2xl font-bold font-poppins text-white mb-1">{{ edu.institution }}</h3>
+                <p class="text-white/80 sm:text-xs md:text-sm font-poppins">{{ edu.major }}</p>
               </div>
             </a>
           </div>
@@ -155,6 +155,7 @@ onMounted(async () => {
   gap: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .card:hover {
   transform: translateY(-6px) !important;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25) !important;

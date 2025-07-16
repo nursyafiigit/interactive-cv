@@ -8,7 +8,7 @@
 
       <!-- Animasi utama -->
       <div
-        class="mx-auto mb-10 w-full max-w-[500px]"
+        class="anim mx-auto mb-10 w-full max-w-[500px]"
         data-aos="zoom-in"
         data-aos-delay="200"
         data-aos-duration="800"
@@ -23,7 +23,7 @@
         data-aos-delay="300"
         data-aos-duration="800"
       >
-        <h4 class=" text-white font-poppins text-3xl sm:text-xl font-semibold mb-2">Apa yang Saya Bisa?</h4>
+        <h4 class=" apa text-white  font-poppins text-3xl sm:text-xl font-semibold mb-2">Apa yang Saya Bisa?</h4>
         <p class="desc text-white/80 max-w-3xl mx-auto text-base sm:text-lg">
           Dunia teknologi selalu berkembang, dan saya senang menjadi bagian dari perjalanan itu.
           Berikut beberapa skill yang saya kuasai:
@@ -36,7 +36,7 @@
           <div
             v-for="skill in skills"
             :key="skill.name"
-            class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300"
+            class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300 card"
             data-aos="zoom-in-up"
             data-aos-duration="800"
             data-aos-delay="400"
@@ -95,8 +95,42 @@ onMounted(async () => {
   background-size: cover;
   background-position: center;
 }
+
 .lottie-box {
   height: 200px;
   max-width: 100%;
+}
+
+/* Mengurangi tinggi card di tampilan mobile dan tablet */
+.card {
+  height: auto;
+  max-height: 350px; /* Sesuaikan dengan tinggi yang diinginkan */
+}
+
+/* Pada perangkat dengan lebar layar <768px (mobile) */
+@media (max-width: 767px) {
+  .card {
+    height: 280px; /* Menurunkan tinggi card lebih lanjut pada perangkat mobile */
+
+  }
+  .apa {
+    font-size: 9px;
+  }
+  .anim {
+    max-width: 300px;
+  }
+}
+
+/* Pada perangkat dengan lebar layar 768px sampai 1024px (tablet) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .card {
+    height: 300px; /* Menurunkan tinggi card pada tablet */
+  }
+  .apa {
+    font-size: 10px;
+  }
+  .anim {
+    max-width: 400px;
+  }
 }
 </style>
