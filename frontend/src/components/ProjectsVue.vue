@@ -1,12 +1,12 @@
 <template>
   <section id="proyek" class="pro py-20 min-h-screen font-sans overflow-x-hidden overflow-y-hidden">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container flex flex-col justify-center items-center mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Judul -->
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" class="text-white text-center">
         <SectionTitle title="MyProjects" class="font-poppins"/>
       </div>
       <div
-        class="max-w-screen flex justify-center items-center"
+        class="condes max-w-screen flex justify-center items-center"
         data-aos="fade-up"
         data-aos-duration="800"
         data-aos-delay="300"
@@ -137,7 +137,7 @@ const getDur = () => {
 
 <style scoped>
 .pro {
-  background-image: url('../assets/background/wl6.jpg');
+  background-image: url('../assets/background/wl14.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -173,5 +173,28 @@ const getDur = () => {
 /* Optional: Set a minimum height for consistent card height */
 .project-card {
   min-height: 300px; /* You can adjust this to whatever height you want */
+}
+
+@media (max-width: 768px) {
+  
+  .desc {
+    font-size: 20px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile */
+    line-height: 29px;
+  }
+  .condes {
+    max-width: 650px;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .desc {
+    font-size: 13px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile kecil */
+    line-height: 19px;
+  }
+  .condes {
+    max-width: 360px;
+    margin-top: -15px;
+  }
 }
 </style>

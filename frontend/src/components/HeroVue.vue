@@ -39,7 +39,7 @@
         <img
           src="/image/aku.jpg"
           alt="Foto Profil"
-          class="w-40 sm:w-52 md:w-72 lg:w-[320px] max-w-full rounded-full object-cover"
+          class="w-40 sm:w-58 md:w-72 lg:w-[320px] max-w-full rounded-full object-cover"
         />
       </div>
     </div>
@@ -48,7 +48,7 @@
 
 <style scoped>
 .herow {
-  background-image: url('../assets/background/wl55.jpg');
+  background-image: url('../assets/background/wl7.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -76,5 +76,45 @@
 .nama {
   color: #e9c200;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .ha1 {
+    font-size: 60px; /* Ukuran font lebih kecil pada perangkat mobile */
+  }
+  .desc {
+    font-size: 19px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile */
+    line-height: 29px;
+  }
+  .condes {
+    max-width: 550px;
+  }
+  .contact-button {
+    font-size: 19px;
+    display: inline-block;
+  margin-bottom: 1rem;
+  padding: 1.1rem 1.6rem;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .ha1 {
+    font-size: 50px; /* Ukuran font lebih kecil pada perangkat mobile kecil */
+  }
+  .desc {
+    font-size: 13px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile kecil */
+    line-height: 22px;
+  }
+  .condes {
+    max-width: 340px;
+  }
+
+  .contact-button {
+    font-size: 13px;
+    display: inline-block;
+  margin-bottom: 11rem;
+  padding: 0.5rem 1.2rem;
+  }
 }
 </style>

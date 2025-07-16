@@ -109,29 +109,28 @@ onMounted(() => {
 /* Media Queries untuk Responsivitas */
 @media (max-width: 768px) {
   .ha1 {
-    font-size: 60px; /* Ukuran font lebih kecil pada perangkat mobile */
+    font-size: 80px; /* Ukuran font lebih kecil pada perangkat mobile */
   }
   .desc {
-    font-size: 10px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile */
+    font-size: 19px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile */
   }
   .condes {
-    margin-left: 3px;
-    margin-right: 3px;
-
+    max-width: 550px;
   }
 }
 
 @media (max-width: 480px) {
   .ha1 {
-    font-size: 40px; /* Ukuran font lebih kecil pada perangkat mobile kecil */
+    font-size: 45px; /* Ukuran font lebih kecil pada perangkat mobile kecil */
   }
   .desc {
-    font-size: 9px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile kecil */
+    font-size: 13px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile kecil */
   }
   .condes {
-    margin-left: 3px;
-    margin-right: 3px;
-
+    max-width: 340px;
+  }
+  .landing {
+    
   }
 }
 </style>

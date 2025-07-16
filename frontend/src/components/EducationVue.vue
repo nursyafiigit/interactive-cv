@@ -11,14 +11,14 @@
 
       <!-- Deskripsi -->
       <div
-        class="max-w-3xl mx-auto text-white text-center mt-6 mb-12"
+        class="condes max-w-3xl mx-auto text-white text-center mt-6 mb-12"
         data-aos="fade-up"
         data-aos-delay="200"
         data-aos-duration="800"
       >
         <p class="desc text-white/90 leading-relaxed">
           Sebagai seorang IT Developer, perjalanan pendidikan saya telah memberikan dasar yang kuat
-          untuk memahami dan menguasai teknologi informasi serta pengembangan perangkat lunak...
+          untuk memahami dan menguasai teknologi informasi serta pengembangan perangkat lunak
         </p>
       </div>
 
@@ -135,7 +135,7 @@ onMounted(async () => {
 
 <style scoped>
 .edu {
-  background-image: url('../assets/background/wl7.jpg');
+  background-image: url('../assets/background/wl55.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -159,5 +159,29 @@ onMounted(async () => {
 .card:hover {
   transform: translateY(-6px) !important;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+  
+  .desc {
+    font-size: 19px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile */
+    line-height: 29px;
+  }
+  .condes {
+    max-width: 650px;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .desc {
+    font-size: 13px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile kecil */
+    line-height: 19px;
+  }
+  .condes {
+    max-width: 350px;
+    margin-top: -15px;
+  }
 }
 </style>

@@ -53,7 +53,7 @@ onBeforeUnmount(() => {
 
       <!-- Link Sosial -->
       <div
-        class="flex justify-center flex-wrap gap-6 mt-6"
+        class="conlog flex justify-center flex-wrap gap-6 mt-6"
         data-aos="fade-up"
         data-aos-delay="50"
         data-aos-duration="800"
@@ -107,9 +107,9 @@ onBeforeUnmount(() => {
 
 <style scoped>
 #kontak {
-  background-image: url('../assets/background/wl14.jpg');
+  background-image: url('../assets/background/wl6.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: right;
 }
 
 .space {
@@ -170,5 +170,39 @@ onBeforeUnmount(() => {
 .icon-link:hover .icon {
   filter: brightness(1.2);
   transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  
+  .desc {
+    font-size: 20px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile */
+    line-height: 29px;
+    margin-top: -20px;
+  }
+  .email-button {
+    margin-bottom:10px ;
+  }
+
+  .conlog {
+    margin-bottom:-33px ;
+  }
+ 
+}
+
+@media (max-width: 480px) {
+  
+  .desc {
+    font-size: 14px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile kecil */
+    line-height: 19px;
+    margin-top: -22px;
+  }
+
+   .email-button {
+    margin-bottom:10px ;
+  }
+
+  .conlog {
+    margin-bottom:-33px ;
+  }
 }
 </style>
