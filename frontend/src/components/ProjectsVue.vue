@@ -19,7 +19,7 @@
 
       <!-- Grid proyek -->
       <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-[1220px] mx-auto"
+        class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8 mt-12 max-w-[1220px] mx-auto"
       >
         <div
           v-for="(project, index) in projects"

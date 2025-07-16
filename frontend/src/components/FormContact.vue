@@ -63,7 +63,7 @@
         </div>
 
         <!-- Lottie Animation (Kanan) -->
-        <div class="w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-end items-center" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-end items-center" data-aos="zoom-in" data-aos-duration="1000">
           <div id="lottie" style="max-width: 450px; "></div>
         </div>
       </div>
