@@ -2,14 +2,14 @@
   <section id="proyek" class="pro py-20 min-h-screen font-sans overflow-x-hidden overflow-y-hidden">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Judul -->
-      <div data-aos="fade-up" data-aos-duration="800" class="text-white text-center">
+      <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" class="text-white text-center">
         <SectionTitle title="MyProjects" class="font-poppins"/>
       </div>
       <div
         class="max-w-screen flex justify-center items-center"
         data-aos="fade-up"
         data-aos-duration="800"
-        data-aos-delay="200"
+        data-aos-delay="300"
       >
         <p class="desc text-white text-center max-w-3xl">
           Lihat berbagai proyek yang telah saya kerjakan, masing-masing mencerminkan dedikasi saya

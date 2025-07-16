@@ -118,7 +118,7 @@ onBeforeUnmount(() => {
 /* Fade-up animation */
 .fade-up-enter-active,
 .fade-up-leave-active {
-  transition: all 0.5s ease;
+  transition: all 0.6s ease;
 }
 .fade-up-enter-from,
 .fade-up-leave-to {
