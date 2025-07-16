@@ -32,7 +32,7 @@
 
       <!-- Grid Skill -->
       <div class="mx-auto max-w-[1220px] px-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           <div
             v-for="skill in skills"
             :key="skill.name"
@@ -43,7 +43,7 @@
           >
             <div :id="skill.animId" class="lottie-box mb-4 mx-auto w-full"></div>
             <h5 class="text-white font-poppins text-xl sm:text-2xl font-bold text-center ">{{ skill.name }}</h5>
-            <p class="text-white/60 text-center  font-poppins text-sm sm:text-base">{{ skill.level }}</p>
+            <p class="text-white/60 text-center font-poppins text-sm sm:text-base">{{ skill.level }}</p>
           </div>
         </div>
       </div>
