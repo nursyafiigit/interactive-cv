@@ -1,4 +1,3 @@
-
 <template>
   <section
     id="pendidikan"
@@ -12,7 +11,7 @@
 
       <!-- Deskripsi -->
       <div
-        class=" flex justify-center max-w-3xl mx-auto text-white text-center mt-6 mb-12"
+        class="flex justify-center max-w-3xl mx-auto text-white text-center mt-6 mb-12"
         data-aos="fade-up"
         data-aos-delay="200"
         data-aos-duration="800"
@@ -34,16 +33,9 @@
         ></div>
 
         <!-- Loop riwayat pendidikan -->
-        <div
-          v-for="(edu, index) in educationHistory"
-          :key="edu.id"
-          class="mb-10 w-full px-4"
-        >
+        <div v-for="(edu, index) in educationHistory" :key="edu.id" class="mb-10 w-full px-4">
           <!-- Desktop: layout kiri-kanan -->
-          <div
-            v-if="index % 2 === 0"
-            class="hidden md:flex justify-between items-center"
-          >
+          <div v-if="index % 2 === 0" class="hidden md:flex justify-between items-center">
             <div class="w-1/2 pr-8 flex justify-end">
               <a
                 :href="edu.link"
@@ -54,25 +46,38 @@
               >
                 <img :src="edu.logo" class="w-16 h-16 object-contain" />
                 <div class="text-right">
-                  <p class="text-sm sm:text-xs md:text-sm font-poppins font-semibold text-yellow-500 mb-1">{{ edu.period }}</p>
-                  <h3 class="text-xl sm:text-lg md:text-2xl font-bold font-poppins text-white mb-1">{{ edu.institution }}</h3>
-                  <p class="text-white/80 font-poppins text-sm sm:text-xs md:text-sm">{{ edu.major }}</p>
+                  <p
+                    class="text-sm sm:text-xs md:text-sm font-poppins font-semibold text-yellow-500 mb-1"
+                  >
+                    {{ edu.period }}
+                  </p>
+                  <h3 class="text-xl sm:text-lg md:text-2xl font-bold font-poppins text-white mb-1">
+                    {{ edu.institution }}
+                  </h3>
+                  <p class="text-white/80 font-poppins text-sm sm:text-xs md:text-sm">
+                    {{ edu.major }}
+                  </p>
                 </div>
               </a>
             </div>
             <div class="w-1/2 flex justify-start">
               <!-- Bulet hanya muncul di desktop -->
-              <div class="w-4 h-4 bulet rounded-full z-10 hidden md:block" data-aos="fade-in" data-aos-duration="800"></div>
+              <div
+                class="w-4 h-4 bulet rounded-full z-10 hidden md:block"
+                data-aos="fade-in"
+                data-aos-duration="800"
+              ></div>
             </div>
           </div>
 
-          <div
-            v-else
-            class="hidden md:flex justify-between items-center"
-          >
+          <div v-else class="hidden md:flex justify-between items-center">
             <div class="w-1/2 flex justify-end">
               <!-- Bulet hanya muncul di desktop -->
-              <div class="w-4 h-4 bulet rounded-full z-10 hidden md:block" data-aos="fade-in" data-aos-duration="800"></div>
+              <div
+                class="w-4 h-4 bulet rounded-full z-10 hidden md:block"
+                data-aos="fade-in"
+                data-aos-duration="800"
+              ></div>
             </div>
             <div class="w-1/2 pl-8 flex justify-start">
               <a
@@ -84,8 +89,12 @@
               >
                 <img :src="edu.logo" class="w-16 h-16 object-contain" />
                 <div class="text-right">
-                  <p class="text-sm sm:text-xs md:text-sm font-semibold text-yellow-500 mb-1">{{ edu.period }}</p>
-                  <h3 class="text-xl sm:text-lg md:text-2xl font-bold text-white mb-1">{{ edu.institution }}</h3>
+                  <p class="text-sm sm:text-xs md:text-sm font-semibold text-yellow-500 mb-1">
+                    {{ edu.period }}
+                  </p>
+                  <h3 class="text-xl sm:text-lg md:text-2xl font-bold text-white mb-1">
+                    {{ edu.institution }}
+                  </h3>
                   <p class="text-white/80 sm:text-xs font-poppins md:text-sm">{{ edu.major }}</p>
                 </div>
               </a>
@@ -105,8 +114,14 @@
             >
               <img :src="edu.logo" class="w-16 h-16 object-contain" />
               <div>
-                <p class="text-sm sm:text-xs md:text-sm font-poppins font-semibold text-yellow-500 mb-1">{{ edu.period }}</p>
-                <h3 class="text-xl sm:text-lg md:text-2xl font-bold font-poppins text-white mb-1">{{ edu.institution }}</h3>
+                <p
+                  class="text-sm sm:text-xs md:text-sm font-poppins font-semibold text-yellow-500 mb-1"
+                >
+                  {{ edu.period }}
+                </p>
+                <h3 class="text-xl sm:text-lg md:text-2xl font-bold font-poppins text-white mb-1">
+                  {{ edu.institution }}
+                </h3>
                 <p class="text-white/80 sm:text-xs md:text-sm font-poppins">{{ edu.major }}</p>
               </div>
             </a>
@@ -154,7 +169,7 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   gap: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s ease !important;
 }
 
 .card:hover {
@@ -164,17 +179,16 @@ onMounted(async () => {
 
 /*Tablet*/
 @media (max-width: 1024px) and (min-width: 768px) {
- .desc {
-    font-size: 16px !important; 
+  .desc {
+    font-size: 16px !important;
     line-height: 22px;
-    max-width:600px;
+    max-width: 600px;
   }
 }
 /*Mobile*/
 @media (max-width: 767px) {
-
   .desc {
-    font-size: 13px !important; 
+    font-size: 13px !important;
     line-height: 20px;
     max-width: 350px;
   }

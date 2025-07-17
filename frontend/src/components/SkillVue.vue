@@ -23,7 +23,9 @@
         data-aos-delay="300"
         data-aos-duration="800"
       >
-        <h4 class=" apa text-white  font-poppins text-3xl sm:text-xl font-semibold mb-2">Apa yang Saya Bisa?</h4>
+        <h4 class="apa text-white font-poppins text-3xl sm:text-xl font-semibold mb-2">
+          Apa yang Saya Bisa?
+        </h4>
         <p class="desc text-white/80 max-w-3xl mx-auto text-base sm:text-lg">
           Dunia teknologi selalu berkembang, dan saya senang menjadi bagian dari perjalanan itu.
           Berikut beberapa skill yang saya kuasai:
@@ -33,18 +35,24 @@
       <!-- Grid Skill -->
       <div class="mx-auto max-w-[1220px] px-4">
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-          <div
-            v-for="skill in skills"
-            :key="skill.name"
-            class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300 card"
-            data-aos="zoom-in-up"
-            data-aos-duration="800"
-            data-aos-delay="400"
-          >
-            <div :id="skill.animId" class="lottie-box mb-4 mx-auto w-full"></div>
-            <h5 class="text-white font-poppins text-xl sm:text-2xl font-bold text-center ">{{ skill.name }}</h5>
-            <p class="text-white/60 text-center font-poppins text-sm sm:text-base">{{ skill.level }}</p>
-          </div>
+          <a :href="skill.link" target="_blank" rel="noopener noreferrer">
+            <div
+              v-for="skill in skills"
+              :key="skill.name"
+              class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300 card"
+              data-aos="zoom-in-up"
+              data-aos-duration="800"
+              data-aos-delay="400"
+            >
+              <div :id="skill.animId" class="lottie-box mb-4 mx-auto w-full"></div>
+              <h5 class="text-white font-poppins text-xl sm:text-2xl font-bold text-center">
+                {{ skill.name }}
+              </h5>
+              <p class="text-white/60 text-center font-poppins text-sm sm:text-base">
+                {{ skill.level }}
+              </p>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -104,10 +112,18 @@ onMounted(async () => {
 /* Mengurangi tinggi card di tampilan mobile dan tablet */
 .card {
   height: auto;
+  transition: all 0.4s ease !important;
+
 }
 
-/*mobile */
+.card:hover {
+  transform: translateY(-6px) !important;
 
+}
+
+
+
+/*mobile */
 
 /* tablet */
 @media (max-width: 1024px) and (min-width: 768px) {
@@ -123,7 +139,6 @@ onMounted(async () => {
   }
 }
 @media (max-width: 767px) {
- 
   .apa {
     font-size: 18px;
   }
