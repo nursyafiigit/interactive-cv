@@ -119,8 +119,9 @@ onMounted(async () => {
 /* Mengurangi tinggi card di tampilan mobile dan tablet */
 .card {
   height: auto;
-  transition: all 0.4s ease !important;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+
 
 .card:hover {
   transform: translateY(-6px) !important;

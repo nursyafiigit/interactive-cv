@@ -182,7 +182,8 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   gap: 1rem;
-  transition: all 0.4s ease !important;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
 }
 
 .card:hover {

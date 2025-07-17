@@ -111,14 +111,12 @@ onMounted(async () => {
     // Barulah AOS diinit / refresh setelah semua elemen muncul
     AOS.init({
       duration: 800,
-      
     })
     AOS.refresh() // Pastikan AOS mendeteksi semua elemen v-for
   } catch (error) {
     console.error(error)
   }
 })
-
 
 // Function to determine AOS effect based on column position in the grid
 const getAOS = (index) => {
@@ -140,9 +138,6 @@ const getDelay = (index) => {
     return 600
   }
 }
-
-
-
 </script>
 
 <style scoped>
@@ -159,16 +154,15 @@ const getDelay = (index) => {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 18px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease !important;
+  transition: transform 0.3s ease;
+
   display: flex;
   flex-direction: column;
   height: 100%; /* Set height to 100% for consistent card height */
 }
 
 .project-card:hover {
-  transform: translateY(-6px) !important;
+  transform: translateY(-6px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
 }
 
