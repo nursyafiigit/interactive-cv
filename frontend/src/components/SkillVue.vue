@@ -94,10 +94,9 @@ onMounted(async () => {
         path: `/lottie/${skill.animFile}`,
       })
     })
-    AOS.init({     // animasi hanya sekali
-      duration: 800,     // default duration global
+    AOS.init({     
+      duration: 800,     
     })
-    AOS.refresh()
   } catch (error) {
     console.error('Gagal memuat data skill:', error)
   }
