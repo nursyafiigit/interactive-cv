@@ -19,7 +19,7 @@
       >
         <p class="desc text-white/90 leading-relaxed">
           Sebagai seorang IT Developer, perjalanan pendidikan saya telah memberikan dasar yang kuat
-          untuk memahami dan menguasai teknologi informasi serta pengembangan perangkat lunak...
+          untuk memahami dan menguasai teknologi informasi serta pengembangan perangkat lunak
         </p>
       </div>
 
@@ -160,5 +160,20 @@ onMounted(async () => {
 .card:hover {
   transform: translateY(-6px) !important;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25) !important;
+}
+
+@media (max-width: 768px) {
+ .desc {
+    font-size: 13px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile kecil */
+    line-height: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .desc {
+    font-size: 13px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile kecil */
+    line-height: 22px;
+  }
 }
 </style>
