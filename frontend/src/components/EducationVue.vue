@@ -152,7 +152,7 @@ onMounted(async () => {
     await nextTick()
 
     AOS.init({
-      duration: 800,     // default duration global
+      duration: 800, // default duration global
     })
 
     AOS.refresh()
@@ -182,13 +182,12 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   gap: 1rem;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-
+  transition: none;
 }
 
 .card:hover {
-  transform: translateY(-6px) !important;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25) !important;
+  transform: translateY(-6px);
+  transition: transform 0.3s ease;
 }
 
 /*Tablet*/

@@ -41,7 +41,7 @@
             :href="skill.link"
             target="_blank"
             rel="noopener noreferrer"
-            class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300 card"
+            class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-lg card"
             data-aos="zoom-in-up"
             data-aos-duration="800"
             data-aos-delay="400"
@@ -119,12 +119,13 @@ onMounted(async () => {
 /* Mengurangi tinggi card di tampilan mobile dan tablet */
 .card {
   height: auto;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 
 .card:hover {
-  transform: translateY(-6px) !important;
+  transform: translateY(-6px);
+  transition: transform 0.4s ease;
+
 }
 
 /*mobile */
