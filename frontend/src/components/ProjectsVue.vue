@@ -33,7 +33,7 @@
           :data-aos-delay="getDelay(index)"
           data-aos-duration="800"
           class="project-card"
-        >``
+        >
           <img
             :src="project.image"
             alt="Gambar Proyek"
@@ -154,7 +154,7 @@ const getDelay = (index) => {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 18px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  transition: none;
+
   display: flex;
   flex-direction: column;
   height: 100%; /* Set height to 100% for consistent card height */
@@ -162,7 +162,7 @@ const getDelay = (index) => {
 
 .project-card:hover {
   transform: translateY(-6px);
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .project-card .p-4 {
