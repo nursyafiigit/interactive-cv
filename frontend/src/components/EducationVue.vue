@@ -137,7 +137,10 @@
 
 <script setup>
 import axios from 'axios'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
+
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import SectionTitle from './SectionTitle.vue'
 
 const educationHistory = ref([])
@@ -146,6 +149,13 @@ onMounted(async () => {
   try {
     const response = await axios.get('/api/education')
     educationHistory.value = response.data
+    await nextTick()
+
+    AOS.init({
+      duration: 800,     // default duration global
+    })
+
+    AOS.refresh()
   } catch (error) {
     console.error(error)
   }

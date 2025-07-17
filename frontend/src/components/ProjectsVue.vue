@@ -31,7 +31,7 @@
           :key="project.title"
           :data-aos="getAOS(index)"
           :data-aos-delay="getDelay(index)"
-          :data-aos-duration="getDur(index)"
+          data-aos-duration="800"
           class="project-card"
         >
           <img
@@ -111,7 +111,7 @@ onMounted(async () => {
     // Barulah AOS diinit / refresh setelah semua elemen muncul
     AOS.init({
       duration: 800,
-      once: true,
+      
     })
     AOS.refresh() // Pastikan AOS mendeteksi semua elemen v-for
   } catch (error) {
@@ -141,9 +141,7 @@ const getDelay = (index) => {
   }
 }
 
-const getDur = (index) => {
-  return 800 // kamu juga bisa variasikan berdasarkan index kalau mau
-}
+
 
 </script>
 
