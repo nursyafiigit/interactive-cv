@@ -36,13 +36,14 @@
         <div v-for="(edu, index) in educationHistory" :key="edu.id" class="mb-10 w-full px-4">
           <!-- Desktop: layout kiri-kanan -->
           <div v-if="index % 2 === 0" class="hidden md:flex justify-between items-center">
-            <div class="w-1/2 pr-8 flex justify-end">
+            <div class="w-1/2 pr-8 flex justify-end" data-aos="fade-right"
+                data-aos-duration="800">
               <a
                 :href="edu.link"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="card max-w-md"
-                data-aos="fade-right"
+                
               >
                 <img :src="edu.logo" class="w-16 h-16 object-contain" />
                 <div class="text-right">
@@ -68,6 +69,7 @@
                 class="w-4 h-4 bulet rounded-full z-10 hidden md:block"
                 data-aos="fade-in"
                 data-aos-duration="800"
+                data-aos-delay="500"
               ></div>
             </div>
           </div>
@@ -79,15 +81,18 @@
                 class="w-4 h-4 bulet rounded-full z-10 hidden md:block"
                 data-aos="fade-in"
                 data-aos-duration="800"
+                data-aos-delay="500"
+
               ></div>
             </div>
-            <div class="w-1/2 pl-8 flex justify-start">
+            <div class="w-1/2 pl-8 flex justify-start" data-aos="fade-left"
+                data-aos-duration="800">
               <a
                 :href="edu.link"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="card max-w-md"
-                data-aos="fade-left"
+                
               >
                 <img :src="edu.logo" class="w-16 h-16 object-contain" />
                 <div class="text-right">

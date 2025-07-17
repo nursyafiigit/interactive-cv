@@ -184,15 +184,7 @@ const getDur = () => {
   .condes {
     max-width: 650px;
   }
-  .gambar {
-    height: 120px;
-  }
-  .tech {
-    font-size: 9px;
-  }
-  .ha3 {
-    font-size: 20px; /* Ukuran font judul lebih kecil pada perangkat mobile */
-  }
+
 }
 
 @media (max-width: 480px) {

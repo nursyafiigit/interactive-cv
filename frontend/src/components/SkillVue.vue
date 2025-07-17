@@ -35,21 +35,21 @@
       <!-- Grid Skill -->
       <div class="mx-auto max-w-[1220px] px-4">
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-          <div
-            v-for="skill in skills"
-            :key="skill.name"
+          <div v-for="skill in skills" :key="skill.name " data-aos="zoom-in-up"
+              data-aos-delay="400"
+               data-aos-duration="800">
+            <div
             class="card bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-lg"
-            data-aos="zoom-in-up"
-            data-aos-duration="800"
-            data-aos-delay="400"
-          >
-            <div :id="skill.animId" class="lottie-box mb-4 mx-auto w-full"></div>
-            <h5 class="text-white font-poppins text-xl sm:text-2xl font-bold text-center">
-              {{ skill.name }}
-            </h5>
-            <p class="text-white/60 text-center font-poppins text-sm sm:text-base">
-              {{ skill.level }}
-            </p>
+              
+            >
+              <div :id="skill.animId" class="lottie-box mb-4 mx-auto w-full"></div>
+              <h5 class="text-white font-poppins text-xl sm:text-2xl font-bold text-center">
+                {{ skill.name }}
+              </h5>
+              <p class="text-white/60 text-center font-poppins text-sm sm:text-base">
+                {{ skill.level }}
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -67,19 +67,17 @@ const skills = ref([])
 
 onMounted(async () => {
   lottie.loadAnimation({
-      container: document.getElementById('main-lottie'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      animationData:animationData,
-    })
+    container: document.getElementById('main-lottie'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+  })
   try {
     const response = await axios.get('/api/skills')
     skills.value = response.data
 
     await nextTick()
-
-    
 
     skills.value.forEach((skill) => {
       lottie.loadAnimation({
@@ -145,11 +143,10 @@ onMounted(async () => {
   }
 
   .card {
-  transition: all 0.3s ease !important;
-  max-height: 200px;
-}
-.card:hover {
-  transform: translateY(-6px) !important;
-}
+    transition: all 0.3s ease !important;
+  }
+  .card:hover {
+    transform: translateY(-6px) !important;
+  }
 }
 </style>
