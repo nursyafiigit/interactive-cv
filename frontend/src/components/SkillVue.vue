@@ -8,7 +8,7 @@
 
       <!-- Animasi utama -->
       <div
-        class="mx-auto mb-10 w-full max-w-[500px]"
+        class="animutama mx-auto mb-10 w-full max-w-[500px]"
         data-aos="zoom-in"
         data-aos-delay="200"
         data-aos-duration="800"
@@ -23,7 +23,9 @@
         data-aos-delay="300"
         data-aos-duration="800"
       >
-        <h4 class="apayang text-white font-poppins text-3xl sm:text-xl font-semibold mb-2">Apa yang Saya Bisa?</h4>
+        <h4 class="apayang text-white font-poppins text-3xl sm:text-xl font-semibold mb-2">
+          Apa yang Saya Bisa?
+        </h4>
         <p class="desc text-white/80 max-w-3xl mx-auto text-base sm:text-lg">
           Dunia teknologi selalu berkembang, dan saya senang menjadi bagian dari perjalanan itu.
           Berikut beberapa skill yang saya kuasai:
@@ -36,14 +38,18 @@
           <div
             v-for="skill in skills"
             :key="skill.name"
-            class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:scale-105 transition duration-300"
+            class="card bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-lg"
             data-aos="zoom-in-up"
             data-aos-duration="800"
             data-aos-delay="400"
           >
             <div :id="skill.animId" class="lottie-box mb-4 mx-auto w-full"></div>
-            <h5 class="text-white font-poppins text-xl sm:text-2xl font-bold text-center ">{{ skill.name }}</h5>
-            <p class="text-white/60 text-center font-poppins text-sm sm:text-base">{{ skill.level }}</p>
+            <h5 class="text-white font-poppins text-xl sm:text-2xl font-bold text-center">
+              {{ skill.name }}
+            </h5>
+            <p class="text-white/60 text-center font-poppins text-sm sm:text-base">
+              {{ skill.level }}
+            </p>
           </div>
         </div>
       </div>
@@ -56,23 +62,24 @@ import { ref, onMounted, nextTick } from 'vue'
 import axios from 'axios'
 import lottie from 'lottie-web'
 import SectionTitle from './SectionTitle.vue'
-
+import animationData from '../assets/lottie/front.json'
 const skills = ref([])
 
 onMounted(async () => {
+  lottie.loadAnimation({
+      container: document.getElementById('main-lottie'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData:animationData,
+    })
   try {
     const response = await axios.get('/api/skills')
     skills.value = response.data
 
     await nextTick()
 
-    lottie.loadAnimation({
-      container: document.getElementById('main-lottie'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: '/lottie/front.json',
-    })
+    
 
     skills.value.forEach((skill) => {
       lottie.loadAnimation({
@@ -99,9 +106,14 @@ onMounted(async () => {
   height: 200px;
   max-width: 100%;
 }
+.card {
+  transition: all 0.3s ease !important;
+}
+.card:hover {
+  transform: translateY(-6px) !important;
+}
 
 @media (max-width: 768px) {
-  
   .desc {
     font-size: 20px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile */
     line-height: 29px;
@@ -109,15 +121,13 @@ onMounted(async () => {
   .condes {
     max-width: 650px;
   }
-   .apayang {
+  .apayang {
     font-size: 27px;
     margin-bottom: 22px;
-    
   }
 }
 
 @media (max-width: 480px) {
-  
   .desc {
     font-size: 13px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile kecil */
     line-height: 19px;
@@ -130,5 +140,16 @@ onMounted(async () => {
     font-size: 18px;
     margin-bottom: 6px;
   }
+  .animutama {
+    max-width: 300px;
+  }
+
+  .card {
+  transition: all 0.3s ease !important;
+  max-height: 200px;
+}
+.card:hover {
+  transform: translateY(-6px) !important;
+}
 }
 </style>

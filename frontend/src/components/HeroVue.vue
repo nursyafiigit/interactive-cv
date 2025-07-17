@@ -1,7 +1,6 @@
 <template>
-  <section id="profil" class="herow min-h-screen flex items-center justify-center ">
+  <section id="profil" class="herow min-h-screen flex items-center justify-center">
     <div
-      
       class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center gap-y-12 md:gap-x-12"
     >
       <!-- Bagian Kiri -->
@@ -39,7 +38,7 @@
         <img
           src="/image/aku.jpg"
           alt="Foto Profil"
-          class="w-40 sm:w-58 md:w-72 lg:w-[320px] max-w-full rounded-full object-cover"
+          class="foto w-[420px] max-w-full rounded-full object-cover"
         />
       </div>
     </div>
@@ -92,10 +91,9 @@
   .contact-button {
     font-size: 19px;
     display: inline-block;
-  margin-bottom: 1rem;
-  padding: 1.1rem 1.6rem;
+    margin-bottom: 1rem;
+    padding: 1.1rem 1.6rem;
   }
-
 }
 
 @media (max-width: 480px) {
@@ -110,11 +108,15 @@
     max-width: 340px;
   }
 
+  .foto {
+    width: 250px;
+    max-width: 250px;
+  }
   .contact-button {
     font-size: 13px;
     display: inline-block;
-  margin-bottom: 11rem;
-  padding: 0.5rem 1.2rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1.2rem;
   }
 }
 </style>

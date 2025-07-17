@@ -32,12 +32,12 @@
             <img
               :src="project.image"
               alt="Gambar Proyek"
-              class="w-full h-48 sm:h-56 md:h-60 object-cover rounded-t-lg"
+              class="gambar w-full h-48 object-cover rounded-t-lg"
             />
 
             <div class="p-4 sm:p-6 flex flex-col justify-between">
               <h3
-                class="text-xl font-poppins sm:text-2xl font-bold text-white mb-2"
+                class="ha3 text-xl font-poppins font-bold text-white mb-2"
                 data-aos="zoom-in"
                 :data-aos-delay="index * 250"
                 data-aos-duration="700"
@@ -46,7 +46,7 @@
               </h3>
 
               <p
-                class="text-sm font-poppins sm:text-base text-white/80 mb-4 leading-relaxed"
+                class="desc text-sm font-poppins sm:text-base text-white/80 mb-4 leading-relaxed"
                 data-aos="fade"
                 :data-aos-delay="index * 250"
               >
@@ -59,7 +59,7 @@
                   <span
                     v-for="t in project.tech"
                     :key="t"
-                    class="inline-block bg-white/20 font-poppins text-white text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full"
+                    class="tech inline-block bg-white/20 font-poppins text-white text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full"
                     data-aos="zoom-in"
                     :data-aos-delay="index * 250"
                   >
@@ -184,6 +184,15 @@ const getDur = () => {
   .condes {
     max-width: 650px;
   }
+  .gambar {
+    height: 120px;
+  }
+  .tech {
+    font-size: 9px;
+  }
+  .ha3 {
+    font-size: 20px; /* Ukuran font judul lebih kecil pada perangkat mobile */
+  }
 }
 
 @media (max-width: 480px) {
@@ -195,6 +204,9 @@ const getDur = () => {
   .condes {
     max-width: 360px;
     margin-top: -15px;
+  }
+  .gambar {
+    height: 200px;
   }
 }
 </style>
