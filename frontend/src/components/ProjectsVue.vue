@@ -27,8 +27,9 @@
           :data-aos="getAOS(index)"
           :data-aos-delay="getDelay(index)"
           :data-aos-duration="getDur(index)"
+          class="project-card"
         >
-          <div class="project-card">
+          <div >
             <img
               :src="project.image"
               alt="Gambar Proyek"
@@ -98,7 +99,7 @@ const projects = ref([])
 
 onMounted(async () => {
   AOS.init({
-    duration: 1000, // Set the global duration for AOS animations
+    duration: 800, // Set the global duration for AOS animations
     delay: 200, // Optional: set a global delay for all AOS animations
   })
   try {
