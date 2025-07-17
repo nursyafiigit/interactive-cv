@@ -55,6 +55,7 @@
               <button
                 type="submit"
                 class="contact-button w-full"
+                
               >
                 Kirim
               </button>
@@ -134,10 +135,5 @@ const submitForm = () => {
   color: #e9c200;
   transform: translateY(-5px) !important;
   box-shadow: 0px 6px 16px rgba(249, 186, 14, 0.374);
-}
-
-button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
 }
 </style>

@@ -2,7 +2,7 @@
 <template>
   <section
     id="pendidikan"
-    class="edu py-20 bg-gradient-to-r from-blue-100 via-blue-50 to-green-100 min-h-screen font-sans overflow-x-hidden"
+    class="edu py-20 bg-gradient-to-r from-blue-100 via-blue-50 to-green-100 min-h-screen font-sans overflow-hidden"
   >
     <div class="container mx-auto px-4 sm:px-6">
       <!-- Section Title -->
@@ -12,7 +12,7 @@
 
       <!-- Deskripsi -->
       <div
-        class="max-w-3xl mx-auto text-white text-center mt-6 mb-12"
+        class=" flex justify-center max-w-3xl mx-auto text-white text-center mt-6 mb-12"
         data-aos="fade-up"
         data-aos-delay="200"
         data-aos-duration="800"
@@ -162,18 +162,21 @@ onMounted(async () => {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25) !important;
 }
 
-@media (max-width: 768px) {
+/*Tablet*/
+@media (max-width: 1024px) and (min-width: 768px) {
  .desc {
-    font-size: 13px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile kecil */
+    font-size: 16px !important; 
     line-height: 22px;
+    max-width:600px;
   }
 }
-
-@media (max-width: 480px) {
+/*Mobile*/
+@media (max-width: 767px) {
 
   .desc {
-    font-size: 13px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile kecil */
-    line-height: 22px;
+    font-size: 13px !important; 
+    line-height: 20px;
+    max-width: 350px;
   }
 }
 </style>

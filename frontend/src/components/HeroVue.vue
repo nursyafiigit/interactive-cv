@@ -1,5 +1,5 @@
 <template>
-  <section id="profil" class="herow min-h-screen flex items-center justify-center">
+  <section id="profil" class="herow min-h-screen flex items-center justify-center overflow-hidden">
     <div
       class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col md:flex-row items-center gap-y-12 md:gap-x-12"
     >
@@ -77,7 +77,7 @@
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) and (min-width: 768px) {
   .ha1 {
     font-size: 60px; /* Ukuran font lebih kecil pada perangkat mobile */
   }
@@ -96,7 +96,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .ha1 {
     font-size: 50px; /* Ukuran font lebih kecil pada perangkat mobile kecil */
   }

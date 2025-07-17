@@ -107,7 +107,7 @@ onMounted(() => {
 }
 
 /* Media Queries untuk Responsivitas */
-@media (max-width: 768px) {
+@media (max-width: 1024px) and (min-width: 768px) {
   .ha1 {
     font-size: 80px; /* Ukuran font lebih kecil pada perangkat mobile */
   }
@@ -119,7 +119,7 @@ onMounted(() => {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .ha1 {
     font-size: 45px; /* Ukuran font lebih kecil pada perangkat mobile kecil */
   }
@@ -128,9 +128,6 @@ onMounted(() => {
   }
   .condes {
     max-width: 340px;
-  }
-  .landing {
-    
   }
 }
 </style>

@@ -172,7 +172,7 @@ onBeforeUnmount(() => {
   transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) and (min-width: 768px) {
   
   .desc {
     font-size: 20px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile */
@@ -189,7 +189,7 @@ onBeforeUnmount(() => {
  
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   
   .desc {
     font-size: 14px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile kecil */

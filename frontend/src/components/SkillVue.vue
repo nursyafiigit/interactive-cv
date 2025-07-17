@@ -1,5 +1,5 @@
 <template>
-  <section class="skills-section py-20 font-sans min-h-screen overflow-x-hidden" id="skill">
+  <section class="skills-section py-20 font-sans min-h-screen overflow-hidden" id="skill">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Judul -->
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
@@ -106,27 +106,33 @@ onMounted(async () => {
   height: auto;
 }
 
-/* Pada perangkat dengan lebar layar <768px (mobile) */
-@media (max-width: 767px) {
- 
-  .apa {
-    font-size: 9px;
-  }
-  .anim {
-    max-width: 300px;
-  }
-}
+/*mobile */
 
-/* Pada perangkat dengan lebar layar 768px sampai 1024px (tablet) */
+
+/* tablet */
 @media (max-width: 1024px) and (min-width: 768px) {
-  .card {
-    height: 300px; /* Menurunkan tinggi card pada tablet */
-  }
   .apa {
-    font-size: 10px;
+    font-size: 20px;
   }
   .anim {
     max-width: 400px;
+  }
+  .desc {
+    font-size: 16px !important; /* Ukuran font deskripsi lebih kecil pada perangkat tablet */
+    line-height: 22px;
+  }
+}
+@media (max-width: 767px) {
+ 
+  .apa {
+    font-size: 18px;
+  }
+  .desc {
+    font-size: 13px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile */
+    line-height: 20px;
+  }
+  .anim {
+    max-width: 300px;
   }
 }
 </style>

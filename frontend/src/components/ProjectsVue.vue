@@ -1,5 +1,5 @@
 <template>
-  <section id="proyek" class="pro py-20 min-h-screen font-sans overflow-x-hidden overflow-y-hidden">
+  <section id="proyek" class="pro py-20 min-h-screen font-sans overflow-hidden">
     <div class="container flex flex-col justify-center items-center mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Judul -->
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" class="text-white text-center">
@@ -175,11 +175,11 @@ const getDur = () => {
   min-height: 300px; /* You can adjust this to whatever height you want */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) and (min-width: 768px) {
   
   .desc {
-    font-size: 20px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile */
-    line-height: 29px;
+    font-size: 16px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile */
+    line-height: 22px;
   }
   .condes {
     max-width: 650px;
@@ -187,11 +187,11 @@ const getDur = () => {
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   
   .desc {
     font-size: 13px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile kecil */
-    line-height: 19px;
+    line-height: 20px;
   }
   .condes {
     max-width: 360px;
