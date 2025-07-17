@@ -2,8 +2,13 @@
   <section id="proyek" class="pro py-20 min-h-screen font-sans overflow-hidden">
     <div class="container flex flex-col justify-center items-center mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Judul -->
-      <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" class="text-white text-center">
-        <SectionTitle title="MyProjects" class="font-poppins"/>
+      <div
+        data-aos="fade-up"
+        data-aos-duration="800"
+        data-aos-delay="100"
+        class="text-white text-center"
+      >
+        <SectionTitle title="MyProjects" class="font-poppins" />
       </div>
       <div
         class="condes max-w-screen flex justify-center items-center"
@@ -27,58 +32,57 @@
           :data-aos="getAOS(index)"
           :data-aos-delay="getDelay(index)"
           :data-aos-duration="getDur(index)"
+          class="project-card"
         >
-          <div class="project-card">
-            <img
-              :src="project.image"
-              alt="Gambar Proyek"
-              class="gambar w-full h-48 object-cover rounded-t-lg"
-            />
+          <img
+            :src="project.image"
+            alt="Gambar Proyek"
+            class="gambar w-full h-48 object-cover rounded-t-lg"
+          />
 
-            <div class="p-4 sm:p-6 flex flex-col justify-between">
-              <h3
-                class="ha3 text-xl font-poppins font-bold text-white mb-2"
-                data-aos="zoom-in"
-                :data-aos-delay="index * 250"
-                data-aos-duration="700"
-              >
-                {{ project.title }}
-              </h3>
+          <div class="p-4 sm:p-6 flex flex-col justify-between">
+            <h3
+              class="ha3 text-xl font-poppins font-bold text-white mb-2"
+              data-aos="zoom-in"
+              :data-aos-delay="index * 250"
+              data-aos-duration="700"
+            >
+              {{ project.title }}
+            </h3>
 
-              <p
-                class="desc text-sm font-poppins sm:text-base text-white/80 mb-4 leading-relaxed"
-                data-aos="fade"
-                :data-aos-delay="index * 250"
-              >
-                {{ project.description }}
-              </p>
-              <!-- Teknologi dan Link berada di bagian bawah -->
-              <div class="mt-auto">
-                <!-- Teknologi -->
-                <div class="mb-4 flex flex-wrap gap-2">
-                  <span
-                    v-for="t in project.tech"
-                    :key="t"
-                    class="tech inline-block bg-white/20 font-poppins text-white text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full"
-                    data-aos="zoom-in"
-                    :data-aos-delay="index * 250"
-                  >
-                    {{ t }}
-                  </span>
-                </div>
-
-                <!-- Link -->
-                <a
-                  :href="project.link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-yellow-300 font-poppins font-semibold hover:underline text-sm sm:text-base"
-                  data-aos="fade-up"
-                  :data-aos-delay="index * 300"
+            <p
+              class="desc text-sm font-poppins sm:text-base text-white/80 mb-4 leading-relaxed"
+              data-aos="fade"
+              :data-aos-delay="index * 250"
+            >
+              {{ project.description }}
+            </p>
+            <!-- Teknologi dan Link berada di bagian bawah -->
+            <div class="mt-auto">
+              <!-- Teknologi -->
+              <div class="mb-4 flex flex-wrap gap-2">
+                <span
+                  v-for="t in project.tech"
+                  :key="t"
+                  class="tech inline-block bg-white/20 font-poppins text-white text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full"
+                  data-aos="zoom-in"
+                  :data-aos-delay="index * 250"
                 >
-                  Lihat Detail &rarr;
-                </a>
+                  {{ t }}
+                </span>
               </div>
+
+              <!-- Link -->
+              <a
+                :href="project.link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-yellow-300 font-poppins font-semibold hover:underline text-sm sm:text-base"
+                data-aos="fade-up"
+                :data-aos-delay="index * 300"
+              >
+                Lihat Detail &rarr;
+              </a>
             </div>
           </div>
         </div>
@@ -88,7 +92,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 import axios from 'axios'
 import SectionTitle from './SectionTitle.vue'
 import AOS from 'aos'
@@ -97,17 +101,24 @@ import 'aos/dist/aos.css'
 const projects = ref([])
 
 onMounted(async () => {
-  AOS.init({
-    duration: 1000, // Set the global duration for AOS animations
-    delay: 200, // Optional: set a global delay for all AOS animations
-  })
   try {
     const response = await axios.get('/api/projects')
     projects.value = response.data
+
+    // Tunggu render selesai
+    await nextTick()
+
+    // Barulah AOS diinit / refresh setelah semua elemen muncul
+    AOS.init({
+      duration: 800,
+      once: true,
+    })
+    AOS.refresh() // Pastikan AOS mendeteksi semua elemen v-for
   } catch (error) {
     console.error(error)
   }
 })
+
 
 // Function to determine AOS effect based on column position in the grid
 const getAOS = (index) => {
@@ -130,9 +141,10 @@ const getDelay = (index) => {
   }
 }
 
-const getDur = () => {
-  return 800
+const getDur = (index) => {
+  return 800 // kamu juga bisa variasikan berdasarkan index kalau mau
 }
+
 </script>
 
 <style scoped>
@@ -176,7 +188,6 @@ const getDur = () => {
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
-  
   .desc {
     font-size: 16px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile */
     line-height: 22px;
@@ -184,11 +195,9 @@ const getDur = () => {
   .condes {
     max-width: 650px;
   }
-
 }
 
 @media (max-width: 767px) {
-  
   .desc {
     font-size: 13px !important; /* Ukuran font deskripsi lebih kecil pada perangkat mobile kecil */
     line-height: 20px;

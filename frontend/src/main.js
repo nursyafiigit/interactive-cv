@@ -8,8 +8,11 @@ const app = createApp(App)
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-AOS.init()
 
+AOS.init({
+  duration: 800, 
+  once: true,
+})
 
 
 app.use(router)

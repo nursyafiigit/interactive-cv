@@ -43,6 +43,7 @@
                 rel="noopener noreferrer"
                 class="card max-w-md"
                 data-aos="fade-right"
+                data-aos-duration="800"
               >
                 <img :src="edu.logo" class="w-16 h-16 object-contain" />
                 <div class="text-right">
@@ -86,6 +87,7 @@
                 rel="noopener noreferrer"
                 class="card max-w-md"
                 data-aos="fade-left"
+                data-aos-duration="800"
               >
                 <img :src="edu.logo" class="w-16 h-16 object-contain" />
                 <div class="text-right">
@@ -111,6 +113,7 @@
               rel="noopener noreferrer"
               class="card w-full max-w-sm text-left"
               data-aos="fade-up"
+              data-aos-duration="800"
             >
               <img :src="edu.logo" class="w-16 h-16 object-contain" />
               <div>

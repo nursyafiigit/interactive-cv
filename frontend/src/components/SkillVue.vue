@@ -64,6 +64,8 @@
 import { ref, onMounted, nextTick } from 'vue'
 import axios from 'axios'
 import lottie from 'lottie-web'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import SectionTitle from './SectionTitle.vue'
 
 const skills = ref([])
@@ -92,6 +94,7 @@ onMounted(async () => {
         path: `/lottie/${skill.animFile}`,
       })
     })
+    AOS.refresh()
   } catch (error) {
     console.error('Gagal memuat data skill:', error)
   }
