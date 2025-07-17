@@ -36,30 +36,25 @@
         <div v-for="(edu, index) in educationHistory" :key="edu.id" class="mb-10 w-full px-4">
           <!-- Desktop: layout kiri-kanan -->
           <div v-if="index % 2 === 0" class="hidden md:flex justify-between items-center">
-            <div class="w-1/2 pr-8 flex justify-end" data-aos="fade-right"
-                data-aos-duration="800">
-              <a
-                :href="edu.link"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="card max-w-md"
-                
-              >
-                <img :src="edu.logo" class="w-16 h-16 object-contain" />
-                <div class="text-right">
-                  <p
-                    class="text-sm sm:text-xs md:text-sm font-poppins font-semibold text-yellow-500 mb-1"
-                  >
-                    {{ edu.period }}
-                  </p>
-                  <h3
-                    class="text-xl sm:text-base md:text-lg font-bold font-poppins text-white mb-1"
-                  >
-                    {{ edu.institution }}
-                  </h3>
-                  <p class="text-white/80 font-poppins text-sm sm:text-xs md:text-sm">
-                    {{ edu.major }}
-                  </p>
+            <div class="w-1/2 pr-8 flex justify-end">
+              <a :href="edu.link" target="_blank" rel="noopener noreferrer">
+                <div class="card max-w-md" data-aos="fade-right" data-aos-duration="800">
+                  <img :src="edu.logo" class="w-16 h-16 object-contain" />
+                  <div class="text-right">
+                    <p
+                      class="text-sm sm:text-xs md:text-sm font-poppins font-semibold text-yellow-500 mb-1"
+                    >
+                      {{ edu.period }}
+                    </p>
+                    <h3
+                      class="text-xl sm:text-base md:text-lg font-bold font-poppins text-white mb-1"
+                    >
+                      {{ edu.institution }}
+                    </h3>
+                    <p class="text-white/80 font-poppins text-sm sm:text-xs md:text-sm">
+                      {{ edu.major }}
+                    </p>
+                  </div>
                 </div>
               </a>
             </div>
@@ -82,27 +77,21 @@
                 data-aos="fade-in"
                 data-aos-duration="800"
                 data-aos-delay="500"
-
               ></div>
             </div>
-            <div class="w-1/2 pl-8 flex justify-start" data-aos="fade-left"
-                data-aos-duration="800">
-              <a
-                :href="edu.link"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="card max-w-md"
-                
-              >
-                <img :src="edu.logo" class="w-16 h-16 object-contain" />
-                <div class="text-right">
-                  <p class="text-sm sm:text-xs md:text-sm font-semibold text-yellow-500 mb-1">
-                    {{ edu.period }}
-                  </p>
-                  <h3 class="text-xl sm:text-lg md:text-2xl font-bold text-white mb-1">
-                    {{ edu.institution }}
-                  </h3>
-                  <p class="text-white/80 sm:text-xs font-poppins md:text-sm">{{ edu.major }}</p>
+            <div class="w-1/2 pl-8 flex justify-start" >
+              <a :href="edu.link" target="_blank" rel="noopener noreferrer" >
+                <div class="card max-w-md" data-aos="fade-left" data-aos-duration="800">
+                  <img :src="edu.logo" class="w-16 h-16 object-contain" />
+                  <div class="text-right">
+                    <p class="text-sm sm:text-xs md:text-sm font-semibold text-yellow-500 mb-1">
+                      {{ edu.period }}
+                    </p>
+                    <h3 class="text-xl sm:text-lg md:text-2xl font-bold text-white mb-1">
+                      {{ edu.institution }}
+                    </h3>
+                    <p class="text-white/80 sm:text-xs font-poppins md:text-sm">{{ edu.major }}</p>
+                  </div>
                 </div>
               </a>
             </div>
