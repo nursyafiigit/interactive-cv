@@ -108,10 +108,7 @@ onMounted(async () => {
 
 /* Pada perangkat dengan lebar layar <768px (mobile) */
 @media (max-width: 767px) {
-  .card {
-    height: 280px; /* Menurunkan tinggi card lebih lanjut pada perangkat mobile */
-
-  }
+ 
   .apa {
     font-size: 9px;
   }
