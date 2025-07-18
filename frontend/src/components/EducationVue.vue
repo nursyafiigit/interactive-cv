@@ -174,10 +174,7 @@ onMounted(async () => {
   gap: 1rem;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  transition: transform 0.4s ease;
-}
+
 
 /*Tablet*/
 @media (max-width: 1024px) and (min-width: 768px) {

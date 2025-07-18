@@ -160,10 +160,6 @@ const getDelay = (index) => {
   height: 100%; /* Set height to 100% for consistent card height */
 }
 
-.project-card:hover {
-  transform: translateY(-6px);
-  transition: transform 0.4s ease;
-}
 
 .project-card .p-4 {
   flex-grow: 1;
@@ -173,9 +169,8 @@ const getDelay = (index) => {
   margin-top: auto;
 }
 
-/* Optional: Set a minimum height for consistent card height */
 .project-card {
-  min-height: 300px; /* You can adjust this to whatever height you want */
+  min-height: 300px; 
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {

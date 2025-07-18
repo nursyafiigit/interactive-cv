@@ -121,11 +121,6 @@ onMounted(async () => {
 }
 
 
-.card:hover {
-  transform: translateY(-6px);
-  transition: transform 0.4s ease;
-
-}
 
 /*mobile */
 
