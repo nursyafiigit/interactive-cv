@@ -35,25 +35,27 @@
       <!-- Grid Skill -->
       <div class="mx-auto max-w-[1220px] px-4">
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-          <a
-            v-for="skill in skills"
-            :key="skill.name"
-            :href="skill.link"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-lg card"
-            data-aos="zoom-in-up"
-            data-aos-duration="800"
-            data-aos-delay="400"
-          >
-            <div :id="skill.animId" class="lottie-box mb-4 mx-auto w-full"></div>
-            <h5 class="text-white font-poppins text-xl sm:text-2xl font-bold text-center">
-              {{ skill.name }}
-            </h5>
-            <p class="text-white/60 text-center font-poppins text-sm sm:text-base">
-              {{ skill.level }}
-            </p>
-          </a>
+          <div v-for="skill in skills" :key="skill.name">
+            <div class="ho">
+              <a
+                :href="skill.link"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-lg card"
+                data-aos="zoom-in-up"
+                data-aos-duration="800"
+                data-aos-delay="400"
+              >
+                <div :id="skill.animId" class="lottie-box mb-4 mx-auto w-full"></div>
+                <h5 class="text-white font-poppins text-xl sm:text-2xl font-bold text-center">
+                  {{ skill.name }}
+                </h5>
+                <p class="text-white/60 text-center font-poppins text-sm sm:text-base">
+                  {{ skill.level }}
+                </p>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -94,8 +96,8 @@ onMounted(async () => {
         path: `/lottie/${skill.animFile}`,
       })
     })
-    AOS.init({     
-      duration: 800,     
+    AOS.init({
+      duration: 800,
     })
   } catch (error) {
     console.error('Gagal memuat data skill:', error)
@@ -117,16 +119,18 @@ onMounted(async () => {
 
 /* Mengurangi tinggi card di tampilan mobile dan tablet */
 .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: auto;
 }
 
-.card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+.ho {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-
-
+.ho:hover {
+  transform: translateY(-6px);
+}
 
 /*mobile */
 

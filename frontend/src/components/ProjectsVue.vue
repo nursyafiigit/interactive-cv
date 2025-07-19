@@ -26,63 +26,65 @@
       <div
         class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8 mt-12 max-w-[1220px] mx-auto"
       >
-        <div
-          v-for="(project, index) in projects"
-          :key="project.title"
-          :data-aos="getAOS(index)"
-          :data-aos-delay="getDelay(index)"
-          data-aos-duration="800"
-          class="project-card"
-        >
-          <img
-            :src="project.image"
-            alt="Gambar Proyek"
-            class="gambar w-full h-48 object-cover rounded-t-lg"
-          />
-
-          <div class="p-4 sm:p-6 flex flex-col justify-between">
-            <h3
-              class="ha3 text-xl font-poppins font-bold text-white mb-2"
-              data-aos="zoom-in"
-              :data-aos-delay="index * 250"
-              data-aos-duration="700"
+        <div v-for="(project, index) in projects" :key="project.title">
+          <div class="ho">
+            <div
+              :data-aos="getAOS(index)"
+              :data-aos-delay="getDelay(index)"
+              data-aos-duration="800"
+              class="project-card"
             >
-              {{ project.title }}
-            </h3>
+              <img
+                :src="project.image"
+                alt="Gambar Proyek"
+                class="gambar w-full h-48 object-cover rounded-t-lg"
+              />
 
-            <p
-              class="desc text-sm font-poppins sm:text-base text-white/80 mb-4 leading-relaxed"
-              data-aos="fade"
-              :data-aos-delay="index * 250"
-            >
-              {{ project.description }}
-            </p>
-            <!-- Teknologi dan Link berada di bagian bawah -->
-            <div class="mt-auto">
-              <!-- Teknologi -->
-              <div class="mb-4 flex flex-wrap gap-2">
-                <span
-                  v-for="t in project.tech"
-                  :key="t"
-                  class="tech inline-block bg-white/20 font-poppins text-white text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full"
+              <div class="p-4 sm:p-6 flex flex-col justify-between">
+                <h3
+                  class="ha3 text-xl font-poppins font-bold text-white mb-2"
                   data-aos="zoom-in"
                   :data-aos-delay="index * 250"
+                  data-aos-duration="700"
                 >
-                  {{ t }}
-                </span>
-              </div>
+                  {{ project.title }}
+                </h3>
 
-              <!-- Link -->
-              <a
-                :href="project.link"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-yellow-300 font-poppins font-semibold hover:underline text-sm sm:text-base"
-                data-aos="fade-up"
-                :data-aos-delay="index * 300"
-              >
-                Lihat Detail &rarr;
-              </a>
+                <p
+                  class="desc text-sm font-poppins sm:text-base text-white/80 mb-4 leading-relaxed"
+                  data-aos="fade"
+                  :data-aos-delay="index * 250"
+                >
+                  {{ project.description }}
+                </p>
+                <!-- Teknologi dan Link berada di bagian bawah -->
+                <div class="mt-auto">
+                  <!-- Teknologi -->
+                  <div class="mb-4 flex flex-wrap gap-2">
+                    <span
+                      v-for="t in project.tech"
+                      :key="t"
+                      class="tech inline-block bg-white/20 font-poppins text-white text-xs sm:text-sm font-semibold px-2.5 py-0.5 rounded-full"
+                      data-aos="zoom-in"
+                      :data-aos-delay="index * 250"
+                    >
+                      {{ t }}
+                    </span>
+                  </div>
+
+                  <!-- Link -->
+                  <a
+                    :href="project.link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-yellow-300 font-poppins font-semibold hover:underline text-sm sm:text-base"
+                    data-aos="fade-up"
+                    :data-aos-delay="index * 300"
+                  >
+                    Lihat Detail &rarr;
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -158,13 +160,18 @@ const getDelay = (index) => {
   display: flex;
   flex-direction: column;
   height: 100%; /* Set height to 100% for consistent card height */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+.ho {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
+.ho:hover {
+  transform: translateY(-6px);
+}
+
 .project-card .p-4 {
   flex-grow: 1;
 }
@@ -174,7 +181,7 @@ const getDelay = (index) => {
 }
 
 .project-card {
-  min-height: 300px; 
+  min-height: 300px;
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {

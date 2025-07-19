@@ -84,25 +84,27 @@
               ></div>
             </div>
             <div class="w-1/2 pl-8 flex justify-start">
-              <a
-                :href="edu.link"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="card max-w-md"
-                data-aos="fade-left"
-                data-aos-duration="800"
-              >
-                <img :src="edu.logo" class="w-16 h-16 object-contain" />
-                <div class="text-right">
-                  <p class="text-sm sm:text-xs md:text-sm font-semibold text-yellow-500 mb-1">
-                    {{ edu.period }}
-                  </p>
-                  <h3 class="text-xl sm:text-lg md:text-2xl font-bold text-white mb-1">
-                    {{ edu.institution }}
-                  </h3>
-                  <p class="text-white/80 sm:text-xs font-poppins md:text-sm">{{ edu.major }}</p>
-                </div>
-              </a>
+              <div class="ho">
+                <a
+                  :href="edu.link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="card max-w-md"
+                  data-aos="fade-left"
+                  data-aos-duration="800"
+                >
+                  <img :src="edu.logo" class="w-16 h-16 object-contain" />
+                  <div class="text-right">
+                    <p class="text-sm sm:text-xs md:text-sm font-semibold text-yellow-500 mb-1">
+                      {{ edu.period }}
+                    </p>
+                    <h3 class="text-xl sm:text-lg md:text-2xl font-bold text-white mb-1">
+                      {{ edu.institution }}
+                    </h3>
+                    <p class="text-white/80 sm:text-xs font-poppins md:text-sm">{{ edu.major }}</p>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -175,18 +177,16 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   gap: 1rem;
-  
 }
 
 .ho {
-transition:
+  transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
 .ho:hover {
-  transform: translateY(-6px) scale(1.02);
-
+  transform: translateY(-6px);
 }
 
 /*Tablet*/
