@@ -193,7 +193,7 @@ onMounted(async () => {
 }
 
 .ho:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
 }
 
 /*Tablet*/
