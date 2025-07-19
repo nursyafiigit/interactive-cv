@@ -1,19 +1,28 @@
 <template>
-  <NavbarVue />
   <section id="contact" class="min-h-screen flex items-center justify-center bg-gray-900 py-20">
+    <NavbarVue />
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
       <!-- Judul (Section Title) -->
       <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" class="mb-6">
-        <SectionTitle title="Contact Me" class="text-white font-poppins text-xl sm:text-2xl md:text-4xl" />
+        <SectionTitle
+          title="Contact Me"
+          class="text-white font-poppins text-xl sm:text-2xl md:text-4xl"
+        />
       </div>
 
       <div class="flex flex-col lg:flex-row w-full max-w-7xl justify-center items-center">
         <!-- Form Kontak (Kiri) -->
-        <div class="w-full lg:w-1/2 bg-black-30 bg-opacity-30 backdrop-blur-md p-8 rounded-lg shadow-lg mb-8 lg:mb-0" data-aos="fade-up" data-aos-duration="1000">
+        <div
+          class="bgform w-full lg:w-1/2 bg-opacity-30 backdrop-blur-md p-8 rounded-lg shadow-lg mb-8 lg:mb-0"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <form @submit.prevent="submitForm">
             <!-- Name -->
             <div class="mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-              <label for="name" class="block text-sm font-poppins font-medium text-white">Nama</label>
+              <label for="name" class="block text-sm font-poppins font-medium text-white"
+                >Nama</label
+              >
               <input
                 v-model="form.name"
                 type="text"
@@ -26,7 +35,9 @@
 
             <!-- Email -->
             <div class="mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-              <label for="email" class="block text-sm font-poppins font-medium text-white">Email</label>
+              <label for="email" class="block text-sm font-poppins font-medium text-white"
+                >Email</label
+              >
               <input
                 v-model="form.email"
                 type="email"
@@ -39,7 +50,9 @@
 
             <!-- Message -->
             <div class="mb-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
-              <label for="message" class="block font-poppins text-sm font-medium text-white">Pesan</label>
+              <label for="message" class="block font-poppins text-sm font-medium text-white"
+                >Pesan</label
+              >
               <textarea
                 v-model="form.message"
                 id="message"
@@ -52,20 +65,18 @@
 
             <!-- Submit Button -->
             <div data-aos="zoom-in-up" data-aos-delay="700" data-aos-duration="800">
-              <button
-                type="submit"
-                class="contact-button w-full"
-                
-              >
-                Kirim
-              </button>
+              <button type="submit" class="contact-button w-full">Kirim</button>
             </div>
           </form>
         </div>
 
         <!-- Lottie Animation (Kanan) -->
-        <div class="w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-end items-center" data-aos="zoom-in" data-aos-duration="1000">
-          <div id="lottie" style="max-width: 450px; "></div>
+        <div
+          class="w-full lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-end items-center"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        >
+          <div id="lottie" style="max-width: 450px"></div>
         </div>
       </div>
     </div>
@@ -73,7 +84,6 @@
 </template>
 
 <script setup>
-
 import { ref } from 'vue'
 import { onMounted } from 'vue'
 import NavbarVue from './NavbarVue.vue'
@@ -135,5 +145,9 @@ const submitForm = () => {
   color: #e9c200;
   transform: translateY(-5px) !important;
   box-shadow: 0px 6px 16px rgba(249, 186, 14, 0.374);
+}
+
+.bgform {
+  background-color: rgba(0, 50, 0, 0); /* Warna latar belakang dengan transparansi */
 }
 </style>

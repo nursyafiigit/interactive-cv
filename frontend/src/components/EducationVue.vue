@@ -67,7 +67,7 @@
             <div class="w-1/2 flex justify-start">
               <!-- Bulet hanya muncul di desktop -->
               <div
-                class="w-4 h-4 bulet rounded-full z-10 hidden md:block"
+                class="w-4 h-4 buletkan rounded-full z-10 hidden md:block"
                 data-aos="fade-in"
                 data-aos-duration="800"
               ></div>
@@ -166,8 +166,14 @@ onMounted(async () => {
 .bulet {
   background-color: #e9c200;
 }
+
+.buletkan {
+  background-color: #e9c200;
+  margin-left: 2px;
+
+}
 .card {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(0, 50, 0, 0);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -179,10 +185,11 @@ onMounted(async () => {
   gap: 1rem;
 }
 
+
+
 .ho {
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.3s ease;
 }
 
 .ho:hover {

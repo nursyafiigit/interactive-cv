@@ -38,7 +38,7 @@
           <div v-for="skill in skills" :key="skill.name">
             <div class="ho">
               <div
-                class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-lg card"
+                class="backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-lg card"
                 data-aos="zoom-in-up"
                 data-aos-duration="800"
                 data-aos-delay="400"
@@ -119,6 +119,7 @@ onMounted(async () => {
 /* Mengurangi tinggi card di tampilan mobile dan tablet */
 .card {
   height: auto;
+  background-color:rgba(0, 50, 0, 0);
 }
 
 .ho {

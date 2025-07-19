@@ -93,7 +93,7 @@ onBeforeUnmount(() => {
     <transition name="fade-up">
       <div
         v-show="showFooterBar"
-        class="w-full fixed bottom-0 left-0 bg-black/10 backdrop-blur-md z-50"
+        class="bgfoot w-full fixed bottom-0 left-0 backdrop-blur-md z-50"
       >
         <div
           class="container mx-auto px-4 sm:px-6 text-white text-center py-5 text-xxs sm:text-base font-poppins"
@@ -153,6 +153,10 @@ onBeforeUnmount(() => {
 
 .icon-link:hover {
   transform: translateY(-5px);
+}
+
+.bgfoot {
+  background-color: rgba(0, 50, 0, 0);
 }
 
 .icon {
