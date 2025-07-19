@@ -9,7 +9,6 @@
         <SectionTitle title="Education History" class="text-white font-poppins" />
       </div>
 
-
       <div
         class="flex justify-center max-w-3xl mx-auto text-white text-center mt-6 mb-12"
         data-aos="fade-up"
@@ -37,29 +36,33 @@
           <!-- Desktop: layout kiri-kanan -->
           <div v-if="index % 2 === 0" class="hidden md:flex justify-between items-center">
             <div class="w-1/2 pr-8 flex justify-end">
-              <a
-                :href="edu.link"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="card max-w-md"
-                data-aos="fade-right"
-                data-aos-duration="800"
-              >
-                <img :src="edu.logo" class="w-16 h-16 object-contain" />
-                <div class="text-right">
-                  <p
-                    class="text-sm sm:text-xs md:text-sm font-poppins font-semibold text-yellow-500 mb-1"
-                  >
-                    {{ edu.period }}
-                  </p>
-                  <h3 class="text-xl sm:text-lg md:text-2xl font-bold font-poppins text-white mb-1">
-                    {{ edu.institution }}
-                  </h3>
-                  <p class="text-white/80 font-poppins text-sm sm:text-xs md:text-sm">
-                    {{ edu.major }}
-                  </p>
-                </div>
-              </a>
+              <div class="ho">
+                <a
+                  :href="edu.link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="card max-w-md"
+                  data-aos="fade-right"
+                  data-aos-duration="800"
+                >
+                  <img :src="edu.logo" class="w-16 h-16 object-contain" />
+                  <div class="text-right">
+                    <p
+                      class="text-sm sm:text-xs md:text-sm font-poppins font-semibold text-yellow-500 mb-1"
+                    >
+                      {{ edu.period }}
+                    </p>
+                    <h3
+                      class="text-xl sm:text-lg md:text-2xl font-bold font-poppins text-white mb-1"
+                    >
+                      {{ edu.institution }}
+                    </h3>
+                    <p class="text-white/80 font-poppins text-sm sm:text-xs md:text-sm">
+                      {{ edu.major }}
+                    </p>
+                  </div>
+                </a>
+              </div>
             </div>
             <div class="w-1/2 flex justify-start">
               <!-- Bulet hanya muncul di desktop -->
@@ -172,16 +175,19 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   gap: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
 }
 
-.card:hover {
+.ho {
+transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.ho:hover {
   transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+
 }
-
-
-
 
 /*Tablet*/
 @media (max-width: 1024px) and (min-width: 768px) {
