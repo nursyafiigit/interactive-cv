@@ -39,15 +39,11 @@
             <div class="ho">
               <div
                 class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-lg card"
+                data-aos="zoom-in-up"
+                data-aos-duration="800"
+                data-aos-delay="400"
               >
-                <a
-                  :href="skill.link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-aos="zoom-in-up"
-                  data-aos-duration="800"
-                  data-aos-delay="400"
-                >
+                <a :href="skill.link" target="_blank" rel="noopener noreferrer">
                   <div :id="skill.animId" class="lottie-box mb-4 mx-auto w-full"></div>
                   <h5 class="text-white font-poppins text-xl sm:text-2xl font-bold text-center">
                     {{ skill.name }}

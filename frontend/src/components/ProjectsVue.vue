@@ -26,13 +26,13 @@
       <div
         class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-8 mt-12 max-w-[1220px] mx-auto"
       >
-        <div v-for="(project, index) in projects" :key="project.title">
-          <div class="ho">
+        <div v-for="(project, index) in projects" :key="project.title" class="flex">
+          <div class="ho w-full">
             <div
               :data-aos="getAOS(index)"
               :data-aos-delay="getDelay(index)"
               data-aos-duration="800"
-              class="project-card"
+              class="project-card h-full flex flex-col"
             >
               <img
                 :src="project.image"
@@ -160,6 +160,8 @@ const getDelay = (index) => {
   display: flex;
   flex-direction: column;
   height: 100%; /* Set height to 100% for consistent card height */
+  height: 100%;       /* Ini penting */
+  min-height: 380px;
 }
 
 .ho {
@@ -181,9 +183,7 @@ const getDelay = (index) => {
   margin-top: auto;
 }
 
-.project-card {
-  min-height: 300px;
-}
+
 
 @media (max-width: 1024px) and (min-width: 768px) {
   .desc {
