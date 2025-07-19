@@ -158,9 +158,13 @@ const getDelay = (index) => {
   display: flex;
   flex-direction: column;
   height: 100%; /* Set height to 100% for consistent card height */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
+.project-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
 .project-card .p-4 {
   flex-grow: 1;
 }

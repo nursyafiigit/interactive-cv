@@ -9,7 +9,7 @@
         <SectionTitle title="Education History" class="text-white font-poppins" />
       </div>
 
-      <!-- Deskripsi -->
+
       <div
         class="flex justify-center max-w-3xl mx-auto text-white text-center mt-6 mb-12"
         data-aos="fade-up"
@@ -172,7 +172,14 @@ onMounted(async () => {
   display: flex;
   align-items: center;
   gap: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
 
 
 
