@@ -164,8 +164,9 @@ const getDelay = (index) => {
 
 .ho {
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.3s ease;
+  
+    display: block;
 }
 
 .ho:hover {
